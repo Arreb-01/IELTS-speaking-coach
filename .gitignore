@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Node.js
+node_modules/
+.npm
+.yarn
+
+# 环境变量与密钥
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 操作系统
+.DS_Store
+Thumbs.db
+
+# 日志
+*.log
+logs/
+
+# 构建产物
+frontend/dist/
+backend/static/
+
+# 临时文件
+*.tmp
+*.bak
+.cache/
+
+# PDF 素材 (不提交到仓库)
+*.pdf
+
+# 数据库
+*.db
+*.sqlite3
