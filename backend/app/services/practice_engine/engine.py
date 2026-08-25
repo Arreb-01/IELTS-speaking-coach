@@ -575,7 +575,7 @@ class PracticeEngine:
     async def _speak(self, text: str, *, set_phase: bool = True) -> None:
         if set_phase:
             await self._set_phase(C.PHASE_EXAMINER_ASKS)
-        await self.send({"type": "audio_start", "encoding": "mp3", "text": text})
+        await self.send({"type": "audio_start", "encoding": "pcm", "rate": 24000, "text": text})
         for i, chunk in enumerate(split_sentences(text)):
             try:
                 async with async_session_factory() as db:

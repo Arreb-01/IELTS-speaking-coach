@@ -38,3 +38,18 @@ export interface ApiKeyTestResult {
   key_source: 'user' | 'platform' | 'none'
   latency_ms: number | null
 }
+
+export interface TopicOut {
+  id: string
+  name_en: string
+  name_zh: string | null
+  category: string | null
+  tag: string | null
+  question_count: number
+}
+
+export interface CueCard {
+  prompt: string
+  summary_zh?: string
+  you_should_say?: string[]
+}

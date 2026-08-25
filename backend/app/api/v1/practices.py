@@ -71,6 +71,22 @@ async def create_practice(
     )
 
 
+@router.get("/{session_id}/ticket")
+async def issue_reconnect_ticket(
+    session_id: uuid.UUID,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+) -> dict:
+    """断线重连：为进行中的会话签发新的 WS ticket。"""
+    session = await db.get(PracticeSession, session_id)
+    if session is None or session.user_id != user.id:
+        raise HTTPException(404, "练习记录不存在")
+    if session.status != "in_progress":
+        raise HTTPException(410, "会话已结束")
+    ticket = await registry.issue_ticket(session.id)
+    return {"ws_ticket": ticket, "ws_path": f"/api/v1/ws/practice/{session.id}?ticket={ticket}"}
+
+
 @router.get("", response_model=list[PracticeSessionOut])
 async def list_practices(
     user: User = Depends(get_current_user),

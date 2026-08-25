@@ -48,8 +48,8 @@ const keys = reactive<Record<ServiceType, ApiKeyOut | null>>({
 /** 每张卡片的表单状态：key 输入 + 服务配置 */
 const forms = reactive({
   llm: { key: '', model: LLM_MODELS[0]!.value, region: 'cn-beijing' },
-  asr: { key: '', version: '2.0' },
-  tts: { key: '', voice: TTS_VOICES[0]!.value },
+  asr: { key: '', appid: '', version: '2.0' },
+  tts: { key: '', appid: '', voice: TTS_VOICES[0]!.value },
   evaluation: { key: '' },
 })
 
@@ -75,8 +75,10 @@ function backfillForms() {
   if (llm?.config.region) forms.llm.region = String(llm.config.region)
   const asr = keys.asr
   if (asr?.config.version) forms.asr.version = String(asr.config.version)
+  if (asr?.config.appid) forms.asr.appid = String(asr.config.appid)
   const tts = keys.tts
   if (tts?.config.voice) forms.tts.voice = String(tts.config.voice)
+  if (tts?.config.appid) forms.tts.appid = String(tts.config.appid)
 }
 
 async function refreshList() {
@@ -89,10 +91,12 @@ async function refreshList() {
 
 function placeholder(service: ServiceType): string {
   const key = keys[service]
+  const hint =
+    service === 'llm' ? '请输入火山引擎方舟 API Key' : '请输入语音服务 Access Token'
   if (key?.configured && key.key_last4) {
     return `••••••••••••****${key.key_last4}（重新输入可更换）`
   }
-  return '请输入火山引擎 API Key'
+  return hint
 }
 
 function buildConfig(service: ServiceType): Record<string, unknown> {
@@ -100,9 +104,9 @@ function buildConfig(service: ServiceType): Record<string, unknown> {
     case 'llm':
       return { model: forms.llm.model, region: forms.llm.region.trim() }
     case 'asr':
-      return { version: forms.asr.version }
+      return { appid: forms.asr.appid.trim(), version: forms.asr.version }
     case 'tts':
-      return { voice: forms.tts.voice }
+      return { appid: forms.tts.appid.trim(), voice: forms.tts.voice }
     default:
       return {}
   }
@@ -249,6 +253,10 @@ onMounted(async () => {
 
           <div v-else-if="card.service === 'asr'" class="service-config">
             <div class="service-config__field">
+              <label class="service-config__label">APPID（语音控制台 · 应用管理）</label>
+              <el-input v-model="forms.asr.appid" placeholder="例如 4123456789" />
+            </div>
+            <div class="service-config__field">
               <label class="service-config__label">服务版本</label>
               <el-select v-model="forms.asr.version">
                 <el-option value="2.0" label="豆包流式语音识别 2.0" />
@@ -258,6 +266,10 @@ onMounted(async () => {
           </div>
 
           <div v-else-if="card.service === 'tts'" class="service-config">
+            <div class="service-config__field">
+              <label class="service-config__label">APPID（语音控制台 · 应用管理）</label>
+              <el-input v-model="forms.tts.appid" placeholder="例如 4123456789" />
+            </div>
             <div class="service-config__field">
               <label class="service-config__label">考官音色</label>
               <el-select v-model="forms.tts.voice">

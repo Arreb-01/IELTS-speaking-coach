@@ -57,8 +57,8 @@ class MockAsrSession:
 
 
 def mock_tts_audio() -> bytes:
-    """约 0.1 秒的静音 MP3 帧（合法 MP3 头 + 零数据），用于填充播放管线。"""
-    return bytes.fromhex("fffb906400" + "00" * 200)
+    """约 200ms 的静音 PCM（24kHz 16bit 单声道），与真实 TTS 输出格式一致。"""
+    return b"\x00\x00" * 4800
 
 
 async def mock_synthesize_stream(text, on_audio=None, **_kwargs) -> bytes:

@@ -131,12 +131,15 @@ npm run dev                # http://localhost:5173，/api 自动代理到 8000
 ## 当前进度
 
 - [x] **Part A** 基础设施与用户系统（注册登录 / API Key 管理 / 部署配置）✅ 2026-08
-- [ ] Part B 语音对话核心引擎
+- [x] **Part B** 语音对话核心引擎（流式 ASR / TTS / LLM 考官 / Part 1/2/3 练习）✅ 2026-08
 - [ ] Part C 评分与反馈系统
 - [ ] Part D 题库知识库系统
 - [ ] Part E 学习路径与 Dashboard
 - [ ] Part F 模拟考试模式
 - [ ] Part G 测试与上线
+
+> 开发提示：`VOLC_MOCK=1` 启动后端可在没有任何火山凭据的情况下体验完整语音练习流程（Mock 转写/语音）。
+> 真实凭据接入验证：`scripts/volc_spike.py`（需语音控制台的 APPID + Access Token）。
 
 ## License
 

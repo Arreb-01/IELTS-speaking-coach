@@ -117,7 +117,7 @@ async def synthesize_stream(
     *,
     voice_key: str = "en_female_anna",
     speed_key: str = "normal",
-    encoding: str = "mp3",
+    encoding: str = "pcm",
     on_audio: Callable[[bytes], Awaitable[None]] | None = None,
     timeout: float = 15.0,
 ) -> bytes:
@@ -167,7 +167,7 @@ async def synthesize_http(
     *,
     voice_key: str = "en_female_anna",
     speed_key: str = "normal",
-    encoding: str = "mp3",
+    encoding: str = "pcm",
     timeout: float = 15.0,
 ) -> bytes:
     """HTTP 单次合成，返回音频二进制。用于连通测试与预合成。"""

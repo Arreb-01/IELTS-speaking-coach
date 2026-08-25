@@ -34,6 +34,12 @@ const router = createRouter({
           meta: { title: '话题练习', requiresAuth: true },
         },
         {
+          path: 'practice',
+          name: 'practice',
+          component: () => import('@/views/PracticeView.vue'),
+          meta: { title: 'AI 练习', requiresAuth: true },
+        },
+        {
           path: 'mock-exam',
           name: 'mock-exam',
           component: () => import('@/views/MockExamView.vue'),

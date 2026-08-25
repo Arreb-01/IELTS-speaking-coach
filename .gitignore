@@ -69,3 +69,7 @@ coverage/
 
 # 前端
 frontend/.vite/
+
+# 练习音频归档（本地卷）
+backend/storage/
+backend/e2e*.db
