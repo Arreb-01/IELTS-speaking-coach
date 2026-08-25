@@ -62,6 +62,25 @@ async def test_save_overwrite(client, auth_headers):
     assert second.json()["config"] == {"voice": "anna"}
 
 
+async def test_config_only_update(client, auth_headers, db_session):
+    await client.put(
+        "/api/v1/api-keys/tts", headers=auth_headers, json={"key": "aaaaaaaa1111"}
+    )
+    # 不带 key 仅更新 config：Key 保持不变，last4 不变
+    resp = await client.put(
+        "/api/v1/api-keys/tts", headers=auth_headers, json={"config": {"voice": "jackson"}}
+    )
+    assert resp.status_code == 200
+    assert resp.json()["key_last4"] == "1111"
+    assert resp.json()["config"] == {"voice": "jackson"}
+
+    # 未保存过 Key 的服务不能仅更新 config
+    resp = await client.put(
+        "/api/v1/api-keys/asr", headers=auth_headers, json={"config": {"version": "2.0"}}
+    )
+    assert resp.status_code == 400
+
+
 async def test_save_invalid_service_type(client, auth_headers):
     resp = await client.put(
         "/api/v1/api-keys/translate", headers=auth_headers, json={"key": "x" * 12}

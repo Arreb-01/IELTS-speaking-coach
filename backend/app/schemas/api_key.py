@@ -7,7 +7,8 @@ ServiceType = Literal["llm", "asr", "tts", "evaluation"]
 
 
 class ApiKeySaveRequest(BaseModel):
-    key: str = Field(min_length=8, max_length=512)
+    # 首次保存必填；已保存过 Key 后可仅更新 config（key 传空）
+    key: str | None = Field(default=None, min_length=8, max_length=512)
     # 各服务专属配置：LLM 默认模型 / Region、TTS 音色等
     config: dict[str, Any] = Field(default_factory=dict)
 

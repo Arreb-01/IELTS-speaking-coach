@@ -1,0 +1,42 @@
+/* ============================================================
+   Element Plus 主题覆盖：对齐设计稿（teal-700 主色 / slate 中性 / 8px 圆角）
+   ============================================================ */
+:root {
+  --el-color-primary: var(--ielts-teal-700);
+  --el-color-primary-light-3: var(--ielts-teal-500);
+  --el-color-primary-light-5: var(--ielts-teal-400);
+  --el-color-primary-light-7: var(--ielts-teal-300);
+  --el-color-primary-light-8: var(--ielts-teal-200);
+  --el-color-primary-light-9: var(--ielts-teal-100);
+  --el-color-primary-dark-2: var(--ielts-teal-800);
+
+  --el-color-success: var(--ielts-success);
+  --el-color-warning: var(--ielts-warning);
+  --el-color-danger: var(--ielts-error);
+  --el-color-error: var(--ielts-error);
+  --el-color-info: var(--ielts-slate-500);
+
+  --el-text-color-primary: var(--ielts-slate-900);
+  --el-text-color-regular: var(--ielts-slate-700);
+  --el-text-color-secondary: var(--ielts-slate-500);
+  --el-text-color-placeholder: var(--ielts-slate-400);
+  --el-text-color-disabled: var(--ielts-slate-400);
+
+  --el-border-color: var(--ielts-slate-200);
+  --el-border-color-light: var(--ielts-slate-200);
+  --el-border-color-lighter: var(--ielts-slate-200);
+  --el-border-color-hover: var(--ielts-slate-300);
+  --el-fill-color-blank: var(--ielts-card);
+  --el-fill-color-light: var(--ielts-slate-100);
+  --el-bg-color: var(--ielts-card);
+  --el-bg-color-page: var(--ielts-background);
+
+  --el-border-radius-base: 8px;
+  --el-border-radius-small: 4px;
+
+  --el-font-size-base: 14px;
+  --el-font-family: var(--ielts-font-sans);
+
+  --el-box-shadow-light: var(--ielts-shadow-md);
+  --el-box-shadow: var(--ielts-shadow-lg);
+}

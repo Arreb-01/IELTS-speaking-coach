@@ -77,6 +77,18 @@ async def save_api_key(
     db: AsyncSession = Depends(get_db),
 ) -> ApiKeyOut:
     row = await _get_row(db, user.id, service_type)
+
+    if body.key is None:
+        # 仅更新服务配置，不改动已保存的 Key
+        if row is None:
+            raise HTTPException(
+                status.HTTP_400_BAD_REQUEST, "首次配置该服务时必须填写 API Key"
+            )
+        row.config = body.config
+        await db.commit()
+        await db.refresh(row)
+        return _to_out(row, service_type)
+
     key = body.key.strip()
     if row is None:
         row = UserApiKey(user_id=user.id, service_type=service_type)
