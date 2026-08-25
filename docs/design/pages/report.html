@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>评分报告</title>
+    <style id="theme-vars">
+:root {
+  /* Brand primary scale - Deep Teal */
+  --ielts-teal-50: #f0fdfa;
+  --ielts-teal-100: #ccfbf1;
+  --ielts-teal-200: #99f6e4;
+  --ielts-teal-300: #5eead4;
+  --ielts-teal-400: #2dd4bf;
+  --ielts-teal-500: #14b8a6;
+  --ielts-teal-600: #0d9488;
+  --ielts-teal-700: #0f766e;
+  --ielts-teal-800: #115e59;
+  --ielts-teal-900: #134e4a;
+
+  /* Neutral slate scale */
+  --ielts-slate-50: #f8fafc;
+  --ielts-slate-100: #f1f5f9;
+  --ielts-slate-200: #e2e8f0;
+  --ielts-slate-300: #cbd5e1;
+  --ielts-slate-400: #94a3b8;
+  --ielts-slate-500: #64748b;
+  --ielts-slate-600: #475569;
+  --ielts-slate-700: #334155;
+  --ielts-slate-800: #1e293b;
+  --ielts-slate-900: #0f172a;
+
+  /* Semantic aliases - light mode */
+  --ielts-background: var(--ielts-slate-50);
+  --ielts-foreground: var(--ielts-slate-900);
+  --ielts-card: #ffffff;
+  --ielts-card-foreground: var(--ielts-slate-900);
+  --ielts-popover: #ffffff;
+  --ielts-popover-foreground: var(--ielts-slate-900);
+  --ielts-primary: var(--ielts-teal-700);
+  --ielts-primary-foreground: #ffffff;
+  --ielts-secondary: var(--ielts-slate-100);
+  --ielts-secondary-foreground: var(--ielts-slate-700);
+  --ielts-muted: var(--ielts-slate-100);
+  --ielts-muted-foreground: var(--ielts-slate-500);
+  --ielts-accent: var(--ielts-teal-50);
+  --ielts-accent-foreground: var(--ielts-teal-800);
+  --ielts-border: var(--ielts-slate-200);
+  --ielts-input: var(--ielts-slate-200);
+  --ielts-ring: var(--ielts-teal-500);
+
+  /* State colors */
+  --state-success: #10b981;
+  --state-success-bg: #ecfdf5;
+  --state-warning: #f59e0b;
+  --state-warning-bg: #fffbeb;
+  --state-error: #ef4444;
+  --state-error-bg: #fef2f2;
+  --state-info: var(--ielts-teal-600);
+  --state-info-bg: var(--ielts-teal-50);
+
+  /* Radius */
+  --ielts-radius-small: 4px;
+  --ielts-radius-medium: 8px;
+  --ielts-radius-large: 12px;
+  --ielts-radius-full: 9999px;
+
+  /* Shadows - static surfaces alpha <= 0.05 */
+  --ielts-shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
+  --ielts-shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  --ielts-shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.05), 0 4px 6px -4px rgba(15, 23, 42, 0.05);
+  --ielts-shadow-float: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
+
+  /* Typography */
+  --ielts-font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --ielts-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Type scale */
+  --ielts-text-xs: 12px;
+  --ielts-text-sm: 13px;
+  --ielts-text-base: 14px;
+  --ielts-text-md: 15px;
+  --ielts-text-lg: 16px;
+  --ielts-text-xl: 20px;
+  --ielts-text-2xl: 24px;
+  --ielts-text-3xl: 30px;
+
+  /* Spacing */
+  --ielts-space-1: 4px;
+  --ielts-space-2: 8px;
+  --ielts-space-3: 12px;
+  --ielts-space-4: 16px;
+  --ielts-space-5: 20px;
+  --ielts-space-6: 24px;
+  --ielts-space-8: 32px;
+  --ielts-space-10: 40px;
+
+  /* Layout */
+  --ielts-sidebar-width: 240px;
+  --ielts-topbar-height: 64px;
+  --ielts-max-content-width: 1280px;
+}
+
+.dark {
+  --ielts-background: var(--ielts-slate-900);
+  --ielts-foreground: var(--ielts-slate-50);
+  --ielts-card: var(--ielts-slate-800);
+  --ielts-card-foreground: var(--ielts-slate-50);
+  --ielts-popover: var(--ielts-slate-800);
+  --ielts-popover-foreground: var(--ielts-slate-50);
+  --ielts-primary: var(--ielts-teal-500);
+  --ielts-primary-foreground: var(--ielts-slate-900);
+  --ielts-secondary: var(--ielts-slate-700);
+  --ielts-secondary-foreground: var(--ielts-slate-200);
+  --ielts-muted: var(--ielts-slate-800);
+  --ielts-muted-foreground: var(--ielts-slate-400);
+  --ielts-accent: var(--ielts-teal-900);
+  --ielts-accent-foreground: var(--ielts-teal-100);
+  --ielts-border: var(--ielts-slate-700);
+  --ielts-input: var(--ielts-slate-700);
+  --ielts-ring: var(--ielts-teal-400);
+}
+
+@theme inline {
+  --color-background: var(--ielts-background);
+  --color-foreground: var(--ielts-foreground);
+  --color-card: var(--ielts-card);
+  --color-card-foreground: var(--ielts-card-foreground);
+  --color-popover: var(--ielts-popover);
+  --color-popover-foreground: var(--ielts-popover-foreground);
+  --color-primary: var(--ielts-primary);
+  --color-primary-foreground: var(--ielts-primary-foreground);
+  --color-secondary: var(--ielts-secondary);
+  --color-secondary-foreground: var(--ielts-secondary-foreground);
+  --color-muted: var(--ielts-muted);
+  --color-muted-foreground: var(--ielts-muted-foreground);
+  --color-accent: var(--ielts-accent);
+  --color-accent-foreground: var(--ielts-accent-foreground);
+  --color-border: var(--ielts-border);
+  --color-input: var(--ielts-input);
+  --color-ring: var(--ielts-ring);
+  --radius-sm: var(--ielts-radius-small);
+  --radius-md: var(--ielts-radius-medium);
+  --radius-lg: var(--ielts-radius-large);
+  --radius-full: var(--ielts-radius-full);
+}
+
+/* Base typography */
+html, body {
+  font-family: var(--ielts-font-sans);
+  font-size: var(--ielts-text-base);
+  line-height: 1.5;
+  color: var(--ielts-foreground);
+  background: var(--ielts-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ielts-foreground);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--ielts-primary);
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--ielts-background);
+    --color-foreground: var(--ielts-foreground);
+    --color-card: var(--ielts-card);
+    --color-card-foreground: var(--ielts-card-foreground);
+    --color-popover: var(--ielts-popover);
+    --color-popover-foreground: var(--ielts-popover-foreground);
+    --color-primary: var(--ielts-primary);
+    --color-primary-foreground: var(--ielts-primary-foreground);
+    --color-secondary: var(--ielts-secondary);
+    --color-secondary-foreground: var(--ielts-secondary-foreground);
+    --color-muted: var(--ielts-muted);
+    --color-muted-foreground: var(--ielts-muted-foreground);
+    --color-accent: var(--ielts-accent);
+    --color-accent-foreground: var(--ielts-accent-foreground);
+    --color-border: var(--ielts-border);
+    --color-input: var(--ielts-input);
+    --color-ring: var(--ielts-ring);
+    --radius-sm: var(--ielts-radius-small);
+    --radius-md: var(--ielts-radius-medium);
+    --radius-lg: var(--ielts-radius-large);
+    --radius-full: var(--ielts-radius-full);
+  }
+  @layer base {
+    body { background: var(--ielts-background); color: var(--ielts-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--ielts-background); }
+      .text-background { color: var(--ielts-background); }
+      .border-background { border-color: var(--ielts-background); }
+      .ring-background { --tw-ring-color: var(--ielts-background); }
+      .bg-foreground { background-color: var(--ielts-foreground); }
+      .text-foreground { color: var(--ielts-foreground); }
+      .border-foreground { border-color: var(--ielts-foreground); }
+      .ring-foreground { --tw-ring-color: var(--ielts-foreground); }
+      .bg-card { background-color: var(--ielts-card); }
+      .text-card { color: var(--ielts-card); }
+      .border-card { border-color: var(--ielts-card); }
+      .ring-card { --tw-ring-color: var(--ielts-card); }
+      .bg-card-foreground { background-color: var(--ielts-card-foreground); }
+      .text-card-foreground { color: var(--ielts-card-foreground); }
+      .border-card-foreground { border-color: var(--ielts-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--ielts-card-foreground); }
+      .bg-popover { background-color: var(--ielts-popover); }
+      .text-popover { color: var(--ielts-popover); }
+      .border-popover { border-color: var(--ielts-popover); }
+      .ring-popover { --tw-ring-color: var(--ielts-popover); }
+      .bg-popover-foreground { background-color: var(--ielts-popover-foreground); }
+      .text-popover-foreground { color: var(--ielts-popover-foreground); }
+      .border-popover-foreground { border-color: var(--ielts-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--ielts-popover-foreground); }
+      .bg-primary { background-color: var(--ielts-primary); }
+      .text-primary { color: var(--ielts-primary); }
+      .border-primary { border-color: var(--ielts-primary); }
+      .ring-primary { --tw-ring-color: var(--ielts-primary); }
+      .bg-primary-foreground { background-color: var(--ielts-primary-foreground); }
+      .text-primary-foreground { color: var(--ielts-primary-foreground); }
+      .border-primary-foreground { border-color: var(--ielts-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--ielts-primary-foreground); }
+      .bg-secondary { background-color: var(--ielts-secondary); }
+      .text-secondary { color: var(--ielts-secondary); }
+      .border-secondary { border-color: var(--ielts-secondary); }
+      .ring-secondary { --tw-ring-color: var(--ielts-secondary); }
+      .bg-secondary-foreground { background-color: var(--ielts-secondary-foreground); }
+      .text-secondary-foreground { color: var(--ielts-secondary-foreground); }
+      .border-secondary-foreground { border-color: var(--ielts-secondary-foreground); }
+      .ring-secondary-foreground { --tw-ring-color: var(--ielts-secondary-foreground); }
+      .bg-muted { background-color: var(--ielts-muted); }
+      .text-muted { color: var(--ielts-muted); }
+      .border-muted { border-color: var(--ielts-muted); }
+      .ring-muted { --tw-ring-color: var(--ielts-muted); }
+      .bg-muted-foreground { background-color: var(--ielts-muted-foreground); }
+      .text-muted-foreground { color: var(--ielts-muted-foreground); }
+      .border-muted-foreground { border-color: var(--ielts-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--ielts-muted-foreground); }
+      .bg-accent { background-color: var(--ielts-accent); }
+      .text-accent { color: var(--ielts-accent); }
+      .border-accent { border-color: var(--ielts-accent); }
+      .ring-accent { --tw-ring-color: var(--ielts-accent); }
+      .bg-accent-foreground { background-color: var(--ielts-accent-foreground); }
+      .text-accent-foreground { color: var(--ielts-accent-foreground); }
+      .border-accent-foreground { border-color: var(--ielts-accent-foreground); }
+      .ring-accent-foreground { --tw-ring-color: var(--ielts-accent-foreground); }
+      .bg-border { background-color: var(--ielts-border); }
+      .text-border { color: var(--ielts-border); }
+      .border-border { border-color: var(--ielts-border); }
+      .ring-border { --tw-ring-color: var(--ielts-border); }
+      .bg-input { background-color: var(--ielts-input); }
+      .text-input { color: var(--ielts-input); }
+      .border-input { border-color: var(--ielts-input); }
+      .ring-input { --tw-ring-color: var(--ielts-input); }
+      .bg-ring { background-color: var(--ielts-ring); }
+      .text-ring { color: var(--ielts-ring); }
+      .border-ring { border-color: var(--ielts-ring); }
+      .ring-ring { --tw-ring-color: var(--ielts-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+    <div class="flex min-h-screen bg-background text-foreground">
+      <aside class="fixed left-0 top-0 bottom-0 w-[240px] bg-card border-r border-border z-20 flex flex-col">
+        <div class="h-16 flex items-center px-5 border-b border-border">
+          <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center mr-3">
+            <i data-lucide="message-circle" class="w-5 h-5 text-primary-foreground"></i>
+          </div>
+          <span class="font-semibold text-lg text-foreground">雅思口语教练</span>
+        </div>
+        <nav class="flex-1 py-4 px-3 space-y-1">
+          <a href="#" data-nav-key="dashboard" data-dom-id="nav-dashboard" class="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
+            <i data-lucide="layout-dashboard" class="w-4.5 h-4.5"></i>
+            <span>首页</span>
+          </a>
+          <a href="#" data-nav-key="topics" data-dom-id="nav-topics" class="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
+            <i data-lucide="library" class="w-4.5 h-4.5"></i>
+            <span>话题练习</span>
+          </a>
+          <a href="#" data-nav-key="mock-exam" data-dom-id="nav-mock-exam" class="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
+            <i data-lucide="mic" class="w-4.5 h-4.5"></i>
+            <span>模拟考试</span>
+          </a>
+          <a href="#" data-nav-key="report" data-dom-id="nav-report" class="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium bg-accent text-accent-foreground transition-colors">
+            <i data-lucide="bar-chart-2" class="w-4.5 h-4.5"></i>
+            <span>评分报告</span>
+          </a>
+          <a href="#" data-nav-key="api-keys" data-dom-id="nav-api-keys" class="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
+            <i data-lucide="key" class="w-4.5 h-4.5"></i>
+            <span>API 设置</span>
+          </a>
+        </nav>
+        <div class="p-4 border-t border-border">
+          <div class="flex items-center gap-3 px-3 py-2">
+            <div class="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+              <i data-lucide="user" class="w-4 h-4 text-muted-foreground"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-medium truncate">备考考生</p>
+              <p class="text-xs text-muted-foreground truncate">目标 Band 7.0</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="ml-[240px] flex-1 flex flex-col min-h-screen">
+        <header class="h-16 bg-card border-b border-border flex items-center justify-between px-6 sticky top-0 z-10">
+          <div class="flex items-center gap-4">
+            <h1 class="text-xl font-semibold text-foreground">评分报告</h1>
+            <span class="text-sm text-muted-foreground">Part 1 · 家乡与居住地</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <button class="flex items-center gap-2 px-4 py-2 rounded-md border border-border text-sm font-medium text-muted-foreground hover:bg-muted transition-colors">
+              <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+              <span>再练一次</span>
+            </button>
+            <button class="p-2 rounded-md text-muted-foreground hover:bg-muted transition-colors" aria-label="帮助">
+              <i data-lucide="help-circle" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </header>
+
+        <main class="flex-1 p-6 bg-background overflow-auto">
+          <!-- Score hero -->
+          <div class="bg-card border border-border rounded-lg p-6 shadow-sm mb-6">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-6">
+              <div class="flex items-center gap-5">
+                <div class="w-24 h-24 rounded-full bg-primary/10 flex flex-col items-center justify-center">
+                  <span class="text-3xl font-bold text-primary">6.5</span>
+                  <span class="text-xs text-muted-foreground">综合 Band</span>
+                </div>
+                <div>
+                  <p class="text-sm text-muted-foreground mb-1">本次练习表现</p>
+                  <p class="text-base text-foreground">整体表达流畅，词汇使用有一定多样性，发音方面仍有提升空间。</p>
+                </div>
+              </div>
+              <div class="flex-1 grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="p-3 rounded-lg border border-border text-center">
+                  <p class="text-xs text-muted-foreground mb-1">流利度</p>
+                  <p class="text-xl font-bold text-foreground">6.5</p>
+                </div>
+                <div class="p-3 rounded-lg border border-border text-center">
+                  <p class="text-xs text-muted-foreground mb-1">词汇</p>
+                  <p class="text-xl font-bold text-foreground">6.0</p>
+                </div>
+                <div class="p-3 rounded-lg border border-border text-center">
+                  <p class="text-xs text-muted-foreground mb-1">语法</p>
+                  <p class="text-xl font-bold text-foreground">6.5</p>
+                </div>
+                <div class="p-3 rounded-lg border border-border text-center">
+                  <p class="text-xs text-muted-foreground mb-1">发音</p>
+                  <p class="text-xl font-bold text-foreground">5.5</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Radar + weakness -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+            <div class="bg-card border border-border rounded-lg p-5 shadow-sm">
+              <h2 class="text-base font-semibold mb-4">四维能力雷达</h2>
+              <div id="reportRadar" class="w-full h-[300px]"></div>
+            </div>
+            <div class="bg-card border border-border rounded-lg p-5 shadow-sm">
+              <h2 class="text-base font-semibold mb-4">薄弱项分析</h2>
+              <div class="space-y-4">
+                <div class="p-4 rounded-lg border border-state-error/20 bg-state-error-bg">
+                  <div class="flex items-center gap-2 mb-2">
+                    <i data-lucide="alert-circle" class="w-4 h-4 text-state-error"></i>
+                    <span class="text-sm font-semibold text-foreground">发音：/θ/ 与 /ð/ 音不够饱满</span>
+                  </div>
+                  <p class="text-sm text-muted-foreground">在 "think" 和 "there" 等词中，舌尖位置不够靠前，导致发音偏中式。</p>
+                </div>
+                <div class="p-4 rounded-lg border border-state-warning/20 bg-state-warning-bg">
+                  <div class="flex items-center gap-2 mb-2">
+                    <i data-lucide="alert-circle" class="w-4 h-4 text-state-warning"></i>
+                    <span class="text-sm font-semibold text-foreground">词汇：话题相关词不足</span>
+                  </div>
+                  <p class="text-sm text-muted-foreground">描述家乡时缺少 "residential area", "amenities", "neighborhood" 等地道表达。</p>
+                </div>
+                <div class="p-4 rounded-lg border border-border bg-muted/30">
+                  <div class="flex items-center gap-2 mb-2">
+                    <i data-lucide="check-circle" class="w-4 h-4 text-state-success"></i>
+                    <span class="text-sm font-semibold text-foreground">语法：整体准确</span>
+                  </div>
+                  <p class="text-sm text-muted-foreground">时态使用基本正确，仅出现一处冠词遗漏。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sentence analysis -->
+          <div class="bg-card border border-border rounded-lg p-5 shadow-sm mb-6">
+            <h2 class="text-base font-semibold mb-4">逐句分析</h2>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-border text-muted-foreground">
+                    <th class="text-left font-medium py-2 px-3">时间</th>
+                    <th class="text-left font-medium py-2 px-3">转写文本</th>
+                    <th class="text-left font-medium py-2 px-3">问题类型</th>
+                    <th class="text-left font-medium py-2 px-3">严重度</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-border/50 hover:bg-muted/50 transition-colors">
+                    <td class="py-3 px-3 text-muted-foreground font-mono">00:02</td>
+                    <td class="py-3 px-3">I really like the area where I live <span class="line-through text-state-error">because it's quite peaceful</span>.</td>
+                    <td class="py-3 px-3"><span class="px-2 py-0.5 rounded text-xs bg-state-warning-bg text-state-warning">词汇</span></td>
+                    <td class="py-3 px-3"><span class="text-xs text-state-warning">中等</span></td>
+                  </tr>
+                  <tr class="border-b border-border/50 hover:bg-muted/50 transition-colors">
+                    <td class="py-3 px-3 text-muted-foreground font-mono">00:08</td>
+                    <td class="py-3 px-3">It's not too far from the city center, so I can easily go shopping...</td>
+                    <td class="py-3 px-3"><span class="px-2 py-0.5 rounded text-xs bg-state-success-bg text-state-success">无误</span></td>
+                    <td class="py-3 px-3"><span class="text-xs text-muted-foreground">-</span></td>
+                  </tr>
+                  <tr class="border-b border-border/50 hover:bg-muted/50 transition-colors">
+                    <td class="py-3 px-3 text-muted-foreground font-mono">00:15</td>
+                    <td class="py-3 px-3">And the neighbors are very friendly <span class="line-through text-state-error">and helpful</span>.</td>
+                    <td class="py-3 px-3"><span class="px-2 py-0.5 rounded text-xs bg-state-error-bg text-state-error">语法</span></td>
+                    <td class="py-3 px-3"><span class="text-xs text-state-error">较高</span></td>
+                  </tr>
+                  <tr class="hover:bg-muted/50 transition-colors">
+                    <td class="py-3 px-3 text-muted-foreground font-mono">00:22</td>
+                    <td class="py-3 px-3">I <span class="line-through text-state-error">think</span> the public transport is convenient.</td>
+                    <td class="py-3 px-3"><span class="px-2 py-0.5 rounded text-xs bg-state-info-bg text-state-info">发音</span></td>
+                    <td class="py-3 px-3"><span class="text-xs text-state-info">中等</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Recommendations -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="bg-card border border-border rounded-lg p-5 shadow-sm">
+              <h2 class="text-base font-semibold mb-4">中文改进建议</h2>
+              <ul class="space-y-3 text-sm text-foreground">
+                <li class="flex gap-3">
+                  <span class="w-5 h-5 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs shrink-0">1</span>
+                  <span>语速偏快（170 词/分钟），建议放慢至 130-150 词/分钟，减少填充词 "um" 的使用。</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="w-5 h-5 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs shrink-0">2</span>
+                  <span>多使用连接词如 "Furthermore", "On top of that" 提升段落连贯性。</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="w-5 h-5 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xs shrink-0">3</span>
+                  <span>练习 /θ/ 音时，将舌尖轻触上齿，送出气流，避免发成 /s/。</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-card border border-border rounded-lg p-5 shadow-sm">
+              <h2 class="text-base font-semibold mb-4">高分表达替换</h2>
+              <div class="space-y-3">
+                <div class="flex items-center justify-between p-3 rounded-md border border-border">
+                  <div>
+                    <p class="text-sm text-muted-foreground">你用了</p>
+                    <p class="text-sm line-through text-state-error">very good</p>
+                  </div>
+                  <i data-lucide="arrow-right" class="w-4 h-4 text-muted-foreground"></i>
+                  <div class="text-right">
+                    <p class="text-sm text-muted-foreground">可替换为</p>
+                    <p class="text-sm font-medium text-state-success">remarkable / exceptional</p>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-md border border-border">
+                  <div>
+                    <p class="text-sm text-muted-foreground">你用了</p>
+                    <p class="text-sm line-through text-state-error">a lot of</p>
+                  </div>
+                  <i data-lucide="arrow-right" class="w-4 h-4 text-muted-foreground"></i>
+                  <div class="text-right">
+                    <p class="text-sm text-muted-foreground">可替换为</p>
+                    <p class="text-sm font-medium text-state-success">a wide range of</p>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between p-3 rounded-md border border-border">
+                  <div>
+                    <p class="text-sm text-muted-foreground">你用了</p>
+                    <p class="text-sm line-through text-state-error">I think</p>
+                  </div>
+                  <i data-lucide="arrow-right" class="w-4 h-4 text-muted-foreground"></i>
+                  <div class="text-right">
+                    <p class="text-sm text-muted-foreground">可替换为</p>
+                    <p class="text-sm font-medium text-state-success">I would say / From my perspective</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script>
+      lucide.createIcons();
+      const reportRadar = echarts.init(document.getElementById('reportRadar'));
+      reportRadar.setOption({
+        color: ['#0f766e'],
+        radar: {
+          indicator: [
+            { name: '流利度', max: 9 },
+            { name: '词汇', max: 9 },
+            { name: '语法', max: 9 },
+            { name: '发音', max: 9 }
+          ],
+          radius: '65%',
+          splitNumber: 4,
+          axisName: { color: '#64748b' },
+          splitArea: { areaStyle: { color: ['#f8fafc', '#f1f5f9', '#e2e8f0', '#cbd5e1'] } }
+        },
+        series: [{
+          type: 'radar',
+          data: [{ value: [6.5, 6.0, 6.5, 5.5], name: '本次评分', areaStyle: { opacity: 0.2 } }]
+        }]
+      });
+    </script>
+</body>
+</html>

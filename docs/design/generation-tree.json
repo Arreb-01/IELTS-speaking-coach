@@ -1,0 +1,91 @@
+{
+  "root": {
+    "nodeId": "gen-project-shell",
+    "kind": "project-shell",
+    "pageIds": ["page-dashboard", "page-topics", "page-practice-part1", "page-practice-part2", "page-mock-exam", "page-report", "page-api-keys"],
+    "output": "partials/project-shell.html",
+    "sharedRegions": ["sidebar", "topbar", "page-frame", "brand-css"],
+    "privateRegions": [],
+    "mutableSlots": ["pageTitle", "mainContent"],
+    "status": "generated",
+    "children": [
+      {
+        "nodeId": "gen-page-dashboard",
+        "kind": "page-leaf",
+        "pageIds": ["page-dashboard"],
+        "output": "pages/dashboard.html",
+        "sharedRegions": ["sidebar", "topbar"],
+        "privateRegions": ["dashboard-content"],
+        "mutableSlots": ["pageTitle", "mainContent"],
+        "status": "planned",
+        "children": []
+      },
+      {
+        "nodeId": "gen-page-topics",
+        "kind": "page-leaf",
+        "pageIds": ["page-topics"],
+        "output": "pages/topics.html",
+        "sharedRegions": ["sidebar", "topbar"],
+        "privateRegions": ["topics-content"],
+        "mutableSlots": ["pageTitle", "mainContent"],
+        "status": "planned",
+        "children": []
+      },
+      {
+        "nodeId": "gen-page-practice-part1",
+        "kind": "page-leaf",
+        "pageIds": ["page-practice-part1"],
+        "output": "pages/practice-part1.html",
+        "sharedRegions": ["sidebar", "topbar"],
+        "privateRegions": ["practice-content"],
+        "mutableSlots": ["pageTitle", "mainContent"],
+        "status": "planned",
+        "children": []
+      },
+      {
+        "nodeId": "gen-page-practice-part2",
+        "kind": "page-leaf",
+        "pageIds": ["page-practice-part2"],
+        "output": "pages/practice-part2.html",
+        "sharedRegions": ["sidebar", "topbar"],
+        "privateRegions": ["practice-content"],
+        "mutableSlots": ["pageTitle", "mainContent"],
+        "status": "planned",
+        "children": []
+      },
+      {
+        "nodeId": "gen-page-mock-exam",
+        "kind": "page-leaf",
+        "pageIds": ["page-mock-exam"],
+        "output": "pages/mock-exam.html",
+        "sharedRegions": ["sidebar", "topbar"],
+        "privateRegions": ["mock-exam-content"],
+        "mutableSlots": ["pageTitle", "mainContent"],
+        "status": "planned",
+        "children": []
+      },
+      {
+        "nodeId": "gen-page-report",
+        "kind": "page-leaf",
+        "pageIds": ["page-report"],
+        "output": "pages/report.html",
+        "sharedRegions": ["sidebar", "topbar"],
+        "privateRegions": ["report-content"],
+        "mutableSlots": ["pageTitle", "mainContent"],
+        "status": "planned",
+        "children": []
+      },
+      {
+        "nodeId": "gen-page-api-keys",
+        "kind": "page-leaf",
+        "pageIds": ["page-api-keys"],
+        "output": "pages/api-keys.html",
+        "sharedRegions": ["sidebar", "topbar"],
+        "privateRegions": ["api-keys-content"],
+        "mutableSlots": ["pageTitle", "mainContent"],
+        "status": "planned",
+        "children": []
+      }
+    ]
+  }
+}

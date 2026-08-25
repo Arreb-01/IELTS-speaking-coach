@@ -1,0 +1,403 @@
+{
+  "schemaVersion": "2026.07.11.0",
+  "skillProvenance": {
+    "name": "solo-design",
+    "version": null,
+    "version_source": "unknown",
+    "read_status": "missing"
+  },
+  "project": {
+    "resolvedLane": "complex_html_page",
+    "intentProfile": {
+      "caseFamily": "complex_html_page",
+      "deviceType": "desktop"
+    },
+    "selectedIntentWorkflowRead": true,
+    "contextRequirementsLoaded": [
+      { "path": "shared-runtime/runtime-boundaries/lane-runtime-contracts.md", "readStatus": "loaded", "bodyRead": true },
+      { "path": "shared-runtime/agent-dispatch-runtime/lane-dispatch-index.md", "readStatus": "loaded", "bodyRead": true },
+      { "path": "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md", "readStatus": "loaded", "bodyRead": true },
+      { "path": "delivery-quality/page-rendering-quality-gate.md", "readStatus": "loaded", "bodyRead": true },
+      { "path": "delivery-quality/design-artifact-validation.md", "readStatus": "loaded", "bodyRead": true },
+      { "path": "delivery-quality/delivery-evidence-contract.md", "readStatus": "loaded", "bodyRead": true },
+      { "path": "visual-experience/visual-experience-guidelines.md", "readStatus": "loaded", "bodyRead": true },
+      { "path": "visual-experience/visual-checkpoint-protocol.md", "readStatus": "loaded", "bodyRead": true }
+    ],
+    "contextReadScope": [
+      "intent-workflows/intent-project-complex-build/INTENT_WORKFLOW.md",
+      "intent-workflows/intent-project-complex-build/00-requirement-and-style-intake.md",
+      "intent-workflows/intent-project-complex-build/02-page-composition.md",
+      "intent-workflows/intent-project-complex-build/complex-page-dispatch-contract.md",
+      "shared-runtime/agent-dispatch-runtime/shared-page-rendering-kernel.md"
+    ],
+    "readScopeLedger": [],
+    "operation": "create",
+    "deviceType": "desktop",
+    "projectName": "雅思口语教练前端界面",
+    "designProjectPath": "d:\\Code\\雅思口语教练\\ai-ielts-speaking-coach-design",
+    "styleDefinitionBrief": "面向中国自学雅思考生的网页端 AI 口语教练，采用深青色主调传递专业、可信与鼓励感，中文界面优先，界面清晰克制。",
+    "designRead": "Web App / 18-30 岁中国雅思考生 / 专业可信且鼓励 / 信息密集但层次分明 / 避免过度装饰与通用卡片堆叠",
+    "designDials": {
+      "layoutVariance": 3,
+      "motionIntensity": 2,
+      "visualDensity": 4
+    },
+    "sharedProjectShellContract": {
+      "navigationShell": "desktop-sidebar",
+      "layoutFrame": "fixed-sidebar + scrollable-main",
+      "radiusScale": {
+        "sm": "4px",
+        "md": "8px",
+        "lg": "12px",
+        "full": "9999px"
+      },
+      "surfaceDepthModel": "static surfaces border-led; floating layers may use shadow alpha <= 0.08",
+      "typographySystem": {
+        "titleStack": "var(--ielts-font-sans)",
+        "bodyStack": "var(--ielts-font-sans)"
+      },
+      "colorSystem": {
+        "primary": "#0f766e",
+        "primaryForeground": "#ffffff",
+        "background": "#f8fafc",
+        "foreground": "#0f172a"
+      }
+    },
+    "generationTree": {
+      "root": {
+        "nodeId": "gen-project-shell",
+        "kind": "project-shell",
+        "pageIds": ["page-dashboard", "page-topics", "page-practice-part1", "page-practice-part2", "page-mock-exam", "page-report", "page-api-keys"],
+        "output": "partials/project-shell.html",
+        "sharedRegions": ["sidebar", "topbar", "page-frame", "brand-css"],
+        "privateRegions": [],
+        "mutableSlots": ["pageTitle", "mainContent"],
+        "status": "planned",
+        "children": [
+          {
+            "nodeId": "gen-page-dashboard",
+            "kind": "page-leaf",
+            "pageIds": ["page-dashboard"],
+            "output": "pages/dashboard.html",
+            "sharedRegions": ["sidebar", "topbar"],
+            "privateRegions": ["dashboard-content"],
+            "mutableSlots": ["pageTitle", "mainContent"],
+            "status": "planned",
+            "children": []
+          },
+          {
+            "nodeId": "gen-page-topics",
+            "kind": "page-leaf",
+            "pageIds": ["page-topics"],
+            "output": "pages/topics.html",
+            "sharedRegions": ["sidebar", "topbar"],
+            "privateRegions": ["topics-content"],
+            "mutableSlots": ["pageTitle", "mainContent"],
+            "status": "planned",
+            "children": []
+          },
+          {
+            "nodeId": "gen-page-practice-part1",
+            "kind": "page-leaf",
+            "pageIds": ["page-practice-part1"],
+            "output": "pages/practice-part1.html",
+            "sharedRegions": ["sidebar", "topbar"],
+            "privateRegions": ["practice-content"],
+            "mutableSlots": ["pageTitle", "mainContent"],
+            "status": "planned",
+            "children": []
+          },
+          {
+            "nodeId": "gen-page-practice-part2",
+            "kind": "page-leaf",
+            "pageIds": ["page-practice-part2"],
+            "output": "pages/practice-part2.html",
+            "sharedRegions": ["sidebar", "topbar"],
+            "privateRegions": ["practice-content"],
+            "mutableSlots": ["pageTitle", "mainContent"],
+            "status": "planned",
+            "children": []
+          },
+          {
+            "nodeId": "gen-page-mock-exam",
+            "kind": "page-leaf",
+            "pageIds": ["page-mock-exam"],
+            "output": "pages/mock-exam.html",
+            "sharedRegions": ["sidebar", "topbar"],
+            "privateRegions": ["mock-exam-content"],
+            "mutableSlots": ["pageTitle", "mainContent"],
+            "status": "planned",
+            "children": []
+          },
+          {
+            "nodeId": "gen-page-report",
+            "kind": "page-leaf",
+            "pageIds": ["page-report"],
+            "output": "pages/report.html",
+            "sharedRegions": ["sidebar", "topbar"],
+            "privateRegions": ["report-content"],
+            "mutableSlots": ["pageTitle", "mainContent"],
+            "status": "planned",
+            "children": []
+          },
+          {
+            "nodeId": "gen-page-api-keys",
+            "kind": "page-leaf",
+            "pageIds": ["page-api-keys"],
+            "output": "pages/api-keys.html",
+            "sharedRegions": ["sidebar", "topbar"],
+            "privateRegions": ["api-keys-content"],
+            "mutableSlots": ["pageTitle", "mainContent"],
+            "status": "planned",
+            "children": []
+          }
+        ]
+      }
+    },
+    "cssPreflightEvidence": {
+      "ranAt": "2026-08-25T22:44:00+08:00",
+      "command": "apply-html-head-contract.mjs",
+      "exitCode": 0,
+      "outputFile": ".preflight/preflight.html",
+      "hasThemeVars": true,
+      "hasSemanticFallback": true,
+      "hasTailwindTheme": true
+    },
+    "mobileNavigation": {
+      "applies": false
+    },
+    "dispatchPreflightManifest": [],
+    "expectedDispatches": [],
+    "validationRunDiscipline": "run-validate-design-workspace-before-delivery",
+    "validationHistory": [],
+    "validationRepairLedger": [],
+    "validationSnapshot": {},
+    "artifactReadinessEvidence": {},
+    "lowValueCallWatchdog": {
+      "noProgressNextAction": "proceed-to-readiness-or-blocked-summary"
+    },
+    "sourceAuthorityLock": null,
+    "visualQualityCheckpoints": [
+      {
+        "checkpoint": "visual-anchor",
+        "target": "深青色（#0f766e）品牌标识与侧边栏 Logo 区域，保持稳定识别"
+      },
+      {
+        "checkpoint": "information-hierarchy",
+        "target": "侧边栏主导航 → 页面标题与操作区 → 卡片/表格/图表内容 → 辅助说明，层级清晰"
+      },
+      {
+        "checkpoint": "composition-structure",
+        "target": "240px 固定侧边栏 + 64px 顶栏 + 主内容区，所有页面共享同一外壳"
+      },
+      {
+        "checkpoint": "implementation-strategy",
+        "target": "使用 Element Plus 风格组件与 Tailwind 工具类，优先静态布局 CSS，图表用 ECharts"
+      }
+    ]
+  },
+  "designSource": {
+    "operatingMode": "free-explore",
+    "cssFilePath": "colors_and_type.css",
+    "brandPrefix": "ielts",
+    "styleConstraints": {
+      "radiusMax": 16,
+      "staticShadowAlphaMax": 0.05,
+      "singleBrandHue": true
+    }
+  },
+  "pages": [
+    {
+      "nodeId": "page-dashboard",
+      "title": "Dashboard 学习概览",
+      "htmlSrc": "pages/dashboard.html",
+      "pageIndex": 1,
+      "pageType": "info-dense",
+      "visualNorthStar": "考试能力仪表盘：左侧导航固定，主区顶部展示今日目标与连续打卡，中部四维雷达图与提分趋势并列，底部推荐练习与最近记录卡片",
+      "compositionPattern": "sidebar + header + three-row dashboard grid",
+      "continuityAnchors": [
+        "共享 240px 侧边栏与 64px 顶栏",
+        "卡片使用统一圆角、边框与浅阴影",
+        "主色调深青色用于按钮、选中态与关键指标"
+      ],
+      "componentPlan": {
+        "navItems": ["首页", "话题练习", "模拟考试", "评分报告", "API 设置"],
+        "charts": ["radar", "line"],
+        "cards": ["stat", "recommendation", "history"]
+      },
+      "imagePlan": [],
+      "chartsRequired": ["radar", "line"],
+      "longRequirementContext": {
+        "requirementIds": ["REQ-FEATURE-001", "REQ-FEATURE-002", "REQ-FEATURE-003"],
+        "summary": "用户登录后默认进入 Dashboard，展示四维雷达图、今日推荐练习、最近练习记录、提分趋势、连续打卡与预测 Band。"
+      }
+    },
+    {
+      "nodeId": "page-topics",
+      "title": "话题练习库",
+      "htmlSrc": "pages/topics.html",
+      "pageIndex": 2,
+      "pageType": "task-driven",
+      "visualNorthStar": "话题分类浏览页：顶部 Part 切换标签，下方按主题分类卡片网格，每张卡片显示话题名、题目数、标签与上次得分",
+      "compositionPattern": "sidebar + header + tab filter + card grid",
+      "continuityAnchors": [
+        "共享 240px 侧边栏与 64px 顶栏",
+        "卡片使用统一圆角、边框与浅阴影",
+        "标签颜色按新题/保留题/必考题区分"
+      ],
+      "componentPlan": {
+        "navItems": ["首页", "话题练习", "模拟考试", "评分报告", "API 设置"],
+        "tabs": ["Part 1", "Part 2", "Part 3"],
+        "cards": ["topic-card"]
+      },
+      "imagePlan": [],
+      "longRequirementContext": {
+        "requirementIds": ["REQ-FEATURE-004"],
+        "summary": "按雅思口语话题分类，支持 Part 1/2/3 切换，每个话题显示题目数量、新题/保留题/必考题标签、上次练习得分。"
+      }
+    },
+    {
+      "nodeId": "page-practice-part1",
+      "title": "AI 练习 - Part 1",
+      "htmlSrc": "pages/practice-part1.html",
+      "pageIndex": 3,
+      "pageType": "task-driven",
+      "visualNorthStar": "语音对话练习页：左侧显示 AI 考官头像与问题，右侧实时转写区，底部录音控制栏，顶部显示进度与设置",
+      "compositionPattern": "sidebar + header + two-column conversation + control bar",
+      "continuityAnchors": [
+        "共享 240px 侧边栏与 64px 顶栏",
+        "录音按钮使用品牌主色圆形强调",
+        "转写文本使用等宽字体显示时间戳"
+      ],
+      "componentPlan": {
+        "navItems": ["首页", "话题练习", "模拟考试", "评分报告", "API 设置"],
+        "controls": ["record", "pause", "retry", "end"],
+        "components": ["transcript-panel", "examiner-avatar"]
+      },
+      "imagePlan": [],
+      "longRequirementContext": {
+        "requirementIds": ["REQ-FEATURE-005"],
+        "summary": "Part 1 问答模式：AI 考官逐题提问，用户语音作答，实时显示转写文本，支持暂停/重来/结束。"
+      }
+    },
+    {
+      "nodeId": "page-practice-part2",
+      "title": "AI 练习 - Part 2",
+      "htmlSrc": "pages/practice-part2.html",
+      "pageIndex": 4,
+      "pageType": "task-driven",
+      "visualNorthStar": "Part 2 独白页：展示 Cue Card，1 分钟准备倒计时，关键词记录区，2 分钟录音进度条，录音中实时转写",
+      "compositionPattern": "sidebar + header + cue-card + timer + notes + transcript",
+      "continuityAnchors": [
+        "共享 240px 侧边栏与 64px 顶栏",
+        "倒计时使用大号数字与品牌色强调",
+        "Cue Card 使用卡片式高对比展示"
+      ],
+      "componentPlan": {
+        "navItems": ["首页", "话题练习", "模拟考试", "评分报告", "API 设置"],
+        "controls": ["timer", "record", "notes"],
+        "components": ["cue-card", "transcript-panel"]
+      },
+      "imagePlan": [],
+      "longRequirementContext": {
+        "requirementIds": ["REQ-FEATURE-006"],
+        "summary": "Part 2 独白模式：显示 Cue Card，1 分钟准备倒计时，用户可记录关键词，然后 2 分钟独白录音。"
+      }
+    },
+    {
+      "nodeId": "page-mock-exam",
+      "title": "模拟考试",
+      "htmlSrc": "pages/mock-exam.html",
+      "pageIndex": 5,
+      "pageType": "task-driven",
+      "visualNorthStar": "模考流程页：顶部总倒计时与 Part 进度条，中间展示当前题目与考官语音状态，底部录音控制，整体更严肃紧凑",
+      "compositionPattern": "sidebar + header + progress bar + exam stage + control bar",
+      "continuityAnchors": [
+        "共享 240px 侧边栏与 64px 顶栏",
+        "进度条与倒计时使用高对比强调",
+        "模考界面不可暂停，突出严肃考试感"
+      ],
+      "componentPlan": {
+        "navItems": ["首页", "话题练习", "模拟考试", "评分报告", "API 设置"],
+        "controls": ["progress", "timer", "record"],
+        "components": ["exam-progress", "transcript-panel"]
+      },
+      "imagePlan": [],
+      "longRequirementContext": {
+        "requirementIds": ["REQ-FEATURE-007"],
+        "summary": "完整模拟 Part 1→2→3 考试流程，严格计时，不可暂停/重来，结束后生成综合评分报告。"
+      }
+    },
+    {
+      "nodeId": "page-report",
+      "title": "评分报告",
+      "htmlSrc": "pages/report.html",
+      "pageIndex": 6,
+      "pageType": "info-dense",
+      "visualNorthStar": "评分报告页：顶部综合 Band 与四维分数，左侧雷达图，右侧逐句分析与问题标注，底部中文改进建议与高分表达替换",
+      "compositionPattern": "sidebar + header + score hero + two-column analysis + recommendations",
+      "continuityAnchors": [
+        "共享 240px 侧边栏与 64px 顶栏",
+        "Band 分数使用大号数字与品牌色",
+        "问题标注使用颜色编码（语法/发音/词汇）"
+      ],
+      "componentPlan": {
+        "navItems": ["首页", "话题练习", "模拟考试", "评分报告", "API 设置"],
+        "charts": ["radar"],
+        "components": ["score-card", "sentence-analysis", "recommendation-list"]
+      },
+      "imagePlan": [],
+      "chartsRequired": ["radar"],
+      "longRequirementContext": {
+        "requirementIds": ["REQ-FEATURE-008"],
+        "summary": "练习结束后展示四维评分、综合 Band、雷达图、逐句分析、中文改进建议、高分表达替换。"
+      }
+    },
+    {
+      "nodeId": "page-api-keys",
+      "title": "API Key 管理",
+      "htmlSrc": "pages/api-keys.html",
+      "pageIndex": 7,
+      "pageType": "task-driven",
+      "visualNorthStar": "API Key 管理页：四组服务卡片，每组包含 Key 输入框、状态指示器、测试连接按钮、用量统计，整体安全可信",
+      "compositionPattern": "sidebar + header + service cards grid",
+      "continuityAnchors": [
+        "共享 240px 侧边栏与 64px 顶栏",
+        "状态指示器使用绿/灰/红语义色",
+        "Key 输入框使用密码模式与后四位提示"
+      ],
+      "componentPlan": {
+        "navItems": ["首页", "话题练习", "模拟考试", "评分报告", "API 设置"],
+        "forms": ["api-key-input"],
+        "components": ["status-badge", "usage-chart", "test-button"]
+      },
+      "imagePlan": [],
+      "longRequirementContext": {
+        "requirementIds": ["REQ-FEATURE-009"],
+        "summary": "用户可配置 LLM/ASR/TTS/口语评测的火山引擎 API Key，支持连接测试、状态指示与用量查看。"
+      }
+    }
+  ],
+  "wiringPlan": [
+    { "from": "page-dashboard", "to": "page-topics", "domId": "nav-topics", "label": "进入话题练习" },
+    { "from": "page-dashboard", "to": "page-mock-exam", "domId": "nav-mock-exam", "label": "进入模拟考试" },
+    { "from": "page-dashboard", "to": "page-report", "domId": "nav-report", "label": "查看评分报告" },
+    { "from": "page-topics", "to": "page-practice-part1", "domId": "start-part1", "label": "开始 Part 1 练习" },
+    { "from": "page-topics", "to": "page-practice-part2", "domId": "start-part2", "label": "开始 Part 2 练习" },
+    { "from": "page-practice-part1", "to": "page-report", "domId": "end-practice", "label": "结束并查看报告" },
+    { "from": "page-practice-part2", "to": "page-report", "domId": "end-practice", "label": "结束并查看报告" },
+    { "from": "page-mock-exam", "to": "page-report", "domId": "end-mock-exam", "label": "结束模考查看报告" }
+  ],
+  "hiddenInteractionPlan": [
+    { "from": "page-topics", "to": "page-dashboard", "domId": "nav-dashboard", "hideEdge": true },
+    { "from": "page-practice-part1", "to": "page-dashboard", "domId": "nav-dashboard", "hideEdge": true },
+    { "from": "page-practice-part2", "to": "page-dashboard", "domId": "nav-dashboard", "hideEdge": true },
+    { "from": "page-mock-exam", "to": "page-dashboard", "domId": "nav-dashboard", "hideEdge": true },
+    { "from": "page-report", "to": "page-dashboard", "domId": "nav-dashboard", "hideEdge": true },
+    { "from": "page-api-keys", "to": "page-dashboard", "domId": "nav-dashboard", "hideEdge": true },
+    { "from": "page-api-keys", "to": "page-topics", "domId": "nav-topics", "hideEdge": true },
+    { "from": "page-api-keys", "to": "page-mock-exam", "domId": "nav-mock-exam", "hideEdge": true },
+    { "from": "page-api-keys", "to": "page-report", "domId": "nav-report", "hideEdge": true }
+  ],
+  "assets": []
+}

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Key 管理</title>
+    <style id="theme-vars">
+:root {
+  /* Brand primary scale - Deep Teal */
+  --ielts-teal-50: #f0fdfa;
+  --ielts-teal-100: #ccfbf1;
+  --ielts-teal-200: #99f6e4;
+  --ielts-teal-300: #5eead4;
+  --ielts-teal-400: #2dd4bf;
+  --ielts-teal-500: #14b8a6;
+  --ielts-teal-600: #0d9488;
+  --ielts-teal-700: #0f766e;
+  --ielts-teal-800: #115e59;
+  --ielts-teal-900: #134e4a;
+
+  /* Neutral slate scale */
+  --ielts-slate-50: #f8fafc;
+  --ielts-slate-100: #f1f5f9;
+  --ielts-slate-200: #e2e8f0;
+  --ielts-slate-300: #cbd5e1;
+  --ielts-slate-400: #94a3b8;
+  --ielts-slate-500: #64748b;
+  --ielts-slate-600: #475569;
+  --ielts-slate-700: #334155;
+  --ielts-slate-800: #1e293b;
+  --ielts-slate-900: #0f172a;
+
+  /* Semantic aliases - light mode */
+  --ielts-background: var(--ielts-slate-50);
+  --ielts-foreground: var(--ielts-slate-900);
+  --ielts-card: #ffffff;
+  --ielts-card-foreground: var(--ielts-slate-900);
+  --ielts-popover: #ffffff;
+  --ielts-popover-foreground: var(--ielts-slate-900);
+  --ielts-primary: var(--ielts-teal-700);
+  --ielts-primary-foreground: #ffffff;
+  --ielts-secondary: var(--ielts-slate-100);
+  --ielts-secondary-foreground: var(--ielts-slate-700);
+  --ielts-muted: var(--ielts-slate-100);
+  --ielts-muted-foreground: var(--ielts-slate-500);
+  --ielts-accent: var(--ielts-teal-50);
+  --ielts-accent-foreground: var(--ielts-teal-800);
+  --ielts-border: var(--ielts-slate-200);
+  --ielts-input: var(--ielts-slate-200);
+  --ielts-ring: var(--ielts-teal-500);
+
+  /* State colors */
+  --state-success: #10b981;
+  --state-success-bg: #ecfdf5;
+  --state-warning: #f59e0b;
+  --state-warning-bg: #fffbeb;
+  --state-error: #ef4444;
+  --state-error-bg: #fef2f2;
+  --state-info: var(--ielts-teal-600);
+  --state-info-bg: var(--ielts-teal-50);
+
+  /* Radius */
+  --ielts-radius-small: 4px;
+  --ielts-radius-medium: 8px;
+  --ielts-radius-large: 12px;
+  --ielts-radius-full: 9999px;
+
+  /* Shadows - static surfaces alpha <= 0.05 */
+  --ielts-shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
+  --ielts-shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  --ielts-shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.05), 0 4px 6px -4px rgba(15, 23, 42, 0.05);
+  --ielts-shadow-float: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
+
+  /* Typography */
+  --ielts-font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --ielts-font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Type scale */
+  --ielts-text-xs: 12px;
+  --ielts-text-sm: 13px;
+  --ielts-text-base: 14px;
+  --ielts-text-md: 15px;
+  --ielts-text-lg: 16px;
+  --ielts-text-xl: 20px;
+  --ielts-text-2xl: 24px;
+  --ielts-text-3xl: 30px;
+
+  /* Spacing */
+  --ielts-space-1: 4px;
+  --ielts-space-2: 8px;
+  --ielts-space-3: 12px;
+  --ielts-space-4: 16px;
+  --ielts-space-5: 20px;
+  --ielts-space-6: 24px;
+  --ielts-space-8: 32px;
+  --ielts-space-10: 40px;
+
+  /* Layout */
+  --ielts-sidebar-width: 240px;
+  --ielts-topbar-height: 64px;
+  --ielts-max-content-width: 1280px;
+}
+
+.dark {
+  --ielts-background: var(--ielts-slate-900);
+  --ielts-foreground: var(--ielts-slate-50);
+  --ielts-card: var(--ielts-slate-800);
+  --ielts-card-foreground: var(--ielts-slate-50);
+  --ielts-popover: var(--ielts-slate-800);
+  --ielts-popover-foreground: var(--ielts-slate-50);
+  --ielts-primary: var(--ielts-teal-500);
+  --ielts-primary-foreground: var(--ielts-slate-900);
+  --ielts-secondary: var(--ielts-slate-700);
+  --ielts-secondary-foreground: var(--ielts-slate-200);
+  --ielts-muted: var(--ielts-slate-800);
+  --ielts-muted-foreground: var(--ielts-slate-400);
+  --ielts-accent: var(--ielts-teal-900);
+  --ielts-accent-foreground: var(--ielts-teal-100);
+  --ielts-border: var(--ielts-slate-700);
+  --ielts-input: var(--ielts-slate-700);
+  --ielts-ring: var(--ielts-teal-400);
+}
+
+@theme inline {
+  --color-background: var(--ielts-background);
+  --color-foreground: var(--ielts-foreground);
+  --color-card: var(--ielts-card);
+  --color-card-foreground: var(--ielts-card-foreground);
+  --color-popover: var(--ielts-popover);
+  --color-popover-foreground: var(--ielts-popover-foreground);
+  --color-primary: var(--ielts-primary);
+  --color-primary-foreground: var(--ielts-primary-foreground);
+  --color-secondary: var(--ielts-secondary);
+  --color-secondary-foreground: var(--ielts-secondary-foreground);
+  --color-muted: var(--ielts-muted);
+  --color-muted-foreground: var(--ielts-muted-foreground);
+  --color-accent: var(--ielts-accent);
+  --color-accent-foreground: var(--ielts-accent-foreground);
+  --color-border: var(--ielts-border);
+  --color-input: var(--ielts-input);
+  --color-ring: var(--ielts-ring);
+  --radius-sm: var(--ielts-radius-small);
+  --radius-md: var(--ielts-radius-medium);
+  --radius-lg: var(--ielts-radius-large);
+  --radius-full: var(--ielts-radius-full);
+}
+
+/* Base typography */
+html, body {
+  font-family: var(--ielts-font-sans);
+  font-size: var(--ielts-text-base);
+  line-height: 1.5;
+  color: var(--ielts-foreground);
+  background: var(--ielts-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--ielts-foreground);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--ielts-primary);
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--ielts-background);
+    --color-foreground: var(--ielts-foreground);
+    --color-card: var(--ielts-card);
+    --color-card-foreground: var(--ielts-card-foreground);
+    --color-popover: var(--ielts-popover);
+    --color-popover-foreground: var(--ielts-popover-foreground);
+    --color-primary: var(--ielts-primary);
+    --color-primary-foreground: var(--ielts-primary-foreground);
+    --color-secondary: var(--ielts-secondary);
+    --color-secondary-foreground: var(--ielts-secondary-foreground);
+    --color-muted: var(--ielts-muted);
+    --color-muted-foreground: var(--ielts-muted-foreground);
+    --color-accent: var(--ielts-accent);
+    --color-accent-foreground: var(--ielts-accent-foreground);
+    --color-border: var(--ielts-border);
+    --color-input: var(--ielts-input);
+    --color-ring: var(--ielts-ring);
+    --radius-sm: var(--ielts-radius-small);
+    --radius-md: var(--ielts-radius-medium);
+    --radius-lg: var(--ielts-radius-large);
+    --radius-full: var(--ielts-radius-full);
+  }
+  @layer base {
+    body { background: var(--ielts-background); color: var(--ielts-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--ielts-background); }
+      .text-background { color: var(--ielts-background); }
+      .border-background { border-color: var(--ielts-background); }
+      .ring-background { --tw-ring-color: var(--ielts-background); }
+      .bg-foreground { background-color: var(--ielts-foreground); }
+      .text-foreground { color: var(--ielts-foreground); }
+      .border-foreground { border-color: var(--ielts-foreground); }
+      .ring-foreground { --tw-ring-color: var(--ielts-foreground); }
+      .bg-card { background-color: var(--ielts-card); }
+      .text-card { color: var(--ielts-card); }
+      .border-card { border-color: var(--ielts-card); }
+      .ring-card { --tw-ring-color: var(--ielts-card); }
+      .bg-card-foreground { background-color: var(--ielts-card-foreground); }
+      .text-card-foreground { color: var(--ielts-card-foreground); }
+      .border-card-foreground { border-color: var(--ielts-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--ielts-card-foreground); }
+      .bg-popover { background-color: var(--ielts-popover); }
+      .text-popover { color: var(--ielts-popover); }
+      .border-popover { border-color: var(--ielts-popover); }
+      .ring-popover { --tw-ring-color: var(--ielts-popover); }
+      .bg-popover-foreground { background-color: var(--ielts-popover-foreground); }
+      .text-popover-foreground { color: var(--ielts-popover-foreground); }
+      .border-popover-foreground { border-color: var(--ielts-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--ielts-popover-foreground); }
+      .bg-primary { background-color: var(--ielts-primary); }
+      .text-primary { color: var(--ielts-primary); }
+      .border-primary { border-color: var(--ielts-primary); }
+      .ring-primary { --tw-ring-color: var(--ielts-primary); }
+      .bg-primary-foreground { background-color: var(--ielts-primary-foreground); }
+      .text-primary-foreground { color: var(--ielts-primary-foreground); }
+      .border-primary-foreground { border-color: var(--ielts-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--ielts-primary-foreground); }
+      .bg-secondary { background-color: var(--ielts-secondary); }
+      .text-secondary { color: var(--ielts-secondary); }
+      .border-secondary { border-color: var(--ielts-secondary); }
+      .ring-secondary { --tw-ring-color: var(--ielts-secondary); }
+      .bg-secondary-foreground { background-color: var(--ielts-secondary-foreground); }
+      .text-secondary-foreground { color: var(--ielts-secondary-foreground); }
+      .border-secondary-foreground { border-color: var(--ielts-secondary-foreground); }
+      .ring-secondary-foreground { --tw-ring-color: var(--ielts-secondary-foreground); }
+      .bg-muted { background-color: var(--ielts-muted); }
+      .text-muted { color: var(--ielts-muted); }
+      .border-muted { border-color: var(--ielts-muted); }
+      .ring-muted { --tw-ring-color: var(--ielts-muted); }
+      .bg-muted-foreground { background-color: var(--ielts-muted-foreground); }
+      .text-muted-foreground { color: var(--ielts-muted-foreground); }
+      .border-muted-foreground { border-color: var(--ielts-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--ielts-muted-foreground); }
+      .bg-accent { background-color: var(--ielts-accent); }
+      .text-accent { color: var(--ielts-accent); }
+      .border-accent { border-color: var(--ielts-accent); }
+      .ring-accent { --tw-ring-color: var(--ielts-accent); }
+      .bg-accent-foreground { background-color: var(--ielts-accent-foreground); }
+      .text-accent-foreground { color: var(--ielts-accent-foreground); }
+      .border-accent-foreground { border-color: var(--ielts-accent-foreground); }
+      .ring-accent-foreground { --tw-ring-color: var(--ielts-accent-foreground); }
+      .bg-border { background-color: var(--ielts-border); }
+      .text-border { color: var(--ielts-border); }
+      .border-border { border-color: var(--ielts-border); }
+      .ring-border { --tw-ring-color: var(--ielts-border); }
+      .bg-input { background-color: var(--ielts-input); }
+      .text-input { color: var(--ielts-input); }
+      .border-input { border-color: var(--ielts-input); }
+      .ring-input { --tw-ring-color: var(--ielts-input); }
+      .bg-ring { background-color: var(--ielts-ring); }
+      .text-ring { color: var(--ielts-ring); }
+      .border-ring { border-color: var(--ielts-ring); }
+      .ring-ring { --tw-ring-color: var(--ielts-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+    <div class="flex min-h-screen bg-background text-foreground">
+      <aside class="fixed left-0 top-0 bottom-0 w-[240px] bg-card border-r border-border z-20 flex flex-col">
+        <div class="h-16 flex items-center px-5 border-b border-border">
+          <div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center mr-3">
+            <i data-lucide="message-circle" class="w-5 h-5 text-primary-foreground"></i>
+          </div>
+          <span class="font-semibold text-lg text-foreground">雅思口语教练</span>
+        </div>
+        <nav class="flex-1 py-4 px-3 space-y-1">
+          <a href="#" data-nav-key="dashboard" data-dom-id="nav-dashboard" class="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
+            <i data-lucide="layout-dashboard" class="w-4.5 h-4.5"></i>
+            <span>首页</span>
+          </a>
+          <a href="#" data-nav-key="topics" data-dom-id="nav-topics" class="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
+            <i data-lucide="library" class="w-4.5 h-4.5"></i>
+            <span>话题练习</span>
+          </a>
+          <a href="#" data-nav-key="mock-exam" data-dom-id="nav-mock-exam" class="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
+            <i data-lucide="mic" class="w-4.5 h-4.5"></i>
+            <span>模拟考试</span>
+          </a>
+          <a href="#" data-nav-key="report" data-dom-id="nav-report" class="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors">
+            <i data-lucide="bar-chart-2" class="w-4.5 h-4.5"></i>
+            <span>评分报告</span>
+          </a>
+          <a href="#" data-nav-key="api-keys" data-dom-id="nav-api-keys" class="flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-medium bg-accent text-accent-foreground transition-colors">
+            <i data-lucide="key" class="w-4.5 h-4.5"></i>
+            <span>API 设置</span>
+          </a>
+        </nav>
+        <div class="p-4 border-t border-border">
+          <div class="flex items-center gap-3 px-3 py-2">
+            <div class="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+              <i data-lucide="user" class="w-4 h-4 text-muted-foreground"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm font-medium truncate">备考考生</p>
+              <p class="text-xs text-muted-foreground truncate">目标 Band 7.0</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="ml-[240px] flex-1 flex flex-col min-h-screen">
+        <header class="h-16 bg-card border-b border-border flex items-center justify-between px-6 sticky top-0 z-10">
+          <div class="flex items-center gap-4">
+            <h1 class="text-xl font-semibold text-foreground">API Key 管理</h1>
+          </div>
+          <div class="flex items-center gap-3">
+            <button class="p-2 rounded-md text-muted-foreground hover:bg-muted transition-colors" aria-label="通知">
+              <i data-lucide="bell" class="w-5 h-5"></i>
+            </button>
+            <button class="p-2 rounded-md text-muted-foreground hover:bg-muted transition-colors" aria-label="帮助">
+              <i data-lucide="help-circle" class="w-5 h-5"></i>
+            </button>
+          </div>
+        </header>
+
+        <main class="flex-1 p-6 bg-background overflow-auto">
+          <div class="max-w-5xl mx-auto">
+            <div class="bg-state-info-bg border border-state-info/20 rounded-lg p-4 mb-6 flex items-start gap-3">
+              <i data-lucide="info" class="w-5 h-5 text-state-info mt-0.5"></i>
+              <div>
+                <p class="text-sm font-medium text-state-info">安全提示</p>
+                <p class="text-xs text-state-info/80 mt-1">API Key 仅存储在本地浏览器中，不会上传到我们的服务器。请妥善保管您的火山引擎密钥。</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <!-- LLM -->
+              <div class="bg-card border border-border rounded-lg p-5 shadow-sm">
+                <div class="flex items-start justify-between mb-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
+                      <i data-lucide="brain" class="w-5 h-5 text-accent-foreground"></i>
+                    </div>
+                    <div>
+                      <h2 class="text-base font-semibold">大语言模型 LLM</h2>
+                      <p class="text-xs text-muted-foreground">评分反馈与高分表达</p>
+                    </div>
+                  </div>
+                  <span class="px-2 py-1 rounded text-xs font-medium bg-state-success-bg text-state-success">已连接</span>
+                </div>
+                <div class="space-y-3">
+                  <div>
+                    <label class="block text-xs font-medium text-muted-foreground mb-1.5">API Key</label>
+                    <div class="relative">
+                      <input type="password" value="sk-****************abcd" class="w-full pl-3 pr-10 py-2 rounded-md border border-border bg-card text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+                      <button class="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground" aria-label="显示/隐藏">
+                        <i data-lucide="eye" class="w-4 h-4"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-2 gap-3">
+                    <div>
+                      <label class="block text-xs font-medium text-muted-foreground mb-1.5">模型</label>
+                      <select class="w-full px-3 py-2 rounded-md border border-border bg-card text-sm focus:outline-none focus:ring-2 focus:ring-ring">
+                        <option>doubao-1.5-pro-32k</option>
+                        <option>doubao-seed-2.1-turbo</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label class="block text-xs font-medium text-muted-foreground mb-1.5">Region</label>
+                      <input type="text" value="cn-beijing" class="w-full px-3 py-2 rounded-md border border-border bg-card text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between pt-2">
+                    <div class="text-xs text-muted-foreground">本月用量：1,240 tokens</div>
+                    <button class="px-3 py-1.5 rounded-md bg-primary text-primary-foreground text-xs font-medium hover:opacity-90 transition-opacity">测试连接</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ASR -->
+              <div class="bg-card border border-border rounded-lg p-5 shadow-sm">
+                <div class="flex items-start justify-between mb-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
+                      <i data-lucide="mic" class="w-5 h-5 text-accent-foreground"></i>
+                    </div>
+                    <div>
+                      <h2 class="text-base font-semibold">语音识别 ASR</h2>
+                      <p class="text-xs text-muted-foreground">实时转写与流式识别</p>
+                    </div>
+                  </div>
+                  <span class="px-2 py-1 rounded text-xs font-medium bg-state-success-bg text-state-success">已连接</span>
+                </div>
+                <div class="space-y-3">
+                  <div>
+                    <label class="block text-xs font-medium text-muted-foreground mb-1.5">API Key</label>
+                    <div class="relative">
+                      <input type="password" value="sk-****************wxyz" class="w-full pl-3 pr-10 py-2 rounded-md border border-border bg-card text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+                      <button class="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground" aria-label="显示/隐藏">
+                        <i data-lucide="eye" class="w-4 h-4"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-medium text-muted-foreground mb-1.5">服务版本</label>
+                    <select class="w-full px-3 py-2 rounded-md border border-border bg-card text-sm focus:outline-none focus:ring-2 focus:ring-ring">
+                      <option>豆包流式语音识别 2.0</option>
+                      <option>豆包语音识别 1.0</option>
+                    </select>
+                  </div>
+                  <div class="flex items-center justify-between pt-2">
+                    <div class="text-xs text-muted-foreground">本月用量：86 分钟</div>
+                    <button class="px-3 py-1.5 rounded-md bg-primary text-primary-foreground text-xs font-medium hover:opacity-90 transition-opacity">测试连接</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TTS -->
+              <div class="bg-card border border-border rounded-lg p-5 shadow-sm">
+                <div class="flex items-start justify-between mb-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
+                      <i data-lucide="volume-2" class="w-5 h-5 text-accent-foreground"></i>
+                    </div>
+                    <div>
+                      <h2 class="text-base font-semibold">语音合成 TTS</h2>
+                      <p class="text-xs text-muted-foreground">AI 考官语音播报</p>
+                    </div>
+                  </div>
+                  <span class="px-2 py-1 rounded text-xs font-medium bg-state-warning-bg text-state-warning">待配置</span>
+                </div>
+                <div class="space-y-3">
+                  <div>
+                    <label class="block text-xs font-medium text-muted-foreground mb-1.5">API Key</label>
+                    <div class="relative">
+                      <input type="password" placeholder="请输入火山引擎 TTS API Key" class="w-full pl-3 pr-10 py-2 rounded-md border border-border bg-card text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+                      <button class="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground" aria-label="显示/隐藏">
+                        <i data-lucide="eye" class="w-4 h-4"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-medium text-muted-foreground mb-1.5">音色</label>
+                    <select class="w-full px-3 py-2 rounded-md border border-border bg-card text-sm focus:outline-none focus:ring-2 focus:ring-ring">
+                      <option>英音女声 · 自然</option>
+                      <option>美音男声 · 自然</option>
+                    </select>
+                  </div>
+                  <div class="flex items-center justify-between pt-2">
+                    <div class="text-xs text-muted-foreground">本月用量：0 字符</div>
+                    <button class="px-3 py-1.5 rounded-md bg-primary text-primary-foreground text-xs font-medium hover:opacity-90 transition-opacity">测试连接</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pronunciation -->
+              <div class="bg-card border border-border rounded-lg p-5 shadow-sm">
+                <div class="flex items-start justify-between mb-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
+                      <i data-lucide="audio-waveform" class="w-5 h-5 text-accent-foreground"></i>
+                    </div>
+                    <div>
+                      <h2 class="text-base font-semibold">口语评测</h2>
+                      <p class="text-xs text-muted-foreground">发音与流利度评分</p>
+                    </div>
+                  </div>
+                  <span class="px-2 py-1 rounded text-xs font-medium bg-state-success-bg text-state-success">已连接</span>
+                </div>
+                <div class="space-y-3">
+                  <div>
+                    <label class="block text-xs font-medium text-muted-foreground mb-1.5">API Key</label>
+                    <div class="relative">
+                      <input type="password" value="sk-****************1234" class="w-full pl-3 pr-10 py-2 rounded-md border border-border bg-card text-sm focus:outline-none focus:ring-2 focus:ring-ring" />
+                      <button class="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground" aria-label="显示/隐藏">
+                        <i data-lucide="eye" class="w-4 h-4"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div>
+                    <label class="block text-xs font-medium text-muted-foreground mb-1.5">服务类型</label>
+                    <input type="text" value="service_type 81" readonly class="w-full px-3 py-2 rounded-md border border-border bg-muted text-sm text-muted-foreground" />
+                  </div>
+                  <div class="flex items-center justify-between pt-2">
+                    <div class="text-xs text-muted-foreground">本月用量：62 次评测</div>
+                    <button class="px-3 py-1.5 rounded-md bg-primary text-primary-foreground text-xs font-medium hover:opacity-90 transition-opacity">测试连接</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>

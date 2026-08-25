@@ -53,3 +53,19 @@ backend/static/
 # 数据库
 *.db
 *.sqlite3
+
+# 本地资料与工具产物（不入库）
+.trae-html-share-packages/
+.zcode/
+ai-ielts-speaking-coach-prd/
+ai-ielts-speaking-coach-design/
+2026年5-8月雅思口语素材P123/
+
+# 测试与覆盖率
+.pytest_cache/
+.coverage
+htmlcov/
+coverage/
+
+# 前端
+frontend/.vite/

@@ -1,0 +1,264 @@
+{
+  "data": [
+    {
+      "id": "page-dashboard",
+      "title": "Dashboard 学习概览",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1724592000000,
+      "canvasData": {
+        "x": 0,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 942,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-27b2a56c",
+          "measuredAt": 1787671114439
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/dashboard.html",
+        "interactions": [
+          {
+            "domId": "nav-topics",
+            "targetPageId": "page-topics",
+            "label": "进入话题练习"
+          },
+          {
+            "domId": "nav-mock-exam",
+            "targetPageId": "page-mock-exam",
+            "label": "进入模拟考试"
+          },
+          {
+            "domId": "nav-report",
+            "targetPageId": "page-report",
+            "label": "查看评分报告"
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-topics",
+      "title": "话题练习库",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1724592000000,
+      "canvasData": {
+        "x": 480,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-365403ac",
+          "measuredAt": 1787671114439
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/topics.html",
+        "interactions": [
+          {
+            "domId": "start-part1",
+            "targetPageId": "page-practice-part1",
+            "label": "开始 Part 1 练习"
+          },
+          {
+            "domId": "start-part2",
+            "targetPageId": "page-practice-part2",
+            "label": "开始 Part 2 练习"
+          },
+          {
+            "domId": "nav-dashboard",
+            "targetPageId": "page-dashboard",
+            "hideEdge": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-practice-part1",
+      "title": "AI 练习 - Part 1",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1724592000000,
+      "canvasData": {
+        "x": 960,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-dd47571b",
+          "measuredAt": 1787671114439
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/practice-part1.html",
+        "interactions": [
+          {
+            "domId": "end-practice",
+            "targetPageId": "page-report",
+            "label": "结束并查看报告"
+          },
+          {
+            "domId": "nav-dashboard",
+            "targetPageId": "page-dashboard",
+            "hideEdge": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-practice-part2",
+      "title": "AI 练习 - Part 2",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1724592000000,
+      "canvasData": {
+        "x": 960,
+        "y": 373,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-4a75b49c",
+          "measuredAt": 1787671114439
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/practice-part2.html",
+        "interactions": [
+          {
+            "domId": "end-practice",
+            "targetPageId": "page-report",
+            "label": "结束并查看报告"
+          },
+          {
+            "domId": "nav-dashboard",
+            "targetPageId": "page-dashboard",
+            "hideEdge": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-mock-exam",
+      "title": "模拟考试",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1724592000000,
+      "canvasData": {
+        "x": 960,
+        "y": 746,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-32ccadcb",
+          "measuredAt": 1787671114439
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/mock-exam.html",
+        "interactions": [
+          {
+            "domId": "end-mock-exam",
+            "targetPageId": "page-report",
+            "label": "结束模考查看报告"
+          },
+          {
+            "domId": "nav-dashboard",
+            "targetPageId": "page-dashboard",
+            "hideEdge": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-report",
+      "title": "评分报告",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1724592000000,
+      "canvasData": {
+        "x": 1440,
+        "y": 0,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 1134,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-fc28ea69",
+          "measuredAt": 1787671114439
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/report.html",
+        "interactions": [
+          {
+            "domId": "nav-dashboard",
+            "targetPageId": "page-dashboard",
+            "hideEdge": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "page-api-keys",
+      "title": "API Key 管理",
+      "type": "page",
+      "version": 1,
+      "createdAt": 1724592000000,
+      "canvasData": {
+        "x": 0,
+        "y": 1119,
+        "group": 0,
+        "layoutSnapshot": {
+          "version": 1,
+          "contentHeight": 900,
+          "viewportWidth": 1440,
+          "sourceHash": "fnv1a-9d9fc70f",
+          "measuredAt": 1787671114439
+        }
+      },
+      "devMetadata": {
+        "htmlSrc": "pages/api-keys.html",
+        "interactions": [
+          {
+            "domId": "nav-dashboard",
+            "targetPageId": "page-dashboard",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-topics",
+            "targetPageId": "page-topics",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-mock-exam",
+            "targetPageId": "page-mock-exam",
+            "hideEdge": true
+          },
+          {
+            "domId": "nav-report",
+            "targetPageId": "page-report",
+            "hideEdge": true
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "autoLayout": true,
+    "deviceType": "desktop",
+    "projectName": "雅思口语教练前端界面",
+    "designLibrary": null,
+    "visualEditorEnabled": false
+  }
+}
