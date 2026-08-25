@@ -13,19 +13,22 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.v1.router import api_router
 from app.core.config import get_settings
 from app.services.cache import close_cache, describe_backend, init_cache
+from app.services.practice_engine import registry as practice_registry
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     await init_cache()
+    practice_registry.start_sweeper()
     yield
+    practice_registry.stop_sweeper()
     await close_cache()
 
 
 settings = get_settings()
 app = FastAPI(
     title=settings.app_name,
-    version="0.1.0",
+    version="0.2.0",
     lifespan=lifespan,
 )
 
@@ -42,4 +45,8 @@ app.include_router(api_router, prefix=settings.api_v1_prefix)
 
 @app.get(f"{settings.api_v1_prefix}/health")
 async def health() -> dict[str, str]:
-    return {"status": "ok", "cache": describe_backend()}
+    return {
+        "status": "ok",
+        "cache": describe_backend(),
+        "volc_mock": "on" if settings.volc_mock else "off",
+    }

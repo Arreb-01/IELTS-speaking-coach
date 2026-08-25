@@ -1,0 +1,217 @@
+{
+  "part1_topics": [
+    {
+      "name_en": "Home & Accommodation",
+      "name_zh": "家与住所",
+      "category": "home",
+      "tag": "must",
+      "questions": [
+        "Do you live in a house or an apartment?",
+        "What do you like most about the place where you live?",
+        "Would you like to move to a different place in the future? Why?",
+        "How is your neighbourhood changing?"
+      ]
+    },
+    {
+      "name_en": "Work & Study",
+      "name_zh": "工作与学习",
+      "category": "work",
+      "tag": "must",
+      "questions": [
+        "Do you work or are you a student?",
+        "Why did you choose that subject or job?",
+        "What do you find most difficult about your work or studies?",
+        "Do you prefer to study or work in the morning or in the evening?"
+      ]
+    },
+    {
+      "name_en": "Music",
+      "name_zh": "音乐",
+      "category": "hobby",
+      "tag": "retained",
+      "questions": [
+        "Do you often listen to music?",
+        "What kind of music do you like? Why?",
+        "Have you ever learned to play a musical instrument?",
+        "Do you think music can help people study or work better?"
+      ]
+    },
+    {
+      "name_en": "Reading",
+      "name_zh": "阅读",
+      "category": "hobby",
+      "tag": "retained",
+      "questions": [
+        "Do you like reading books? Why or why not?",
+        "What kind of books did you read when you were a child?",
+        "Do you prefer paper books or e-books?",
+        "Is there a book you would like to read again?"
+      ]
+    },
+    {
+      "name_en": "Weather",
+      "name_zh": "天气",
+      "category": "daily-life",
+      "tag": "new",
+      "questions": [
+        "What's the weather like in your hometown?",
+        "Do you prefer hot or cold weather? Why?",
+        "Does the weather affect your mood?",
+        "What do you usually do on rainy days?"
+      ]
+    },
+    {
+      "name_en": "Mobile Phones",
+      "name_zh": "手机",
+      "category": "technology",
+      "tag": "new",
+      "questions": [
+        "How often do you use your mobile phone?",
+        "What do you mainly use your phone for?",
+        "Do you think people spend too much time on their phones?",
+        "Could you live without your phone for a week?"
+      ]
+    },
+    {
+      "name_en": "Cooking",
+      "name_zh": "烹饪",
+      "category": "daily-life",
+      "tag": "retained",
+      "questions": [
+        "Do you know how to cook?",
+        "Who usually does the cooking in your family?",
+        "What is a popular dish in your hometown?",
+        "Do you think cooking is an important skill for young people?"
+      ]
+    },
+    {
+      "name_en": "Travelling",
+      "name_zh": "旅行",
+      "category": "travel",
+      "tag": "must",
+      "questions": [
+        "Do you like travelling? Why?",
+        "What is the most interesting place you have visited?",
+        "Do you prefer travelling alone or with friends?",
+        "Would you like to travel to space one day if it were possible?"
+      ]
+    }
+  ],
+  "part23_topics": [
+    {
+      "name_en": "A Person Who Has Inspired You",
+      "name_zh": "激励过你的人",
+      "category": "person",
+      "tag": "must",
+      "cue_card": {
+        "prompt": "Describe a person who has inspired you.",
+        "summary_zh": "描述一个激励过你的人：是谁、如何认识、这个人做了什么、为什么激励了你。",
+        "you_should_say": [
+          "who this person is",
+          "how you know this person",
+          "what this person has done",
+          "and explain why this person has inspired you"
+        ]
+      },
+      "followup_seeds": [
+        "What qualities make someone a good role model for young people?",
+        "Do you think celebrities are good role models? Why or why not?",
+        "How do teachers inspire their students in your country?",
+        "Are people more influenced by their family or by their friends?",
+        "Do you think the ability to inspire others is natural or learned?"
+      ]
+    },
+    {
+      "name_en": "A Memorable Journey",
+      "name_zh": "一次难忘的旅行",
+      "category": "event",
+      "tag": "retained",
+      "cue_card": {
+        "prompt": "Describe a memorable journey you have made.",
+        "summary_zh": "描述一次难忘的旅行：去了哪里、和谁去、发生了什么、为什么难忘。",
+        "you_should_say": [
+          "where you went",
+          "how you travelled",
+          "what happened during the journey",
+          "and explain why this journey was memorable for you"
+        ]
+      },
+      "followup_seeds": [
+        "How has travel changed in your country over the past twenty years?",
+        "Do you think it is better to travel with a plan or spontaneously?",
+        "What are the advantages of travelling to unfamiliar places?",
+        "How does tourism affect the environment?",
+        "Will virtual reality travel replace real travel in the future?"
+      ]
+    },
+    {
+      "name_en": "A Useful Skill You Learned",
+      "name_zh": "你学会的一项有用技能",
+      "category": "event",
+      "tag": "new",
+      "cue_card": {
+        "prompt": "Describe a useful skill you learned recently.",
+        "summary_zh": "描述最近学会的一项有用技能：是什么、如何学的、遇到的困难、为什么有用。",
+        "you_should_say": [
+          "what the skill is",
+          "how you learned it",
+          "what difficulties you faced",
+          "and explain why this skill is useful to you"
+        ]
+      },
+      "followup_seeds": [
+        "What skills are most important for young people to learn today?",
+        "Should schools teach practical life skills like cooking or managing money?",
+        "Is it better to learn from a teacher or teach yourself using the internet?",
+        "How will artificial intelligence change the skills people need at work?",
+        "Why do some people find it hard to keep learning new things as they get older?"
+      ]
+    },
+    {
+      "name_en": "An Old Object in Your Family",
+      "name_zh": "家中的老物件",
+      "category": "object",
+      "tag": "retained",
+      "cue_card": {
+        "prompt": "Describe an old object that has been in your family for a long time.",
+        "summary_zh": "描述家中保存已久的一件老物件：是什么、有多久历史、如何保存、对家庭的意义。",
+        "you_should_say": [
+          "what the object is",
+          "how long it has been in your family",
+          "how your family keeps it",
+          "and explain what it means to your family"
+        ]
+      },
+      "followup_seeds": [
+        "Why do people keep old objects instead of throwing them away?",
+        "How can museums help young people understand history?",
+        "Do you think digital photos are as meaningful as printed ones?",
+        "Should governments spend money on preserving historical buildings?",
+        "How might the things we keep today be different from what our grandparents kept?"
+      ]
+    },
+    {
+      "name_en": "A Quiet Place You Like",
+      "name_zh": "你喜欢的安静地方",
+      "category": "place",
+      "tag": "new",
+      "cue_card": {
+        "prompt": "Describe a quiet place you like to spend time in.",
+        "summary_zh": "描述一个你喜欢待的安静地方：在哪里、多久去一次、在那里做什么、为什么喜欢。",
+        "you_should_say": [
+          "where this place is",
+          "how often you go there",
+          "what you usually do there",
+          "and explain why you like this quiet place"
+        ]
+      },
+      "followup_seeds": [
+        "Why is it difficult to find quiet places in modern cities?",
+        "Do you think noise pollution is a serious problem?",
+        "How can cities be designed to reduce noise?",
+        "Do older and younger people have different attitudes towards noise?",
+        "Is it important for children to learn to enjoy quiet time?"
+      ]
+    }
+  ]
+}

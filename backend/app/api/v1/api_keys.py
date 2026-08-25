@@ -121,15 +121,25 @@ async def test_api_key(
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ) -> ApiKeyTestResult:
-    if service_type != "llm":
-        # ASR/TTS/口语评测的凭据形态（AccessKey 对等）随 Part B/C 语音模块接入定型
+    if service_type == "evaluation":
+        # 口语评测凭据与凭据形态随 Part C 接入定型
         return ApiKeyTestResult(
             service_type=service_type,
             testable=False,
-            message="该服务的连通性测试将在语音模块上线后开放",
+            message="该服务的连通性测试将在评分模块上线后开放",
         )
 
-    row = await _get_row(db, user.id, "llm")
+    row = await _get_row(db, user.id, service_type)
+
+    if service_type == "llm":
+        return await _test_llm(user, db, row)
+
+    return await _test_speech(user, db, row, service_type)
+
+
+async def _test_llm(
+    user: User, db: AsyncSession, row: UserApiKey | None
+) -> ApiKeyTestResult:
     if row is not None:
         api_key = decrypt_secret(row.key_encrypted)
         key_source = "user"
@@ -138,11 +148,8 @@ async def test_api_key(
         key_source = "platform"
     else:
         return ApiKeyTestResult(
-            service_type="llm",
-            testable=True,
-            success=False,
-            message="尚未配置 API Key，且平台未提供默认 Key",
-            key_source="none",
+            service_type="llm", testable=True, success=False,
+            message="尚未配置 API Key，且平台未提供默认 Key", key_source="none",
         )
 
     model = (row.config or {}).get("model") if row else None
@@ -154,10 +161,73 @@ async def test_api_key(
         await db.commit()
 
     return ApiKeyTestResult(
-        service_type="llm",
-        testable=True,
-        success=success,
-        message=message,
-        key_source=key_source,
-        latency_ms=latency_ms,
+        service_type="llm", testable=True, success=success, message=message,
+        key_source=key_source, latency_ms=latency_ms,
+    )
+
+
+async def _test_speech(
+    user: User, db: AsyncSession, row: UserApiKey | None, service_type: str
+) -> ApiKeyTestResult:
+    """ASR / TTS 连通性测试。凭据形态：APPID + Access Token（存 config）。"""
+    from app.services.volcengine.asr import AsrCredentials, test_asr_connection
+    from app.services.volcengine.speech import ASR_RESOURCE_IDS, resolve_asr_credentials
+    from app.services.volcengine.tts import TtsCredentials, test_tts_connection
+
+    settings = get_settings()
+
+    if row is not None:
+        config = dict(row.config or {})
+        appid = config.get("appid")
+        access_token = decrypt_secret(row.key_encrypted)
+        key_source = "user"
+        if not appid:
+            if row is not None:
+                row.status = "invalid"
+                row.last_verified_at = datetime.now(timezone.utc)
+                await db.commit()
+            return ApiKeyTestResult(
+                service_type=service_type, testable=True, success=False,
+                message="请在配置中填写 APPID（语音控制台 → 应用管理）", key_source=key_source,
+            )
+    else:
+        platform_asr = await resolve_asr_credentials(user, db) if service_type == "asr" else None
+        platform_tts = None
+        if service_type == "tts":
+            from app.services.volcengine.speech import resolve_tts_credentials
+
+            platform_tts = await resolve_tts_credentials(user, db)
+        platform = platform_asr or platform_tts
+        if platform is None:
+            return ApiKeyTestResult(
+                service_type=service_type, testable=True, success=False,
+                message="尚未配置凭据，且平台未提供默认凭据", key_source="none",
+            )
+        appid = platform.appid
+        access_token = platform.access_token
+        key_source = "platform"
+
+    if service_type == "asr":
+        version = str((row.config or {}).get("version") or "2.0") if row else "2.0"
+        credentials = AsrCredentials(
+            appid=str(appid),
+            access_token=access_token,
+            resource_id=ASR_RESOURCE_IDS.get(version, ASR_RESOURCE_IDS["2.0"]),
+        )
+        success, message, latency_ms = await test_asr_connection(credentials)
+    else:
+        credentials = TtsCredentials(
+            appid=str(appid), access_token=access_token,
+            resource_id=settings.volc_tts_resource_id,
+        )
+        success, message, latency_ms = await test_tts_connection(credentials)
+
+    if row is not None:
+        row.status = "valid" if success else "invalid"
+        row.last_verified_at = datetime.now(timezone.utc)
+        await db.commit()
+
+    return ApiKeyTestResult(
+        service_type=service_type, testable=True, success=success, message=message,
+        key_source=key_source, latency_ms=latency_ms,
     )

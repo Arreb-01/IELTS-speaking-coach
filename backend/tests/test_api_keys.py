@@ -166,9 +166,59 @@ async def test_llm_test_fallback_to_platform_key(client, auth_headers, monkeypat
     assert data["success"] is True
 
 
-async def test_voice_services_pending(client, auth_headers):
-    for service in ("asr", "tts", "evaluation"):
+async def test_speech_test_without_credentials(client, auth_headers):
+    # 未配置用户凭据且平台默认凭据为空（conftest 已隔离）
+    for service in ("asr", "tts"):
         resp = await client.post(f"/api/v1/api-keys/{service}/test", headers=auth_headers)
         assert resp.status_code == 200
         data = resp.json()
-        assert data["testable"] is False
+        assert data["testable"] is True
+        assert data["success"] is False
+        assert data["key_source"] == "none"
+
+
+async def test_evaluation_pending(client, auth_headers):
+    resp = await client.post("/api/v1/api-keys/evaluation/test", headers=auth_headers)
+    assert resp.status_code == 200
+    data = resp.json()
+    assert data["testable"] is False
+
+
+async def test_asr_test_missing_appid(client, auth_headers, db_session, monkeypatch):
+    # 已保存 Key 但 config 缺 APPID → 明确提示
+    await client.put(
+        "/api/v1/api-keys/asr", headers=auth_headers, json={"key": "dddddddd4444"}
+    )
+    resp = await client.post("/api/v1/api-keys/asr/test", headers=auth_headers)
+    data = resp.json()
+    assert data["success"] is False
+    assert "APPID" in data["message"]
+
+    row = await _get_row(db_session)
+    assert row.service_type == "asr"
+    assert row.status == "invalid"
+
+
+async def test_asr_test_with_appid(client, auth_headers, db_session, monkeypatch):
+    from app.services.volcengine import asr as asr_module
+
+    async def fake_test(credentials):
+        assert credentials.appid == "app123"
+        assert credentials.access_token == "tok-tok-tok"
+        assert credentials.resource_id == "volc.seedasr.sauc.duration"
+        return True, "连接成功", 55
+
+    monkeypatch.setattr(asr_module, "test_asr_connection", fake_test)
+
+    await client.put(
+        "/api/v1/api-keys/asr",
+        headers=auth_headers,
+        json={"key": "tok-tok-tok", "config": {"appid": "app123", "version": "2.0"}},
+    )
+    resp = await client.post("/api/v1/api-keys/asr/test", headers=auth_headers)
+    data = resp.json()
+    assert data["success"] is True
+    assert data["key_source"] == "user"
+
+    row = await _get_row(db_session)
+    assert row.status == "valid"
