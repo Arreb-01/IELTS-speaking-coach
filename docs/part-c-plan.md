@@ -1,6 +1,12 @@
 # Part C 实施计划：评分与反馈系统
 
 > 本文档为跨会话交接文档，供新开发会话直接使用。写作时间：2026-08-27。
+> **状态更新（2026-08-27）：Part C 已实现并通过 E2E（18/18）**，架构有两处与本文
+> 计划不同的重要演进，详见 README「Part C 评分流水线」：
+> ① LLM 评分拆为两阶段（10s 内快速出分 + 深度分析异步补齐）——根因是 seed-2.1
+> 默认深度思考，思考 token 不受 max_tokens 限制，单次调用 >30s；
+> ② 口语评测协议已实证到 `POST /api/v1/mdd`（app 鉴权 + request.reqid/sequence
+> + ref_text），服务开通前走 Mock，开通后校准 VOLC_EVALUATION_CLUSTER 一处即可。
 > 前置状态：Part A（用户系统/API Key 管理）与 Part B（语音对话引擎）已完成并通过真机验收。
 
 ## 一、现状盘点（新会话必读）

@@ -132,14 +132,33 @@ npm run dev                # http://localhost:5173，/api 自动代理到 8000
 
 - [x] **Part A** 基础设施与用户系统（注册登录 / API Key 管理 / 部署配置）✅ 2026-08
 - [x] **Part B** 语音对话核心引擎（流式 ASR / TTS / LLM 考官 / Part 1/2/3 练习）✅ 2026-08
-- [ ] Part C 评分与反馈系统
+- [x] **Part C** 评分与反馈系统（两阶段评分流水线 / 四维 Band + 雷达 / 逐句分析 /
+  中文深度反馈 / 高分表达替换 / 历史与趋势）✅ 2026-08
 - [ ] Part D 题库知识库系统
 - [ ] Part E 学习路径与 Dashboard
 - [ ] Part F 模拟考试模式
 - [ ] Part G 测试与上线
 
-> 开发提示：`VOLC_MOCK=1` 启动后端可在没有任何火山凭据的情况下体验完整语音练习流程（Mock 转写/语音）。
-> 真实凭据接入验证：`scripts/volc_spike.py`（需语音控制台的 APPID + Access Token）。
+> 开发提示：`VOLC_MOCK=1` 启动后端可在没有任何火山凭据的情况下体验完整语音练习流程（Mock 转写/语音/评测）。
+> 真实凭据接入验证：`scripts/volc_spike.py`（需语音控制台的 APPID + Access Token）；
+> 口语评测协议探测：`scripts/auc_probe*.py`（见 `backend/app/services/volcengine/evaluation.py` 头注）。
+
+### Part C 评分流水线（架构速览）
+
+练习结束后自动触发，`score_reports` / `turn_analyses` 两表持久化（迁移 0003）：
+
+1. **阶段一（10s 内出分）**：流利度规则引擎（纯本地）∥ 火山口语评测（每轮音频 + 参考文本）
+   ∥ LLM 快速四维打分（**禁用深度思考**，实测开启时 >30s、关闭后 ~3s）→
+   融合（发音 = 真实评测 0.7 + LLM 0.3，综合 = 四维均值取半档）→ 报告置 completed
+2. **阶段二（后台补齐，前端轮询渐进呈现）**：LLM 深度分析一次产出逐句问题标注 +
+   中文总评/优点/改进建议/高分表达替换
+3. **降级**：LLM 打分失败 → 规则引擎出流利度、其余维度保守 5.0 并标注低置信度；
+   空轮次（无有效作答）→ 报告 failed 并给出原因
+4. **手动重评**：报告页「重新评分」按钮 → `POST /api/v1/practices/{id}/rescore`（幂等）
+
+> 口语评测（service_type 81）真机校准进展：端点 `POST /api/v1/mdd` 请求形态已实证
+> （见 evaluation.py 头注），当前账号返回"无可用实例"——待语音控制台开通「口语评测」后，
+> 校准 `VOLC_EVALUATION_CLUSTER` 即可切换真实评测（Mock 全流程可用）。
 
 ## License
 
