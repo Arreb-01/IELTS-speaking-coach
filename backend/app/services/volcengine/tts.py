@@ -93,11 +93,14 @@ async def synthesize_stream(
     *,
     voice_key: str = "en_female_anna",
     speed_key: str = "normal",
-    encoding: str = "mp3",
+    encoding: str = "pcm",
     on_audio: Callable[[bytes], Awaitable[None]] | None = None,
     timeout: float = 20.0,
 ) -> bytes:
-    """v3 单向流式合成：NDJSON 逐块解析，音频块经 on_audio 推送，返回完整音频。"""
+    """v3 单向流式合成：NDJSON 逐块解析，音频块经 on_audio 推送，返回完整音频。
+
+    默认 PCM（24kHz/16bit/单声道）：前端播放器按原始数据直读，无需解压，
+    任意分块边界都安全（MP3 分块解码不可靠）。"""
     voice_type = resolve_voice_type(voice_key)
     speed_ratio = resolve_speed_ratio(speed_key)
     payload = _build_payload(text, voice_type, speed_ratio, encoding)
