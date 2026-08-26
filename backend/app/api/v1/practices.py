@@ -10,6 +10,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.api.deps import get_current_user
 from app.db.base import get_db
 from app.db.models import PracticeSession, PracticeTurn, Topic, User
+from app.schemas.report import ScoreReportDetailOut
 from app.schemas.topic import (
     PracticeCreateRequest,
     PracticeCreateResponse,
@@ -22,6 +23,38 @@ from app.services.practice_engine import registry
 from app.services.storage import open_audio_file
 
 router = APIRouter()
+
+
+@router.get("/{session_id}/report", response_model=ScoreReportDetailOut)
+async def get_practice_report(
+    session_id: uuid.UUID,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+) -> ScoreReportDetailOut:
+    """该会话的评分报告（练习结束后自动生成，前端轮询此接口）。"""
+    from app.api.v1.reports import build_report_detail
+
+    return await build_report_detail(db, user, session_id)
+
+
+@router.post("/{session_id}/rescore", status_code=202)
+async def rescore_practice(
+    session_id: uuid.UUID,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+) -> dict:
+    """手动重评（幂等；评分中不重复触发）。"""
+    from app.services.scoring import engine as scoring_engine
+
+    session = await db.get(PracticeSession, session_id)
+    if session is None or session.user_id != user.id:
+        raise HTTPException(404, "练习记录不存在")
+    if session.status != "completed":
+        raise HTTPException(422, "仅已完成的练习可以评分")
+    report = await scoring_engine.trigger_scoring(session_id, force=True)
+    if report is None:
+        raise HTTPException(422, "触发评分失败")
+    return {"status": report.status, "report_id": str(report.id)}
 
 
 @router.post("", response_model=PracticeCreateResponse, status_code=201)

@@ -104,6 +104,7 @@ def test_practice_flow_part1(ws_client, ws_db):
 
         finished = _drain_until(ws, "finished")
         assert finished["abandoned"] is False
+        assert finished["report_available"] is True
 
     # 会话与轮次落库校验
     detail = ws_client.get(f"/api/v1/practices/{created['session_id']}", headers=headers).json()
@@ -119,6 +120,27 @@ def test_practice_flow_part1(ws_client, ws_db):
     )
     assert audio.status_code == 200
     assert audio.content[:4] == b"RIFF"
+
+    # 练习结束自动触发评分：报告应生成并完成（Mock 模式秒级）
+    import time as time_mod
+
+    for _ in range(40):
+        resp = ws_client.get(
+            f"/api/v1/practices/{created['session_id']}/report", headers=headers
+        )
+        if resp.status_code == 200 and resp.json()["status"] == "completed":
+            break
+        time_mod.sleep(0.25)
+    else:
+        raise AssertionError("评分报告未在预期时间内完成")
+    report = resp.json()
+    assert report["overall_band"] is not None
+    assert report["turn_analyses"], "逐轮分析应落库"
+    # 报告列表与趋势接口
+    reports = ws_client.get("/api/v1/reports", headers=headers).json()
+    assert any(r["session_id"] == created["session_id"] for r in reports)
+    trend = ws_client.get("/api/v1/reports/trend", headers=headers).json()
+    assert len(trend["points"]) >= 1
 
 
 def test_practice_flow_part2(ws_client, ws_db):

@@ -190,6 +190,7 @@ def ws_client(ws_db, tmp_path, monkeypatch):
     monkeypatch.setattr(pe_pkg.engine, "async_session_factory", lazy_factory)
     monkeypatch.setattr("app.db.base.async_session_factory", lazy_factory)
     monkeypatch.setattr("app.api.v1.ws.async_session_factory", lazy_factory)
+    monkeypatch.setattr("app.services.scoring.engine.async_session_factory", lazy_factory)
 
     registry._engines.clear()
     registry._user_active.clear()

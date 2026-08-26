@@ -178,10 +178,13 @@ async def test_speech_test_without_credentials(client, auth_headers):
 
 
 async def test_evaluation_pending(client, auth_headers):
+    # 无用户配置且平台无默认凭据 → 可测试但明确提示未配置
     resp = await client.post("/api/v1/api-keys/evaluation/test", headers=auth_headers)
     assert resp.status_code == 200
     data = resp.json()
-    assert data["testable"] is False
+    assert data["testable"] is True
+    assert data["success"] is False
+    assert data["key_source"] == "none"
 
 
 async def test_asr_test_missing_appid(client, auth_headers, db_session, monkeypatch):

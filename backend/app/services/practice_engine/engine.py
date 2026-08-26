@@ -550,8 +550,24 @@ class PracticeEngine:
                 await db.commit()
         self.session.status = "abandoned" if abandon else "completed"
         self.phase = C.PHASE_FINISHED
+        report_available = False
+        if not abandon:
+            # 正常结束：自动触发评分流水线（后台任务），前端收到提示后跳报告页轮询
+            try:
+                from app.services.scoring import engine as scoring_engine
+
+                await scoring_engine.ensure_report(self.session.id, self.user.id)
+                asyncio.create_task(scoring_engine.run_scoring(self.session.id))
+                report_available = True
+            except Exception:
+                logger.exception("触发评分失败（不影响练习结束）：%s", self.session.id)
         await self.send(
-            {"type": "finished", "session_id": str(self.session.id), "abandoned": abandon}
+            {
+                "type": "finished",
+                "session_id": str(self.session.id),
+                "abandoned": abandon,
+                "report_available": report_available,
+            }
         )
         self._closed = True
         if self.ws is not None:

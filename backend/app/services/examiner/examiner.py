@@ -46,6 +46,9 @@ async def _ask_llm(user: User, db: AsyncSession, system: str, user_content: str)
             ],
             max_tokens=200,
             temperature=0.4,
+            # 关闭深度思考：追问/出题决策是小 JSON 任务，思考 token 会把
+            # 响应拖到 30s+ 直至超时（与评分链路同一实测结论）
+            thinking={"type": "disabled"},
         )
         content = result["choices"][0]["message"]["content"]
         return _extract_json(content)
