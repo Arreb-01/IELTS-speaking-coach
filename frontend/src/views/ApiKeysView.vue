@@ -235,8 +235,14 @@ onMounted(async () => {
           <!-- 服务专属配置 -->
           <div v-if="card.service === 'llm'" class="service-config two-cols">
             <div class="service-config__field">
-              <label class="service-config__label">默认模型</label>
-              <el-select v-model="forms.llm.model">
+              <label class="service-config__label">默认模型（可直接输入 ep- 接入点 ID）</label>
+              <el-select
+                v-model="forms.llm.model"
+                filterable
+                allow-create
+                default-first-option
+                placeholder="选择或粘贴模型 ID / ep-xxx"
+              >
                 <el-option
                   v-for="m in LLM_MODELS"
                   :key="m.value"
