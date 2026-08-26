@@ -41,8 +41,8 @@ class Settings(BaseSettings):
     volc_asr_resource_id: str = "volc.seedasr.sauc.duration"
     volc_tts_appid: str | None = None
     volc_tts_access_token: str | None = None
-    # 大模型音色用 volc.megatts.default；精品音色为 volc.service_type.10029
-    volc_tts_resource_id: str = "volc.megatts.default"
+    # 语音合成 2.0（Seed-TTS）；2026-08 实测 volc.megatts.default 为声音复刻专用
+    volc_tts_resource_id: str = "volc.seedtts.default"
 
     # Mock 模式：不访问火山语音服务，使用本地假实现（开发/测试用）
     volc_mock: bool = False
