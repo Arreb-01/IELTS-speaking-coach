@@ -179,7 +179,14 @@ async def synthesize_http(
     async with httpx.AsyncClient(timeout=timeout) as client:
         resp = await client.post(TTS_HTTP_URL, json=payload, headers=headers)
     if resp.status_code != 200:
-        raise TtsError(f"TTS HTTP 返回 {resp.status_code}")
+        # 3001 = requested resource not granted（应用未开通该服务）
+        try:
+            error = resp.json()
+            raise TtsError(
+                f"TTS 服务错误 code={error.get('code')}：{str(error.get('message', ''))[:150]}"
+            )
+        except ValueError:
+            raise TtsError(f"TTS HTTP 返回 {resp.status_code}")
     data = resp.json()
     if data.get("code") != TTS_SUCCESS_CODE:
         raise TtsError(f"TTS 服务错误 code={data.get('code')}：{data.get('message', '')}")
