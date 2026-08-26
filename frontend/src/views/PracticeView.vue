@@ -9,7 +9,7 @@ import {
   Square,
 } from 'lucide-vue-next'
 import { ElMessageBox } from 'element-plus'
-import { computed, onBeforeUnmount, onMounted } from 'vue'
+import { computed, onBeforeUnmount, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 import TurnAudioPlayer from '@/components/TurnAudioPlayer.vue'
@@ -24,6 +24,13 @@ const examinerSpeaking = computed(() => practice.phase === 'examiner_asks')
 const isPreparing = computed(() => practice.phase === 'preparing')
 const canAnswer = computed(() => practice.phase === 'user_answers' && !practice.paused)
 const isFinished = computed(() => practice.phase === 'finished')
+
+// 正常结束（非异常断开）→ 直接进报告页加载态；轻量总结保留为报告缺失时的兜底
+watch(isFinished, (finished) => {
+  if (finished && practice.reportAvailable && practice.sessionId) {
+    router.push({ name: 'report-detail', params: { sessionId: practice.sessionId } })
+  }
+})
 
 const recordButtonIcon = computed(() => {
   if (practice.buttonState === 'recording') return Square
@@ -185,7 +192,13 @@ onBeforeUnmount(() => {
         <div class="summary__actions">
           <el-button @click="router.push({ name: 'topics' })">再选话题</el-button>
           <el-button
+            v-if="practice.sessionId"
             type="primary"
+            @click="router.push({ name: 'report-detail', params: { sessionId: practice.sessionId } })"
+          >
+            查看评分报告
+          </el-button>
+          <el-button
             @click="router.push({ name: 'practice', query: { topic: route.query.topic, part: route.query.part } })"
           >
             再练一次
@@ -210,7 +223,9 @@ onBeforeUnmount(() => {
       </div>
       <el-empty v-if="transcriptSegments.length === 0" description="本次练习没有有效作答" />
 
-      <p class="summary__note">完整四维评分与中文深度反馈将在评分模块上线后提供。</p>
+      <p class="summary__note">
+        正常结束的练习会自动生成评分报告；如上方未自动跳转，可点击「查看评分报告」。
+      </p>
     </div>
 
     <!-- 练习进行中 -->

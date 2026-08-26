@@ -52,6 +52,12 @@ const router = createRouter({
           meta: { title: '评分报告', requiresAuth: true },
         },
         {
+          path: 'reports/:sessionId',
+          name: 'report-detail',
+          component: () => import('@/views/ReportView.vue'),
+          meta: { title: '评分报告详情', requiresAuth: true },
+        },
+        {
           path: 'settings/api-keys',
           name: 'api-keys',
           component: () => import('@/views/ApiKeysView.vue'),

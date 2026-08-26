@@ -67,6 +67,7 @@ export const usePracticeStore = defineStore('practice', () => {
   // ---- 基础设施 ----
   const player = useAudioPlayer()
   const recorder = useRecorder()
+  const reportAvailable = ref(false)
   let turnTimer: number | null = null
   let turnStartedAt = 0
   let speechEvents: { type: string; t: number }[] = []
@@ -178,6 +179,7 @@ export const usePracticeStore = defineStore('practice', () => {
         speed.value = msg.speed as string
         break
       case 'finished':
+        reportAvailable.value = Boolean(msg.report_available) && !msg.abandoned
         finishPractice()
         break
       case 'error': {
@@ -372,6 +374,7 @@ export const usePracticeStore = defineStore('practice', () => {
     paused.value = false
     fatalMessage.value = ''
     summary.value = null
+    reportAvailable.value = false
   }
 
   return {
@@ -380,7 +383,7 @@ export const usePracticeStore = defineStore('practice', () => {
     currentQuestion, questionIndex, questionTotal, isFollowup,
     cueCard, prepCountdown, notes,
     partialText, transcripts, turnElapsed, turnMaxSeconds,
-    recorder, summary, buttonState,
+    recorder, summary, buttonState, reportAvailable,
     accentOptions: ACCENT_OPTIONS, speedOptions: SPEED_OPTIONS,
     // 动作
     start, beginAnswer, endAnswer, togglePause, retryTurn, endSession,
