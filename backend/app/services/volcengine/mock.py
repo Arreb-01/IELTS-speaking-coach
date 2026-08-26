@@ -61,6 +61,31 @@ def mock_tts_audio() -> bytes:
     return b"\x00\x00" * 4800
 
 
+async def mock_evaluate_turn(wav: bytes, ref_text: str, **_kwargs):
+    """Mock 口语评测：按音频时长生成稳定在 6.0 档（72/100）的假结果。
+
+    分数由音频长度弱扰动（同一段音频结果稳定，便于测试断言），
+    词级明细取参考文本前 8 词，分数在 60-85 之间循环。"""
+    import hashlib
+
+    from app.services.volcengine.evaluation import EvaluationResult, WordScore
+
+    pcm_seconds = max(len(wav) / 32000.0, 0.5)
+    digest = hashlib.md5(ref_text.encode("utf-8")).hexdigest()
+    base = 72 + int(digest[:2], 16) % 6  # 72-77，对应约 band 6.0-6.5
+    words = [
+        WordScore(word=w, score=60 + (i * 7 + int(digest[2:4], 16)) % 26)
+        for i, w in enumerate(ref_text.split()[:8])
+    ]
+    return EvaluationResult(
+        score=float(base),
+        fluency=float(base - 3),
+        integrity=float(min(base + 5, 100)),
+        words=words,
+        raw={"mock": True, "audio_seconds": round(pcm_seconds, 2)},
+    )
+
+
 async def mock_synthesize_stream(text, on_audio=None, **_kwargs) -> bytes:
     # 按句模拟流式：每个分块之间稍作延迟，验证前端播放队列
     chunks = [mock_tts_audio() for _ in range(max(2, min(6, len(text) // 40 + 2)))]

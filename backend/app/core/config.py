@@ -44,6 +44,13 @@ class Settings(BaseSettings):
     # 语音合成 2.0（Seed-TTS）；2026-08 实测 volc.megatts.default 为声音复刻专用
     volc_tts_resource_id: str = "volc.seedtts.default"
 
+    # 口语评测（service_type 81，英文）。端点/请求形态已真机校准
+    # （见 services/volcengine/evaluation.py 头注）；cluster 即 resource id，
+    # 待控制台开通后按官方文档校准该值
+    volc_evaluation_appid: str | None = None
+    volc_evaluation_access_token: str | None = None
+    volc_evaluation_cluster: str = "volcano_mdd"
+
     # Mock 模式：不访问火山语音服务，使用本地假实现（开发/测试用）
     volc_mock: bool = False
 

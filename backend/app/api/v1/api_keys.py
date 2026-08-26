@@ -121,15 +121,10 @@ async def test_api_key(
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ) -> ApiKeyTestResult:
-    if service_type == "evaluation":
-        # 口语评测凭据与凭据形态随 Part C 接入定型
-        return ApiKeyTestResult(
-            service_type=service_type,
-            testable=False,
-            message="该服务的连通性测试将在评分模块上线后开放",
-        )
-
     row = await _get_row(db, user.id, service_type)
+
+    if service_type == "evaluation":
+        return await _test_evaluation(user, db, row)
 
     if service_type == "llm":
         return await _test_llm(user, db, row)
@@ -162,6 +157,63 @@ async def _test_llm(
 
     return ApiKeyTestResult(
         service_type="llm", testable=True, success=success, message=message,
+        key_source=key_source, latency_ms=latency_ms,
+    )
+
+
+async def _test_evaluation(
+    user: User, db: AsyncSession, row: UserApiKey | None
+) -> ApiKeyTestResult:
+    """口语评测连通性测试。凭据形态与 ASR 一致：APPID + Access Token。
+
+    未单独配置时复用用户 ASR 应用或平台默认凭据（同一语音控制台应用）。"""
+    from app.services.volcengine.evaluation import (
+        EvaluationCredentials,
+        test_evaluation_connection,
+    )
+    from app.services.volcengine.speech import resolve_evaluation_credentials
+
+    settings = get_settings()
+    credentials: EvaluationCredentials | None = None
+    key_source = "none"
+
+    if row is not None:
+        config = dict(row.config or {})
+        appid = config.get("appid")
+        token = decrypt_secret(row.key_encrypted)
+        if appid and token:
+            credentials = EvaluationCredentials(
+                appid=str(appid),
+                access_token=token,
+                cluster=str(config.get("cluster") or settings.volc_evaluation_cluster),
+            )
+            key_source = "user"
+        else:
+            row.status = "invalid"
+            row.last_verified_at = datetime.now(timezone.utc)
+            await db.commit()
+            return ApiKeyTestResult(
+                service_type="evaluation", testable=True, success=False,
+                message="请在配置中填写 APPID（语音控制台 → 应用管理）", key_source="user",
+            )
+    else:
+        credentials = await resolve_evaluation_credentials(user, db)
+        if credentials is not None:
+            key_source = "platform"
+
+    if credentials is None:
+        return ApiKeyTestResult(
+            service_type="evaluation", testable=True, success=False,
+            message="尚未配置凭据，且平台未提供默认凭据", key_source=key_source,
+        )
+
+    success, message, latency_ms = await test_evaluation_connection(credentials)
+    if row is not None:
+        row.status = "valid" if success else "invalid"
+        row.last_verified_at = datetime.now(timezone.utc)
+        await db.commit()
+    return ApiKeyTestResult(
+        service_type="evaluation", testable=True, success=success, message=message,
         key_source=key_source, latency_ms=latency_ms,
     )
 

@@ -95,6 +95,49 @@ async def resolve_tts_credentials(user: User, db: AsyncSession) -> SpeechCredent
     return None
 
 
+async def resolve_evaluation_credentials(user: User, db: AsyncSession):
+    """评测凭据：用户 evaluation 行 > 用户 asr 行（同一语音应用复用）> 平台默认。
+
+    返回 EvaluationCredentials；无任何可用凭据返回 None（上层降级跳过发音评测）。"""
+    from app.services.volcengine.evaluation import EvaluationCredentials
+
+    settings = get_settings()
+    config = await _load_user_config(db, user.id, "evaluation")
+    if not (config and config.get("appid") and config.get("access_token")):
+        # 口语评测与 ASR 同属语音控制台应用，未单独配置时复用 ASR 应用
+        config = await _load_user_config(db, user.id, "asr")
+    if config and config.get("appid") and config.get("access_token"):
+        return EvaluationCredentials(
+            appid=str(config["appid"]),
+            access_token=str(config["access_token"]),
+            cluster=str(config.get("cluster") or settings.volc_evaluation_cluster),
+        )
+    if settings.volc_evaluation_appid and settings.volc_evaluation_access_token:
+        return EvaluationCredentials(
+            appid=settings.volc_evaluation_appid,
+            access_token=settings.volc_evaluation_access_token,
+            cluster=settings.volc_evaluation_cluster,
+        )
+    return None
+
+
+async def evaluate_turn_speech(
+    wav: bytes, ref_text: str, user: User, db: AsyncSession, *, uid: str = "ielts-user"
+):
+    """按配置走真实评测或 Mock；无凭据时返回 Mock 结果（发音维度降级标注）。"""
+    from app.services.volcengine import evaluation as evaluation_module
+    from app.services.volcengine import mock as mock_module
+
+    settings = get_settings()
+    if settings.volc_mock:
+        return await mock_module.mock_evaluate_turn(wav, ref_text)
+
+    credentials = await resolve_evaluation_credentials(user, db)
+    if credentials is None:
+        return await mock_module.mock_evaluate_turn(wav, ref_text)
+    return await evaluation_module.evaluate_turn(wav, ref_text, credentials, uid=uid)
+
+
 def create_asr_session(
     credentials: SpeechCredentials | None, *, on_partial=None, uid: str = "ielts-user"
 ):

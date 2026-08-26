@@ -52,7 +52,7 @@ const forms = reactive({
   llm: { key: '', model: LLM_MODELS[0]!.value, region: 'cn-beijing' },
   asr: { key: '', appid: '', version: '2.0' },
   tts: { key: '', appid: '', voice: TTS_VOICES[0]!.value },
-  evaluation: { key: '' },
+  evaluation: { key: '', appid: '' },
 })
 
 const saving = reactive<Record<ServiceType, boolean>>({
@@ -81,6 +81,8 @@ function backfillForms() {
   const tts = keys.tts
   if (tts?.config.voice) forms.tts.voice = String(tts.config.voice)
   if (tts?.config.appid) forms.tts.appid = String(tts.config.appid)
+  const evaluation = keys.evaluation
+  if (evaluation?.config.appid) forms.evaluation.appid = String(evaluation.config.appid)
 }
 
 async function refreshList() {
@@ -109,6 +111,8 @@ function buildConfig(service: ServiceType): Record<string, unknown> {
       return { appid: forms.asr.appid.trim(), version: forms.asr.version }
     case 'tts':
       return { appid: forms.tts.appid.trim(), voice: forms.tts.voice }
+    case 'evaluation':
+      return { appid: forms.evaluation.appid.trim() }
     default:
       return {}
   }
@@ -293,8 +297,15 @@ onMounted(async () => {
 
           <div v-else-if="card.service === 'evaluation'" class="service-config">
             <div class="service-config__field">
+              <label class="service-config__label">APPID（语音控制台 · 应用管理）</label>
+              <el-input v-model="forms.evaluation.appid" placeholder="例如 4123456789" />
+            </div>
+            <div class="service-config__field">
               <label class="service-config__label">服务类型</label>
               <el-input model-value="service_type 81（英文口语评测）" disabled />
+            </div>
+            <div class="service-config__hint">
+              未配置时自动复用 ASR 应用的 APPID 与 Access Token（需在同一应用下开通「口语评测」）。
             </div>
           </div>
 
@@ -434,6 +445,12 @@ onMounted(async () => {
   font-size: var(--ielts-text-xs);
   color: var(--ielts-muted-foreground);
   margin-bottom: 4px;
+}
+
+.service-config__hint {
+  font-size: var(--ielts-text-xs);
+  color: var(--ielts-muted-foreground);
+  line-height: 1.5;
 }
 
 .verified-at {
