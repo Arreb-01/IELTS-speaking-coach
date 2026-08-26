@@ -80,7 +80,7 @@ class VolcAsrSession:
         }
         try:
             self._ws = await asyncio.wait_for(
-                websockets.connect(ASR_WSS_URL, extra_headers=headers, max_size=None),
+                websockets.connect(ASR_WSS_URL, additional_headers=headers, max_size=None),
                 timeout=10,
             )
         except (websockets.WebSocketException, asyncio.TimeoutError, OSError) as exc:

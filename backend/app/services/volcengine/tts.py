@@ -128,7 +128,7 @@ async def synthesize_stream(
 
     try:
         ws = await asyncio.wait_for(
-            websockets.connect(TTS_WSS_URL, extra_headers=_auth_headers(credentials), max_size=None),
+            websockets.connect(TTS_WSS_URL, additional_headers=_auth_headers(credentials), max_size=None),
             timeout=10,
         )
     except (websockets.WebSocketException, asyncio.TimeoutError, OSError) as exc:
