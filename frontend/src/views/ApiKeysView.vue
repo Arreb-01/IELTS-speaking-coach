@@ -28,8 +28,10 @@ const STATUS_META: Record<ApiKeyStatus, { label: string; tone: string }> = {
 }
 
 const LLM_MODELS = [
-  { value: 'doubao-1.5-pro-32k-250115', label: 'doubao-1.5-pro-32k（日常评分）' },
-  { value: 'doubao-seed-2.1-turbo', label: 'doubao-seed-2.1-turbo（高质量反馈）' },
+  { value: 'doubao-seed-2-1-turbo-260628', label: 'doubao-seed-2.1-turbo（日常·推荐）' },
+  { value: 'doubao-seed-2-1-pro-260628', label: 'doubao-seed-2.1-pro（高质量反馈）' },
+  { value: 'doubao-seed-2-0-lite-260428', label: 'doubao-seed-2.0-lite（最便宜）' },
+  { value: 'deepseek-v4-flash-260425', label: 'DeepSeek-V4-flash（备选）' },
 ]
 
 const TTS_VOICES = [

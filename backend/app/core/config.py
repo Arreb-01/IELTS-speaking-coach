@@ -28,9 +28,10 @@ class Settings(BaseSettings):
     login_rate_window_minutes: int = 15
 
     # 火山引擎方舟（豆包 LLM）。平台默认 Key：用户未配置 BYOK Key 时回退使用。
+    # 模型 ID 已于 2026-08 核实可用；doubao-1.5-pro-32k-250115 已退役（Retiring）
     volc_ark_base_url: str = "https://ark.cn-beijing.volces.com/api/v3"
     volc_ark_default_api_key: str | None = None
-    volc_ark_test_model: str = "doubao-1.5-pro-32k-250115"
+    volc_ark_test_model: str = "doubao-seed-2-1-turbo-260628"
 
     # 火山引擎语音服务（平台默认凭据；BYOK 用户凭据存 user_api_keys.config）
     # 凭据在「语音控制台 → 应用管理」创建应用获得：APPID + Access Token
