@@ -35,9 +35,9 @@ const LLM_MODELS = [
 ]
 
 const TTS_VOICES = [
-  { value: 'en_female_anna', label: '英音女声 · Anna（亲切）' },
-  { value: 'en_female_ariana', label: '美音女声 · Ariana（活力）' },
-  { value: 'en_male_jackson', label: '美音男声 · Jackson（活力）' },
+  { value: 'en_female_anna', label: '美音女声' },
+  { value: 'en_female_ariana', label: '美音女声 2' },
+  { value: 'en_male_jackson', label: '美音男声' },
 ]
 
 const keys = reactive<Record<ServiceType, ApiKeyOut | null>>({

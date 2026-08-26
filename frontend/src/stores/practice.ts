@@ -24,9 +24,9 @@ export interface TranscriptEntry {
 }
 
 const ACCENT_OPTIONS = [
-  { value: 'en_female_anna', label: '英音女声 · Anna' },
-  { value: 'en_female_ariana', label: '美音女声 · Ariana' },
-  { value: 'en_male_jackson', label: '美音男声 · Jackson' },
+  { value: 'en_female_anna', label: '美音女声' },
+  { value: 'en_female_ariana', label: '美音女声 2' },
+  { value: 'en_male_jackson', label: '美音男声' },
 ]
 const SPEED_OPTIONS = [
   { value: 'slow', label: '语速 慢' },

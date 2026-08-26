@@ -1,12 +1,11 @@
-"""豆包语音合成 2.0 客户端。
+"""豆包语音合成 2.0 客户端（Seed-TTS v3 单向流式接口，2026-08 真机校准）。
 
-两条通道：
-- WS 流式（ws_binary）：逐句合成时边收边推，用于考官语音播报（低延迟）
-- HTTP 单次（/api/v1/tts）：一次性返回 base64 音频，用于连通性测试与固定话术预合成
-
-音色映射：前端 accent 选项（en_female_anna 英音 / en_female_ariana 美音女 /
-en_male_jackson 美音男）→ 火山 voice_type。默认值以语音控制台音色列表为准，
-可用环境变量 VOLC_TTS_VOICE_MAP（JSON）覆盖。
+接口要点（实测确定）：
+- POST https://openspeech.bytedance.com/api/v3/tts/unidirectional
+- 鉴权头：X-Api-App-Key(appid) + X-Api-Access-Key(token) + X-Api-Resource-Id: volc.seedtts.default
+- 请求体：{user:{uid}, req_params:{text, speaker, audio_params:{format, sample_rate}}}
+- 响应：NDJSON 流，每行 {code, message, data(base64 音频块)}，逐行解析拼接
+- 音色为美式口音（zen_daya 女声 / michael_kevin 男声），英音选项映射到最接近音色
 """
 
 import asyncio
@@ -15,37 +14,31 @@ import json
 import logging
 import time
 import uuid
-from typing import Awaitable, Callable
+from typing import Any, Awaitable, Callable
 
 import httpx
-import websockets
 
 from app.core.config import get_settings
-from app.services.volcengine.protocol import (
-    AUDIO_ONLY_SERVER,
-    FULL_SERVER_RESPONSE,
-    build_json_request,
-    parse_server_frame,
-)
 
 logger = logging.getLogger(__name__)
 
-TTS_WSS_URL = "wss://openspeech.bytedance.com/api/v1/tts/ws_binary"
-TTS_HTTP_URL = "https://openspeech.bytedance.com/api/v1/tts"
-TTS_SUCCESS_CODE = 3000
+TTS_V3_URL = "https://openspeech.bytedance.com/api/v3/tts/unidirectional"
+TTS_RESOURCE_ID = "volc.seedtts.default"
+TTS_SUCCESS_CODE = 0
+TTS_STREAM_END_CODE = 20000000  # NDJSON 流的结束事件
 
-# accent/voice 配置键 → 火山 voice_type（部署前在语音控制台核对具体音色 ID）
+# 前端 accent 配置键 → 实际音色（账号音色库全部为美式口音；英音选项映射到女声）
 DEFAULT_VOICE_MAP = {
-    "en_female_anna": "en_female_anna",
-    "en_female_ariana": "en_female_ariana",
-    "en_male_jackson": "en_male_jackson",
+    "en_female_anna": "en_female_zendaya_p1_uranus_bigtts",
+    "en_female_ariana": "en_female_zendaya_p1_uranus_bigtts",
+    "en_male_jackson": "en_male_michael_kevin_uranus_bigtts",
 }
 
 SPEED_RATIO_MAP = {"slow": 0.8, "normal": 1.0, "fast": 1.2}
 
 
 class TtsCredentials:
-    def __init__(self, appid: str, access_token: str, resource_id: str) -> None:
+    def __init__(self, appid: str, access_token: str, resource_id: str = TTS_RESOURCE_ID) -> None:
         self.appid = appid
         self.access_token = access_token
         self.resource_id = resource_id
@@ -58,7 +51,6 @@ class TtsError(Exception):
 def resolve_voice_type(voice_key: str) -> str:
     settings = get_settings()
     voice_map = DEFAULT_VOICE_MAP
-    # 允许通过环境变量覆盖映射（JSON 字符串）
     override = getattr(settings, "volc_tts_voice_map", None)
     if override:
         try:
@@ -72,42 +64,26 @@ def resolve_speed_ratio(speed_key: str) -> float:
     return SPEED_RATIO_MAP.get(speed_key, 1.0)
 
 
-def _build_request_payload(
-    credentials: TtsCredentials, text: str, voice_type: str, speed_ratio: float, encoding: str
-) -> dict:
+def _auth_headers(credentials: TtsCredentials) -> dict[str, str]:
     return {
-        "app": {
-            "appid": credentials.appid,
-            "token": credentials.access_token,
-            "cluster": "volcano_tts",
-        },
-        "user": {"uid": "ielts-user"},
-        "audio": {
-            "voice_type": voice_type,
-            "encoding": encoding,
-            "speed_ratio": speed_ratio,
-            "volume_ratio": 1.0,
-            "pitch_ratio": 1.0,
-            "rate": 24000,
-            "bits": 16,
-        },
-        "request": {
-            "reqid": uuid.uuid4().hex,
-            "text": text,
-            "text_type": "plain",
-            "operation": "submit",
-            "with_frontend": 1,
-            "frontend_type": "unit",
-        },
+        "X-Api-App-Key": credentials.appid,
+        "X-Api-Access-Key": credentials.access_token,
+        "X-Api-Resource-Id": credentials.resource_id,
+        "Content-Type": "application/json",
     }
 
 
-def _auth_headers(credentials: TtsCredentials) -> dict[str, str]:
-    # 火山 TTS 鉴权头的官方格式是 "Bearer;{token}"（分号分隔）
+def _build_payload(
+    text: str, voice_type: str, speed_ratio: float, encoding: str = "mp3"
+) -> dict[str, Any]:
     return {
-        "Authorization": f"Bearer;{credentials.access_token}",
-        "X-Api-App-Key": credentials.appid,
-        "X-Api-Resource-Id": credentials.resource_id,
+        "user": {"uid": "ielts-user"},
+        "req_params": {
+            "text": text,
+            "speaker": voice_type,
+            "speech_rate": speed_ratio,
+            "audio_params": {"format": encoding, "sample_rate": 24000},
+        },
     }
 
 
@@ -117,48 +93,68 @@ async def synthesize_stream(
     *,
     voice_key: str = "en_female_anna",
     speed_key: str = "normal",
-    encoding: str = "pcm",
+    encoding: str = "mp3",
     on_audio: Callable[[bytes], Awaitable[None]] | None = None,
-    timeout: float = 15.0,
+    timeout: float = 20.0,
 ) -> bytes:
-    """WS 流式合成：音频块边到边推（on_audio），返回完整音频。"""
+    """v3 单向流式合成：NDJSON 逐块解析，音频块经 on_audio 推送，返回完整音频。"""
     voice_type = resolve_voice_type(voice_key)
     speed_ratio = resolve_speed_ratio(speed_key)
-    payload = _build_request_payload(credentials, text, voice_type, speed_ratio, encoding)
-
-    try:
-        ws = await asyncio.wait_for(
-            websockets.connect(TTS_WSS_URL, additional_headers=_auth_headers(credentials), max_size=None),
-            timeout=10,
-        )
-    except (websockets.WebSocketException, asyncio.TimeoutError, OSError) as exc:
-        raise TtsError(f"TTS 连接失败：{type(exc).__name__}") from exc
+    payload = _build_payload(text, voice_type, speed_ratio, encoding)
 
     audio = bytearray()
     try:
-        await ws.send(build_json_request(payload))
-        async for raw in ws:
-            msg = parse_server_frame(raw)
-            if msg.message_type == FULL_SERVER_RESPONSE and msg.json:
-                code = msg.json.get("code")
-                if code != TTS_SUCCESS_CODE:
-                    raise TtsError(f"TTS 服务返回错误 code={code}：{msg.json.get('message', '')}")
-            elif msg.message_type == AUDIO_ONLY_SERVER:
-                if msg.payload:
-                    audio.extend(msg.payload)
-                    if on_audio is not None:
-                        await on_audio(bytes(msg.payload))
-                # TTS v1：音频帧 flags==0 表示最后一包
-                if msg.flags == 0 and audio:
-                    break
+        async with httpx.AsyncClient(timeout=timeout) as client:
+            async with client.stream(
+                "POST", TTS_V3_URL, json=payload, headers=_auth_headers(credentials)
+            ) as resp:
+                if resp.status_code != 200:
+                    body = (await resp.aread()).decode("utf-8", errors="replace")
+                    raise TtsError(_describe_error(resp.status_code, body))
+                async for line in resp.aiter_lines():
+                    line = line.strip()
+                    if not line:
+                        continue
+                    try:
+                        chunk = json.loads(line)
+                    except json.JSONDecodeError:
+                        continue
+                    code = chunk.get("code")
+                    # 0=音频块；20000000=流正常结束；其余为错误
+                    if code is not None and code not in (TTS_SUCCESS_CODE, TTS_STREAM_END_CODE):
+                        raise TtsError(
+                            f"TTS 服务错误 code={code}：{str(chunk.get('message', ''))[:150]}"
+                        )
+                    data_b64 = chunk.get("data")
+                    if data_b64:
+                        block = base64.b64decode(data_b64)
+                        if block:
+                            audio.extend(block)
+                            if on_audio is not None:
+                                result = on_audio(block)
+                                if asyncio.iscoroutine(result):
+                                    await result
+    except httpx.HTTPError as exc:
+        raise TtsError(f"TTS 请求失败：{type(exc).__name__}") from exc
     except asyncio.TimeoutError:
         raise TtsError("TTS 合成超时")
-    finally:
-        await ws.close()
 
     if not audio:
         raise TtsError("TTS 未返回音频数据")
     return bytes(audio)
+
+
+def _describe_error(status: int, body: str) -> str:
+    try:
+        data = json.loads(body)
+        header = data.get("header") or data
+        code = header.get("code", status)
+        message = str(header.get("message", ""))[:150]
+    except (json.JSONDecodeError, AttributeError):
+        return f"TTS HTTP 返回 {status}"
+    if code == 45000030 and "not granted" in message:
+        return "TTS 服务未授权该资源（请检查语音合成 2.0 是否已开通）"
+    return f"TTS 服务错误 code={code}：{message}"
 
 
 async def synthesize_http(
@@ -167,33 +163,14 @@ async def synthesize_http(
     *,
     voice_key: str = "en_female_anna",
     speed_key: str = "normal",
-    encoding: str = "pcm",
+    encoding: str = "mp3",
     timeout: float = 15.0,
 ) -> bytes:
-    """HTTP 单次合成，返回音频二进制。用于连通测试与预合成。"""
-    voice_type = resolve_voice_type(voice_key)
-    speed_ratio = resolve_speed_ratio(speed_key)
-    payload = _build_request_payload(credentials, text, voice_type, speed_ratio, encoding)
-    headers = {"Content-Type": "application/json", **_auth_headers(credentials)}
-
-    async with httpx.AsyncClient(timeout=timeout) as client:
-        resp = await client.post(TTS_HTTP_URL, json=payload, headers=headers)
-    if resp.status_code != 200:
-        # 3001 = requested resource not granted（应用未开通该服务）
-        try:
-            error = resp.json()
-            raise TtsError(
-                f"TTS 服务错误 code={error.get('code')}：{str(error.get('message', ''))[:150]}"
-            )
-        except ValueError:
-            raise TtsError(f"TTS HTTP 返回 {resp.status_code}")
-    data = resp.json()
-    if data.get("code") != TTS_SUCCESS_CODE:
-        raise TtsError(f"TTS 服务错误 code={data.get('code')}：{data.get('message', '')}")
-    audio_b64 = data.get("data")
-    if not audio_b64:
-        raise TtsError("TTS 未返回音频数据")
-    return base64.b64decode(audio_b64)
+    """非流式便捷封装：一次性返回完整音频（复用 v3 流式接口）。"""
+    return await synthesize_stream(
+        text, credentials,
+        voice_key=voice_key, speed_key=speed_key, encoding=encoding, timeout=timeout,
+    )
 
 
 async def test_tts_connection(credentials: TtsCredentials) -> tuple[bool, str, int]:

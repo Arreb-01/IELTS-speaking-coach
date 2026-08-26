@@ -109,7 +109,7 @@ class ServerMessage:
 
 
 def parse_server_frame(data: bytes) -> ServerMessage:
-    """解析服务器帧。防御式解析：不同版本的负载长度字段处理略有差异。"""
+    """解析服务器帧。防御式解析：不同服务/版本的长度前缀与压缩标志略有差异。"""
     if len(data) < 4:
         raise ValueError("帧长度不足 4 字节")
     header_size = data[0] & 0x0F
@@ -126,13 +126,30 @@ def parse_server_frame(data: bytes) -> ServerMessage:
         elif declared == 0 and len(body) == 4:
             body = b""
 
-    if compression == COMPRESS_GZIP and body:
-        body = gzip.decompress(body)
+    # gzip 标志可能在 byte1 flags 或 byte2 compression，两处都检查；
+    # 解压失败时保留原始数据（可能本来就未压缩）
+    if body and ((flags & FLAG_GZIP) or compression == COMPRESS_GZIP):
+        try:
+            body = gzip.decompress(body)
+        except OSError:
+            pass
 
     msg = ServerMessage(message_type=message_type, flags=flags, payload=body)
     if message_type in (FULL_SERVER_RESPONSE, ERROR_RESPONSE):
-        try:
-            msg.json = json.loads(body) if body else {}
-        except json.JSONDecodeError:
-            msg.json = {"raw": body[:200].decode("utf-8", errors="replace")}
+        msg.json = _decode_json(body)
     return msg
+
+
+def _decode_json(body: bytes) -> dict[str, Any]:
+    if not body:
+        return {}
+    try:
+        parsed = json.loads(body)
+        return parsed if isinstance(parsed, dict) else {"value": parsed}
+    except (UnicodeDecodeError, json.JSONDecodeError):
+        # 压缩标志未按标准置位：兜底再解压一次
+        try:
+            parsed = json.loads(gzip.decompress(body))
+            return parsed if isinstance(parsed, dict) else {"value": parsed}
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+            return {"raw": body[:200].decode("utf-8", errors="replace")}
