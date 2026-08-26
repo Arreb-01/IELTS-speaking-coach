@@ -1,5 +1,8 @@
 # 本地开发环境：PostgreSQL 16 + Redis 7
 # 用法：docker compose up -d
+# name 显式指定项目名：目录名含中文时无法自动生成合法项目名
+name: ielts-coach
+
 services:
   db:
     image: postgres:16-alpine
