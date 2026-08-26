@@ -24,6 +24,7 @@ PART_TYPES = (1, 2, 3)
 TOPIC_TAGS = ("new", "retained", "must")
 SESSION_MODES = ("practice", "mock")
 SESSION_STATUSES = ("in_progress", "completed", "abandoned")
+REPORT_STATUSES = ("pending", "processing", "completed", "failed")
 
 
 class User(Base):
@@ -162,3 +163,62 @@ class PracticeTurn(Base):
     speech_events: Mapped[list[Any] | None] = mapped_column(JSONVariant)
     started_at: Mapped[datetime | None] = mapped_column(sa.DateTime(timezone=True))
     ended_at: Mapped[datetime | None] = mapped_column(sa.DateTime(timezone=True))
+
+
+class ScoreReport(Base):
+    """一次练习会话的评分报告（rescore 原地更新，session 唯一）。"""
+
+    __tablename__ = "score_reports"
+
+    id: Mapped[uuid.UUID] = mapped_column(sa.Uuid(), primary_key=True, default=uuid.uuid4)
+    session_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("practice_sessions.id", ondelete="CASCADE"), unique=True
+    )
+    user_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("users.id", ondelete="CASCADE"), index=True
+    )
+    status: Mapped[str] = mapped_column(
+        sa.Enum("pending", "processing", "completed", "failed", name="report_status", native_enum=False, length=20),
+        default="pending",
+    )
+    # 四维 band（0-9 步长 0.5）+ 综合
+    overall_band: Mapped[float | None] = mapped_column(sa.Numeric(2, 1))
+    fluency: Mapped[float | None] = mapped_column(sa.Numeric(2, 1))
+    lexical: Mapped[float | None] = mapped_column(sa.Numeric(2, 1))
+    grammar: Mapped[float | None] = mapped_column(sa.Numeric(2, 1))
+    pronunciation: Mapped[float | None] = mapped_column(sa.Numeric(2, 1))
+    # 流利度规则引擎原始统计（wpm/停顿/填充词）
+    fluency_metrics: Mapped[dict[str, Any] | None] = mapped_column(JSONVariant)
+    overall_comment_zh: Mapped[str | None] = mapped_column(sa.Text)
+    strengths: Mapped[list[Any] | None] = mapped_column(JSONVariant)
+    improvements: Mapped[list[Any] | None] = mapped_column(JSONVariant)
+    # 高分表达替换 [{original, upgraded, note_zh?}]
+    expression_upgrades: Mapped[list[Any] | None] = mapped_column(JSONVariant)
+    # 低置信度标注（回答过短/音频质量差/四维极差>2）
+    low_confidence: Mapped[list[Any] | None] = mapped_column(JSONVariant)
+    # 生成链路用到的模型/服务版本，回归排查用
+    model_versions: Mapped[dict[str, Any] | None] = mapped_column(JSONVariant)
+    error: Mapped[str | None] = mapped_column(sa.Text)
+    created_at: Mapped[datetime] = mapped_column(
+        sa.DateTime(timezone=True), server_default=sa.func.now()
+    )
+    completed_at: Mapped[datetime | None] = mapped_column(sa.DateTime(timezone=True))
+
+
+class TurnAnalysis(Base):
+    """报告下的逐轮分析：句子级问题标注 + 发音评测明细。"""
+
+    __tablename__ = "turn_analyses"
+
+    id: Mapped[uuid.UUID] = mapped_column(sa.Uuid(), primary_key=True, default=uuid.uuid4)
+    report_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("score_reports.id", ondelete="CASCADE"), index=True
+    )
+    turn_id: Mapped[uuid.UUID] = mapped_column(sa.Uuid())
+    seq: Mapped[int] = mapped_column(sa.SmallInteger)
+    # [{text, issues: [{type, severity, explanation_zh, suggestion}]}]
+    sentences: Mapped[list[Any] | None] = mapped_column(JSONVariant)
+    # 火山口语评测原始返回（词级分数等，服务支持时）
+    pronunciation_detail: Mapped[dict[str, Any] | None] = mapped_column(JSONVariant)
+    # 命中的填充词 [{word, count}]
+    filler_hits: Mapped[list[Any] | None] = mapped_column(JSONVariant)
