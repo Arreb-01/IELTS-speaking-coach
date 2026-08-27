@@ -1,0 +1,412 @@
+{
+ "groups": [
+  {
+   "group_name": "新法律 + 重要决定 + 动物故事书 + 困难后成功的人",
+   "aliases": [
+    "新法律",
+    "重要决定",
+    "动物故事书",
+    "困难后成功的人"
+   ],
+   "tag": "new",
+   "page": 3,
+   "summary_zh": "3.一定要注意表达的自然程度~必要时增加重音，表情和手势我想颁布保护流浪猫狗的法律。我常看到被遗弃的宠物，甚至有人伤害它们。这个想法源于一个重要决定：我读了《流浪狗日记》后选择学环境科学。这本书讲普通人救助受伤流浪狗的故事，其中一个工人花三个月治好了一条腿断的狗。书中还提到李博士，她想建收容所但没钱，打三份工攒了两年，后收到小额捐款。十年后她的收容所帮助了200多只狗。她的故事让我明白坚持就有回报。因为她和那本书，我选了现在的专业，也希望能像她一样帮助流浪动物。",
+   "sample_en": "If I could create a new law, it would be to protect stray dogs and cats. In my city, I often see abandoned pets on the streets. Some people buy animals because they look cute, but then they throw them away when they become inconvenient. Some stray animals are even hurt by cruel people. My law would make it illegal to abandon any pet. People who abandon or harm stray animals would have to pay a heavy fine, and repeat offenders would face community service at animal shelters. This idea came from an important decision I made a few years ago. I decided to study environmental science at university. That decision was heavily influenced by a book I read called “Stray Dog Diaries.” This book tells true stories of ordinary people who rescued injured stray dogs. One story was about a construction worker who found a dog with a broken leg. He had no money for a vet, but he spent three months learning how to treat the dog himself. In the end, the dog walked again. That story made me cry. The book also introduced me to someone who succeeded after many difficulties. Her name is Dr. Li, a scientist in my hometown. She wanted to build a shelter for stray dogs, but she had almost no money at the beginning. 3 Many people told her to give up because helping stray animals was not a real job. For two years, she worked three part-time jobs — as a tutor, a cashier, and a cleaner — and saved almost every penny. Then she received a small donation from a kind stranger. She used that money to rent a small house for stray dogs. Now, ten years later, her shelter helps over 200 dogs and has three full-time volunteers. She also works with local schools to teach children not to abandon pets. Dr. Li’s story taught me that persistence pays off. Because of her and the book, I chose my major. And that is why I would make that animal protection law. I hope one day I can help stray animals too, just like Dr. Li. 4",
+   "matched": [
+    {
+     "alias": "新法律",
+     "name_zh": "想颁布的新法律"
+    },
+    {
+     "alias": "重要决定",
+     "name_zh": "重要决定"
+    },
+    {
+     "alias": "动物故事书",
+     "name_zh": "包含动物的故事或书"
+    },
+    {
+     "alias": "困难后成功的人",
+     "name_zh": "遇到困难终成功的人"
+    }
+   ]
+  },
+  {
+   "group_name": "无聊地方 + 科技问题 + 近期看的节目 + 花很久回信息",
+   "aliases": [
+    "无聊地方",
+    "科技问题",
+    "近期看的节目",
+    "花很久回信息"
+   ],
+   "tag": "new",
+   "page": 5,
+   "summary_zh": "3.一定要注意表达的自然程度~必要时增加重音，表情和手势我去过一个无聊的地方——本地历史博物馆，里面只有老照片和落灰的工具，十分钟后我就困了。更糟的是Wi-Fi连不上，我想查资料都不行，只能干坐。最近我在B站看到一个vlog，博主也去了同一个博物馆，吐槽了同样的问题。说到回信息，我曾经花了三天才回复朋友。他问我要不要再去看那个博物馆，我不想去又不知道怎么拒绝，就一直拖着，最后只说“抱歉我很忙”。那个博物馆太无聊，让我连回信息都想逃避。现在我去博物馆前都会先看网上评价。",
+   "sample_en": "A really boring place I have been to is a local history museum near my home. I went there with my class last year because our teacher said it was educational. However, the museum only had a few old photos and some dusty tools behind glass. There were no interactive exhibits, no videos, and no guided tours. I felt sleepy after just ten minutes. Most of my classmates were standing around, looking at their phones. To make the experience even worse, I also had a tech problem there. The museum offered free Wi-Fi, but it did not work at all. I tried to connect three times, but my phone kept showing “no internet connection.” I wanted to search for more information about the exhibits online because the signs next to them were very brief and boring. Without internet, I could only walk around in silence. I ended up sitting on a bench for twenty minutes just waiting for the trip to end. Recently, I watched a funny short video on Bilibili. It was a vlog made by another visitor who had gone to the exact same museum. The vlogger also complained about the bad Wi-Fi and the boring exhibits. He made jokes about the dusty tools and the old photos. I laughed a lot because I had the exact same 5 experience. I even left a comment saying, “I feel you, bro.”. Speaking of replying to messages, I once took three days to reply to a friend. He sent me a message asking, “Do you want to visit that museum again next week?” I did not want to go at all, but I also did not know how to say no politely. So I kept delaying my reply. Every time I opened his message, I closed it again and told myself I would reply later. Finally, after three full days, I simply said, “Sorry, I am busy.” That museum was so boring that it even made me avoid replying to messages. Now I always check online reviews before visiting any museum to avoid wasting my time like that again. 6",
+   "matched": [
+    {
+     "alias": "无聊地方",
+     "name_zh": "去过的无聊地方"
+    },
+    {
+     "alias": "科技问题",
+     "name_zh": "遇到的科技问题"
+    },
+    {
+     "alias": "近期看的节目",
+     "name_zh": "最近看过的电视/网络节目"
+    },
+    {
+     "alias": "花很久回信息",
+     "name_zh": "很久没收到回复的信息"
+    }
+   ]
+  },
+  {
+   "group_name": "高建筑 + 特别场合食物 + 喜欢拜访但不想住的家 + 改变重要想法",
+   "aliases": [
+    "高建筑",
+    "特别场合食物",
+    "喜欢拜访但不想住的家",
+    "改变重要想法"
+   ],
+   "tag": "new",
+   "page": 7,
+   "summary_zh": "3.一定要注意表达的自然程度~必要时增加重音，表情和手势我不喜欢太高的建筑，比如上海中心大厦让我头晕害怕。我更喜欢祖母的老房子，传统矮屋有小院子。春节全家在那里包饺子吃，非常温暖。但我只喜欢去做客，不想长住，因为没有现代厕所和淋浴，冬天冷房间小。这改变了我一个想法：以前觉得好家必须是高大现代建筑，现在明白家的本质是家人温暖，不是高度。充满爱的小旧房子比豪华公寓更像家。我很高兴改变这个想法，学会了珍惜简单的东西。",
+   "sample_en": "To be honest, I do not like very tall buildings. For example, the Shanghai Tower makes me feel dizzy and scared. I went to the top once with my cousins, and I could not even stand near the window. My legs felt weak. I prefer low, cozy buildings instead. That is why I really like my grandmother’s old house. It is a traditional one- story building with a small yard and a wooden door. The rooms are small, but they feel warm and full of memories. In that house, we always eat dumplings during special occasions, especially during Chinese New Year. The dumplings are made by hand by my grandmother. The whole family sits around a big table, wrapping dumplings together and chatting. It is one of the warmest moments in my life. However, I only like visiting my grandmother’s old house. I do not want to live there permanently. The house does not have a modern toilet or a proper shower. In winter, it gets very cold because the walls are thin. Also, the rooms are too small to have my own private space. Visiting for one day is fun and nostalgic, but living there every day would be difficult. 7 This experience actually changed an important idea in my mind. Before, I used to think that a good home must be a tall, modern building with all the latest facilities — things like a gym, a swimming pool, and a big elevator. I thought height equaled quality. But after visiting my grandmother’s old house so many times and comparing it to the tall buildings in the city center, I changed my opinion completely. I now believe that a home is about family warmth and emotional comfort, not about height or modern facilities. A small, old house can be a better home than a luxury apartment if it is filled with love. I am glad I changed this idea because it helped me appreciate the simple things in life. 8",
+   "matched": [
+    {
+     "alias": "高建筑",
+     "name_zh": "喜欢或不喜欢的高建筑"
+    },
+    {
+     "alias": "特别场合食物",
+     "name_zh": "特别场合的食物"
+    },
+    {
+     "alias": "喜欢拜访但不想住的家",
+     "name_zh": "喜欢拜访但不想住的家"
+    },
+    {
+     "alias": "改变重要想法",
+     "name_zh": "改变重要想法"
+    }
+   ]
+  },
+  {
+   "group_name": "喜欢种菜的人 + 团队中工作 + 名人广告 + 坏掉的电子设备",
+   "aliases": [
+    "喜欢种菜的人",
+    "团队中工作",
+    "名人广告",
+    "坏掉的电子设备"
+   ],
+   "tag": "new",
+   "page": 9,
+   "summary_zh": "3.一定要注意表达的自然程度~必要时增加重音，表情和手势爷爷喜欢在阳台种菜，每天早晨浇水除虫，他说种菜让他平静耐心。这教会我如何在团队中工作。上次小组作业组员意见不合，我本想争论，但想起爷爷从不着急，于是耐心听完所有人想法，最后结合优点做出好计划。团队合作就像种菜，不能急于求成。期间我手机坏了，黑屏三天不能用。这三天我反而多了时间陪爷爷。我还看了姚明拍的手机广告，他用手机拍蔬菜，让我想起爷爷的菜园。手机坏掉让我意识到，没有科技的生活也可以很平静。",
+   "sample_en": "My grandfather is a person who loves growing vegetables at home. He has a small garden on our balcony where he plants tomatoes, cucumbers, and green peppers. Every morning, he waters them carefully and checks for any insects. He says gardening makes him feel peaceful and patient. This hobby of his actually taught me a lot about how to work in a team. Last semester, I had a group project at school. My team members had very different opinions about how to do the research. Some wanted to start with surveys, while others preferred interviews. At first, I felt frustrated and wanted to argue. But then I remembered how my grandfather cares for his plants. He never rushes. He observes first, then acts. So I decided to listen to everyone’s ideas carefully before saying anything. Finally, we made a good plan together by combining the best parts of each suggestion. I realized that teamwork is like gardening — you need patience and you cannot force things to grow faster than they should. Around the same time, I had a problem with my electronic device. My mobile phone broke last month. The screen suddenly went black, and I could not use it for three days. I felt very anxious because I use my phone for almost everything 9 — studying, messaging, and entertainment. During those three days, I spent more time with my grandfather in his garden. I also saw a funny TV advertisement with Yao Ming, the famous basketball player. He was selling a mobile phone and used it to take pictures of vegetables. That ad reminded me of my grandfather’s garden because the vegetables in the ad looked exactly like the ones on our balcony. It was funny because Yao Ming is so tall but holding a small phone. The experience of my broken phone actually helped me realize something important. Life without technology can also be peaceful, especially when you have a patient grandfather and a small garden to take care of. 10",
+   "matched": [
+    {
+     "alias": "喜欢种菜的人",
+     "name_zh": "喜欢在家/花园种菜的人"
+    },
+    {
+     "alias": "团队中工作",
+     "name_zh": "在团队中工作"
+    },
+    {
+     "alias": "名人广告",
+     "name_zh": "名人出演的广告"
+    },
+    {
+     "alias": "坏掉的电子设备",
+     "name_zh": "坏掉的电子设备"
+    }
+   ]
+  },
+  {
+   "group_name": "最喜欢的城市 + 想旅游的地方 + 喜欢现场体育赛事 + 推荐旅行过的地方",
+   "aliases": [
+    "最喜欢的城市",
+    "想旅游的地方",
+    "喜欢现场体育赛事",
+    "推荐旅行过的地方"
+   ],
+   "tag": "new",
+   "page": 11,
+   "summary_zh": "3.一定要注意表达的自然程度~必要时增加重音，表情和手势我最喜欢的城市是成都，两年前暑假去的。火锅很美味，但最吸引我的是当地人悠闲的生活方式。我还去看了现场足球赛，全场呐喊助威的气氛让我非常兴奋。因此我向所有人推荐成都，既适合年轻人也适合家庭，可以看熊猫、吃小吃、看比赛。如果有空再去旅游，成都也是我的首选。上次只待三天太短，下次想去一周，品尝更多美食，再去熊猫基地，再看一场比赛。成都不像北上广那么快节奏，它让我感到快乐放松，是我最想重游的地方。",
+   "sample_en": "My favorite city that I have visited is Chengdu, the capital of Sichuan Province. I went there two years ago during the summer holiday. The first thing that impressed me was the food. The hotpot in Chengdu is incredibly delicious, with a perfect balance of spice and aroma. But what I loved most was the relaxed lifestyle. People there enjoy a slow pace of life, sitting in teahouses and chatting for hours. One of the best memories from that trip was watching a live football match at the Chengdu Sports Center. I really enjoy watching live sports events because the atmosphere is completely different from watching on television. The stadium was full of people shouting, cheering, and waving flags. I felt the energy from the crowd, and even though I am not a big football fan, the live atmosphere made me very excited. That is why I strongly recommend Chengdu to anyone who wants to travel. The city is suitable for both young people and families. You can see giant pandas, eat cheap and tasty street food, and enjoy live sports. The people are friendly and welcoming. 11 If I have free time in the future, Chengdu is the first place I want to visit again. Last time I only stayed for three days, which was too short. Next time, I want to go for at least one week. I want to try more local dishes, visit the panda base again, and watch another live sports event. Chengdu makes me feel happy and relaxed. It is not too fast-paced like Beijing or Shanghai. That is why it is my favorite city, my top travel recommendation, and the place I dream of revisiting. 12",
+   "matched": [
+    {
+     "alias": "最喜欢的城市",
+     "name_zh": "去过的最喜欢的城市"
+    },
+    {
+     "alias": "想旅游的地方",
+     "name_zh": "想有空时去旅游的地方"
+    },
+    {
+     "alias": "喜欢现场体育赛事",
+     "name_zh": "喜欢的现场体育赛事"
+    },
+    {
+     "alias": "推荐旅行过的地方",
+     "name_zh": "推荐旅行过的地方"
+    }
+   ]
+  },
+  {
+   "group_name": "发小 + 早起经历 + 近期改变的计划 + 别人帮助解决问题 + 长久目标",
+   "aliases": [
+    "发小",
+    "早起经历",
+    "近期改变的计划",
+    "别人帮助解决问题",
+    "长久目标"
+   ],
+   "tag": "new",
+   "page": 13,
+   "summary_zh": "3.一定要注意表达的自然程度~必要时增加重音，表情和手势我的发小张伟非常自律。去年我备考重要考试时总是起不来床，他连续一周每天早上6点来我家叫我起床。开始很痛苦，但三天后我就适应了，早上复习让我精力更充沛，最终顺利通过考试。受此影响，我近期改变计划，从熬夜睡到中午变成每天6点起床、运动半小时、学习两小时，整个人更健康专注。我的长久目标是成为自律的人，坚持早起五年，并帮助其他拖延的学生。张伟的帮助让我明白，小习惯长期坚持就能带来大成功。",
+   "sample_en": "My childhood best friend is Zhang Wei. We grew up in the same neighborhood and went to the same primary school. He is one of the most disciplined people I have ever known. When I was preparing for a very important exam last year, I faced a serious problem: I could not wake up early. Every morning, I would turn off my alarm and go back to sleep. I was worried because I had so much material to review, but I kept wasting my mornings. Zhang Wei noticed this and decided to help me. For one whole week, he came to my home at 6 a. m. every day and woke me up personally. That was a truly memorable early rising experience. At first, it was painful because I love sleeping. But after three days, I got used to it. I reviewed my notes in the morning and felt much more energetic throughout the day. With his help, I passed the exam successfully. Recently, I changed my daily plan because of that experience. Before, I used to stay up late and sleep until noon. Now I wake up at 6 a. m. every day, exercise for 30 minutes, and study for two hours in the morning. This change has made me healthier and more focused. 13 My long-term goal is to become a disciplined person like Zhang Wei. I want to keep this early rising habit for the next five years. I also hope to help other lazy students who struggle with time management. This goal gives me direction and motivation in life. Without Zhang Wei’s help, I might still be wasting my mornings. Now I truly believe that small changes in daily routine can lead to big success in the long run. 14",
+   "matched": [
+    {
+     "alias": "发小",
+     "name_zh": "发小"
+    },
+    {
+     "alias": "早起经历",
+     "name_zh": "早起经历"
+    },
+    {
+     "alias": "近期改变的计划",
+     "name_zh": "近期改变的计划"
+    },
+    {
+     "alias": "别人帮助解决问题",
+     "name_zh": "别人帮助解决问题"
+    },
+    {
+     "alias": "长久目标",
+     "name_zh": "长久目标/抱负"
+    }
+   ]
+  },
+  {
+   "group_name": "给别人建议 + 擅长做计划的人 + 乐于助人的人 + 鼓励保护自然的人",
+   "aliases": [
+    "给别人建议",
+    "擅长做计划的人",
+    "乐于助人的人",
+    "鼓励保护自然的人"
+   ],
+   "tag": "retained",
+   "page": 15,
+   "summary_zh": "3.一定要注意表达的自然程度~必要时增加重音，表情和手势我的环境科学教授陈博士。她展现规划才能的具体表现是精心设计课程大纲并完美组织湿地考察，确保每个教学环节都高效利用。她乐于助人的本质体现在课后花费额外时间耐心指导学生处理复杂数据分析。正是某次湿地考察中，她指着芦苇间的塑料残骸，将抽象环保概念转化为具体行动号召，成为激励我保护自然的关键人物。这一鼓励直接促使我在家庭聚会上劝阻叔叔铺平花园的计划，通过解释生态价值并建议替代方案，最终使他改变决定。这段经历完整呈现了优秀规划能力、真诚助人精神与有效环保倡导如何形成影响闭环。",
+   "sample_en": "The person who seamlessly connects these topics is my environmental science professor, Dr. Chen, a master planner and inherently helpful individual. Her meticulously structured syllabus and flawlessly executed field trips to ecosystems like local wetlands demonstrated exceptional organizational skill, ensuring every educational moment was maximized. Her willingness to spend extra hours after class, patiently guiding students through complex data analysis, truly defined her helpful nature. It was during one such wetland visit that she became my pivotal encourager for protecting nature. Pointing at plastic debris amidst the reeds, she made the abstract concept of conservation tangibly urgent, urging us to adopt sustainable daily habits. This inspiration directly led to my own act of giving advice. At a family gathering, when my uncle planned to pave over his garden, I advised against it, explaining its ecological value and suggesting permeable alternatives. Influenced by Dr. Chen’s teachings, my reasoning resonated with him, and he revised his plans. This experience highlighted how a planner’s structure, a helper’s support, and an encourager’s spark can collectively empower one to advocate for positive change, completing a meaningful cycle of influence. 15 16",
+   "matched": [
+    {
+     "alias": "给别人建议",
+     "name_zh": "给别人建议"
+    },
+    {
+     "alias": "擅长做计划的人",
+     "name_zh": "擅长做计划的人"
+    },
+    {
+     "alias": "乐于助人的人",
+     "name_zh": "乐于助人的人"
+    },
+    {
+     "alias": "鼓励保护自然的人",
+     "name_zh": "鼓励你保护自然的人"
+    }
+   ]
+  },
+  {
+   "group_name": "自行车/摩托车/汽车旅行 + 外国的短期停留 + 想见的名人 + 花费超过预期的物品",
+   "aliases": [
+    "自行车/摩托车/汽车旅行",
+    "外国的短期停留",
+    "想见的名人",
+    "花费超过预期的物品"
+   ],
+   "tag": "retained",
+   "page": 17,
+   "summary_zh": "3.一定要注意表达的自然程度~必要时增加重音，表情和手势我一直梦想骑摩托车穿越德国的黑森林，感受蜿蜒山路与古老城堡的魅力。之后，我将短暂停留奥地利的萨尔茨堡，沉浸在其浓厚的音乐氛围与阿尔卑斯风光中。我渴望见到的名人是指挥家古斯塔沃·杜达梅尔——虽然相遇机会渺茫，但他的艺术激情正是我探访这座音乐之城的缘由。而整个旅程中，令我花费远超预期的，是在萨尔茨堡老城一眼相中的手工雕刻音乐盒。它奏着莫扎特《魔笛》的旋律，其精美工艺让我毫不犹豫地超出了预算，但它也因此成为融合了旅途冒险、文化共鸣与艺术灵感的最佳纪念。",
+   "sample_en": "I'd love to take a motorbike trip through Germany's Black Forest, following winding roads past villages and castles. After this ride, I'd cross into Austria to stay briefly in Salzburg, drawn by its musical heritage and alpine scenery. Interestingly, the famous person I most want to meet, conductor Gustavo Dudamel, connects to this. While I know meeting him is unlikely, his passion is why I'd visit Mozart's birthplace—to feel that artistic energy. The item I bought that cost more than expected ties this together. In Salzburg, I’d find a beautifully hand-carved music box playing a tune from Mozart’s The Magic Flute. Initially, I’d budget for a simple souvenir, but the craftsmanship would convince me to spend far more—a tangible reminder of the journey, the place, and the inspiration from artists like Dudamel. This trip blends adventure, culture, admiration, and a personal, though costly, keepsake. 17",
+   "matched": [
+    {
+     "alias": "自行车/摩托车/汽车旅行",
+     "name_zh": "自行车/摩托车/汽车旅行"
+    },
+    {
+     "alias": "外国的短期停留",
+     "name_zh": "外国的短期停留"
+    },
+    {
+     "alias": "想见的名人",
+     "name_zh": "想见的名人"
+    },
+    {
+     "alias": "花费超过预期的物品",
+     "name_zh": "花费超过预期的物品"
+    }
+   ]
+  },
+  {
+   "group_name": "喜欢画画的孩子 + 最近读过的故事 + 有趣的建筑 + 不享受的音乐活动",
+   "aliases": [
+    "喜欢画画的孩子",
+    "最近读过的故事",
+    "有趣的建筑",
+    "不享受的音乐活动"
+   ],
+   "tag": "retained",
+   "page": 18,
+   "summary_zh": "3.一定要注意表达的自然程度~必要时增加重音，表情和手势我八岁的侄女莉莉，她想象力丰富，酷爱画画。她的画作充满童趣，最近还根据她读的一个关于月宫玉兔的中国童话创作了一系列素描。我受此启发也读了那个故事，其中蕴含的善良与冒险精神令我回味无穷。这让我联想到上海一座造型奇特、形似兔耳的“月兔塔”现代美术馆，其建筑巧妙融合传统与未来元素。然而，上个月我参加的一场前卫音乐活动却令人失望——实验性的不和谐音效显得杂乱无章，让我深感艺术表达需与观众建立真挚联结。这些经历共同印证了真正打动人心的艺术所具有的感染力。",
+   "sample_en": "The child I’d like to describe is my eight-year-old niece, Lily, who has a vivid imagination and loves drawing more than anything. Her sketches are not just simple pictures; they are windows into her playful mind. Recently, she showed me a series of drawings inspired by a story she’d read—a Chinese folk tale about a magical rabbit living in a moon palace. I was so intrigued that I decided to read the story myself. It was a beautiful narrative about kindness and adventure, which lingered in my thoughts long after I finished it. Interestingly, that tale reminded me of an unusual building I once visited in Shanghai—the “Moon Rabbit Tower,” a modern art museum with a distinctive, curved design that resembles a rabbit’s ear. Its architecture blends traditional motifs with futuristic elements, making it stand out in the city’s skyline. I recalled wandering through its exhibits, marveling at how stories and structures can intertwine to create something truly captivating. Last month, however, I attended a musical activity that didn’t resonate with me at all. It was an avant-garde performance where the musicians experimented with dissonant sounds and random noise, claiming it was “artistic innovation.” While I appreciate creativity, the experience felt chaotic and lacked the 18 harmony I enjoy. It made me reflect on how art, whether through a child’s drawing, a timeless story, or an interesting building, should connect with people on a deeper level. Unlike Lily’s joyful sketches or the enchanting Moon Rabbit Tower, that musical event left me feeling disconnected, underscoring the importance of authenticity in artistic expression. In summary, from Lily’s inspiring drawings to the folk tale and the imaginative building, these experiences highlight the beauty of art that speaks to the heart. The disappointing musical activity, in contrast, served as a reminder that not all creative endeavors succeed in forging that emotional bond. 19",
+   "matched": [
+    {
+     "alias": "喜欢画画的孩子",
+     "name_zh": "喜欢画画的孩子"
+    },
+    {
+     "alias": "最近读过的故事",
+     "name_zh": null
+    },
+    {
+     "alias": "有趣的建筑",
+     "name_zh": "有趣的建筑"
+    },
+    {
+     "alias": "不享受的音乐活动",
+     "name_zh": "不享受的音乐活动"
+    }
+   ]
+  },
+  {
+   "group_name": "朋友学的技能 + App/程序 + 机智解决问题的人 + 鼓励别人做不愿做的事",
+   "aliases": [
+    "朋友学的技能",
+    "App/程序",
+    "机智解决问题的人",
+    "鼓励别人做不愿做的事"
+   ],
+   "tag": "retained",
+   "page": 20,
+   "summary_zh": "3.一定要注意表达的自然程度~必要时增加重音，表情和手势我想分享朋友Leo自学Python编程的经历。起初他为自动化工作而学，后来却深深入迷。上月我们团队遇到数据处理难题，需手动分析庞大而复杂的数据集，耗时且易错。 同事David提出了巧妙方案：建议使用“Automate”应用程序，并结合Leo的编程技能，设计了高效工作流。然而，Leo因信心不足不愿主导编码。我鼓励他接受挑战，强调这是检验学习成果的良机。 最终，Leo鼓起勇气完成了脚本，成功解决问题。这件事让我看到，一项技能、一个实用程序、一次机智解难和适时鼓励如何串联，将犹豫转化为实实在在的成就。",
+   "sample_en": "I’d like to talk about my friend Leo, who recently taught himself Python programming through online courses. Initially, he just wanted to automate some repetitive tasks at work, but he soon became fascinated with its potential. His new skill turned out to be incredibly useful when our team faced a major data processing issue last month. We had to compile and analyze a huge dataset manually, which was extremely time-consuming and prone to errors. That’s when my colleague, David, demonstrated a clever solution. Instead of following the tedious manual process, he suggested we could use a specific app called “Automate” to handle the task. This program allows users to create custom workflows without deep coding knowledge. David, however, combined it with Leo’s Python skills in a brilliant way. He designed a simple interface in “Automate” to pre-process the files, then used Leo’s Python script to perform the complex analysis automatically. It was a stroke of genius that saved us days of work. Interestingly, Leo was hesitant to take the lead on the coding part at first, feeling his skills weren’t professional enough. Seeing his self-doubt, I encouraged him to embrace the challenge. I reminded him of how far he’d 20 come on his own and assured him that this real-world problem was the perfect chance to apply his knowledge. After some persuasion, he agreed. We worked together, with me supporting him on the logical flow while he wrote the script. The result was a great success. Not only was the problem solved efficiently, but Leo’s confidence soared. This experience showed me how a learned skill, a useful app, and clever problem-solving can intertwine. More importantly, it highlighted the power of encouragement—sometimes, all someone needs is a little push to unlock their potential and turn reluctance into achievement. 21",
+   "matched": [
+    {
+     "alias": "朋友学的技能",
+     "name_zh": "朋友学的技能"
+    },
+    {
+     "alias": "App/程序",
+     "name_zh": "App/ 程序"
+    },
+    {
+     "alias": "机智解决问题的人",
+     "name_zh": "机智解决问题的人"
+    },
+    {
+     "alias": "鼓励别人做不愿做的事",
+     "name_zh": "鼓励别人做不愿做的事"
+    }
+   ]
+  },
+  {
+   "group_name": "商场 + 禁用手机的场合 + 微笑的场合 + 近期观影",
+   "aliases": [
+    "商场",
+    "禁用手机的场合",
+    "微笑的场合",
+    "近期观影"
+   ],
+   "tag": "retained",
+   "page": 22,
+   "summary_zh": "3.一定要注意表达的自然程度~必要时增加重音，表情和手势我常去的\"银河广场\"购物中心顶楼有家影院，我最近在那里观看了温情电影《最后的信》。这部影片讲述90年代书信传递亲情的故事，与数字时代形成鲜明对比。观影时影院严禁使用手机，这种\"数字戒断\"起初令人不安，却让我更投入剧情。最打动我的是观察周围观众——在动人场景时，许多人脸上浮现出会心的微笑，那是种基于共情的真诚表达。这次经历让我思考，即便在商业科技空间，我们仍能找到真实的人际联结与情感共鸣。",
+   "sample_en": "The shopping mall I frequent is the \"Galaxy Plaza\" near my home, a sprawling complex that combines retail therapy with leisure activities. What makes it special is its rooftop cinema, where I recently watched a heartwarming film called \"The Last Letter.\" This Chinese drama, set in the 1990s, explores family bonds through handwritten correspondence—a poignant contrast to our digital age. The cinema experience itself provided the perfect occasion when phone use was strictly prohibited. Before the movie started, clear announcements and signs reminded us to silence our devices, and ushers politely ensured compliance. Initially, I felt that familiar twinge of anxiety being disconnected, but this digital detox soon became liberating. It allowed me to be fully immersed in the film’s emotional journey without the constant pull of notifications. The most memorable moment, however, was observing the audience around me. In the dim light, I noticed subtle smiles spreading across people’s faces during particularly tender scenes—a grandfather reading a letter to his granddaughter, a moment of reconciliation between siblings. These weren’t broad, dramatic smiles, but gentle, genuine expressions of empathy and 22 recognition. It was a powerful reminder of cinema’s unique ability to create shared emotional experiences. Leaving the mall that evening, I carried with me more than just the film’s storyline. I reflected on how a simple trip to a familiar mall had offered such a rich tapestry of experiences: the anticipation of entertainment, the unusual quiet of being phoneless, and the beautiful, silent communion of strangers smiling together in the dark. It highlighted how even in our commercialized, tech-driven spaces, there remains room for authentic human connection and reflection. 23",
+   "matched": [
+    {
+     "alias": "商场",
+     "name_zh": null
+    },
+    {
+     "alias": "禁用手机的场合",
+     "name_zh": "禁用手机的场合"
+    },
+    {
+     "alias": "微笑的场合",
+     "name_zh": "微笑的场合"
+    },
+    {
+     "alias": "近期观影",
+     "name_zh": null
+    }
+   ]
+  },
+  {
+   "group_name": "完美工作 + 想拥有的科技产品 + 擅长做计划的人 + 发挥想象力",
+   "aliases": [
+    "完美工作",
+    "想拥有的科技产品",
+    "擅长做计划的人",
+    "发挥想象力"
+   ],
+   "tag": "retained",
+   "page": 24,
+   "summary_zh": "3.一定要注意表达的自然程度~必要时增加重音，表情和手势我的理想职业是未来城市或智能生活系统的概念设计师，在创意与科技的交汇处工作，核心在于发挥想象力去构想未来的生活方式。为了实现它，我渴望拥有一台先进的全息增强现实头盔，它能将抽象概念转化为可交互的三维原型。我的表姐安娜则是一位善于规划的典范，她能把我天马行空的想法分解为可行的步骤。一次我与她畅谈关于自给式森林社区的奇幻构想，我的想象力自由驰骋，而她的规划思维则帮助我将幻想提炼为更成熟的愿景。这让我明白：想象力点燃梦想，而规划则为实现梦想搭建桥梁。",
+   "sample_en": "My ideal job has always been something at the intersection of creativity and technology—perhaps a concept designer for future cities or smart living systems. In this role, I wouldn't just design buildings or products; I’d craft holistic experiences, imagining how people will live, work, and connect in tomorrow's world. The core of this work would be pure imagination, envisioning possibilities beyond current constraints. To truly excel in such a forward-thinking field, there's a technological product I’ve longed to own: an advanced augmented reality (AR) headset with full holographic capabilities. Imagine being able to visualize and manipulate 3D models of your ideas in real space, turning abstract concepts into tangible, interactive prototypes. This tool wouldn't just be a gadget; it would be an extension of my creative mind. My cousin Anna, a project manager for a major tech firm, embodies the perfect counterpart to this imaginative work. She is exceptionally skilled at planning, able to break down even the most visionary ideas into logical, actionable steps. I remember describing my dream job to her once—a whimsical concept about self-sustaining forest communities. While I got lost in the fantastical details, she 24 immediately began sketching a phased development plan, considering resources, timelines, and potential challenges. Her ability to ground dreams in reality is truly inspiring. This conversation with Anna was itself a time when I used my imagination vividly. As I described those floating garden pods and communal learning hubs, my mind raced with possibilities. Yet, through Anna’s structured questions, my imagination was channeled and refined, moving from pure fantasy to a more considered vision. It was a powerful lesson: imagination sparks the dream, but planning builds the bridge to reach it. Ultimately, my ideal career combines these two forces—using tools like the AR headset to fuel boundless creativity, while relying on the mindset of planners like Anna to bring those visions meaningfully to life. 25",
+   "matched": [
+    {
+     "alias": "完美工作",
+     "name_zh": "完美工作"
+    },
+    {
+     "alias": "想拥有的科技产品",
+     "name_zh": "想拥有的科技产品"
+    },
+    {
+     "alias": "擅长做计划的人",
+     "name_zh": "擅长做计划的人"
+    },
+    {
+     "alias": "发挥想象力",
+     "name_zh": "发挥想象力"
+    }
+   ]
+  },
+  {
+   "group_name": "让你骄傲的家人 + 对家庭重要的东西 + 鼓励你保护自然的人 + 乐于助人的人",
+   "aliases": [
+    "让你骄傲的家人",
+    "对家庭重要的东西",
+    "鼓励你保护自然的人",
+    "乐于助人的人"
+   ],
+   "tag": "retained",
+   "page": 26,
+   "summary_zh": "3.一定要注意表达的自然程度~必要时增加重音，表情和手势最让我骄傲的家人是我年过八旬的祖母。她五十多年来悉心照料着庭院里的一株茶树，这株活着的传家宝象征着耐心、坚韧与土地的联结，是我们家族重要的精神图腾。祖母也是我环保意识的启蒙者，她以自然农法养护茶树，教我“向大地借用，必以照料偿还”的道理。她更是我认识的最乐于助人的人，经营的小店成为社区枢纽，默默帮助邻里。在她身上，养护植物、保护自然与帮助他人实现了统一，都源于同样的尊重与关怀。她的传承不仅是茶香，更是一种自觉、互助的生活态度。",
+   "sample_en": "The family member who makes me immensely proud is my grandmother. Now in her eighties, she has nurtured a tea plant in our courtyard for over fifty years—a living heirloom that represents something profoundly important to our family. More than just a plant, it symbolizes patience, resilience, and our connection to the land. Every spring, our family gathering to pick its leaves is a cherished ritual, grounding us in shared history and simple values. This tea plant is also at the heart of how I learned to protect nature. My grandmother was the first person who encouraged me to see the natural world not as a resource to be used, but as a partner to be respected. As a child, I watched her care for this plant without chemicals, explaining how healthy soil and balanced ecosystems mattered more than quick yields. \"We borrow from the earth,\" she would say while teaching me to compost kitchen scraps for the plant, \"so we must return the care.\" Her gentle lessons turned my childhood curiosity into a lifelong commitment to environmental stewardship. Her ethos of care extends beyond nature to people. My grandmother is, fundamentally, the most helpful person I know. Her small grocery shop in our village has been a community hub for decades. She remembers every family's 26 needs, delivers groceries to elderly neighbors without being asked, and uses her tea gatherings to mediate minor disputes or offer quiet comfort. Her help is never grandstanding; it's woven into the daily fabric of life, showing that protecting nature and helping people are two sides of the same coin—both rooted in respect and sustained care. In her, I see a powerful unity: the tea plant she nurtures, the environmental values she instilled, and the community she sustains are all expressions of the same principle. She taught me that what makes our family proud isn’t grand achievements, but how we tend to the living world—both the plant in our courtyard and the community around us. Her legacy isn't just in the tea we drink, but in the conscious, helpful life she inspired me to lead. 27",
+   "matched": [
+    {
+     "alias": "让你骄傲的家人",
+     "name_zh": "为家人骄傲"
+    },
+    {
+     "alias": "对家庭重要的东西",
+     "name_zh": "对家庭重要的东西"
+    },
+    {
+     "alias": "鼓励你保护自然的人",
+     "name_zh": "鼓励你保护自然的人"
+    },
+    {
+     "alias": "乐于助人的人",
+     "name_zh": "乐于助人的人"
+    }
+   ]
+  }
+ ]
+}

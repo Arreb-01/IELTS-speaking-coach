@@ -1,0 +1,2050 @@
+{
+ "topics": [
+  {
+   "name_en": "The area you live in",
+   "name_zh": "居住区域",
+   "note": "",
+   "page": 6,
+   "questions": [
+    {
+     "no": 1,
+     "question": "What are some changes in the area recently?",
+     "answer": "Recently, the neighborhood has seen significant improvements. New parks and bike lanes have been added, making it more eco-friendly. Additionally, several modern cafes and shops have opened, attracting younger crowds. These changes have transformed the area into a lively and vibrant community hub."
+    },
+    {
+     "no": 2,
+     "question": "Are the people in your neighborhood nice and friendly？",
+     "answer": "Absolutely, my neighbors are very warm and approachable. For example, they often organize community gatherings, which creates a strong sense of belonging. I especially appreciate how everyone looks out for one another, making the neighborhood feel safe and welcoming. This friendly atmosphere truly enhances the quality of life here."
+    },
+    {
+     "no": 3,
+     "question": "Do you live in a noisy or a quiet area?",
+     "answer": "I live in a relatively tranquil neighborhood, which allows me to focus on my studies without distractions from noise. The peaceful environment is perfect for unwinding after a busy day of lectures and assignments. It fosters a sense of calmness which is beneficial for my overall well-being and productivity. I truly appreciate the serenity that my quiet area provides."
+    },
+    {
+     "no": 4,
+     "question": "Do you know any of your neighbors?",
+     "answer": "Well, since I’ve only just moved into a new apartment, I am not familiar with any of my neighbors yet. Not only that, but I leave the apartment early in the morning and return late at night, so I don’t really have chance to get to know them either."
+    },
+    {
+     "no": 5,
+     "question": "Do you like the area that you live in?",
+     "answer": "Of course, yes! There are so many aspects in this area that take my fancy. The climate of it is perfect for me, although the winter is a bit freezing. And the modernism there is what attracts me most. Living in this place, I feel that I can always keep up with the times."
+    },
+    {
+     "no": 6,
+     "question": "What changes have been made to the area recently?",
+     "answer": "Well, a lot of changes are taking place nowadays in my city. I can see more and more skyscrapers have been built and the public transportation system is becoming more diversified and completed. But for me, the most fantastic change is that there is greater diversity in restaurants! Now I can taste genuine foreign food in my city. How marvelous it is!"
+    },
+    {
+     "no": 7,
+     "question": "Do you know any famous people in your area?",
+     "answer": "Actually yes! I am aware that a lot of movie stars come from where I live. I feel very proud every time I see them in a fantastic film. Also, there are some poets and writers who are living in the area that I come from. So, I suppose my city is an artistic and poetic area."
+    },
+    {
+     "no": 8,
+     "question": "Where do you like to go in that area?",
+     "answer": "The sports stadium next to the building I live in, is where I would like to go frequently. The stadium is not very spacious but well-equipped with plenty of sports facilities. Also, there is an indoor swimming pool with a small number of people so I can swim whenever I want. That's really awesome!"
+    }
+   ],
+   "tag": "must"
+  },
+  {
+   "name_en": "Work or study",
+   "name_zh": "工作与学习",
+   "note": "",
+   "page": 7,
+   "questions": [
+    {
+     "no": 1,
+     "question": "What subject(s) are you studying?",
+     "answer": "The main subjects I’m studying at the moment are financial management, micro-economics, statistics and audition. Apart from these major ones, I also have to go to classes like Chinese literature, politics and English. I only study these because they contribute to my GPA."
+    },
+    {
+     "no": 2,
+     "question": "What technology do you use when you study?",
+     "answer": "Well, I normally use my iPad for online lessons. You see, I’ve signed up for many online lectures because I like to use my spare time to increase my knowledge. I also use the Kindle for reading which helps me to learn more about various topics and broaden my horizons."
+    },
+    {
+     "no": 3,
+     "question": "Who helps you the most？And how?",
+     "answer": "My mother is always there for me. Whenever I need help, she’s the first one to provide it. She paid for my English training fees when I first entered college. It was a big sum of money at the time. That training course has helped me a lot since then."
+    },
+    {
+     "no": 4,
+     "question": "How much time do you spend on your studies each week?",
+     "answer": "I devote approximately 30 to 35 hours per week to my studies. This includes attending lectures, participating in tutorials, conducting research, completing assignments, and preparing for examinations. I believe it’s crucial to allocate a significant amount of time to academic pursuits in order to excel in my chosen field of study. Additionally, I organize my schedule effectively to ensure a balance between my academic commitments and other aspects of life, such as personal interests, extracurricular activities, and socializing with friends."
+    },
+    {
+     "no": 5,
+     "question": "Do you prefer to study in the mornings or in the afternoons?",
+     "answer": "I wish I was a morning person because I’m actually more productive in the morning. However, it’s so difficult for me to rise early in the morning, so I have to arrange most of my study plans in the afternoons. I’m so used to this study schedule now."
+    },
+    {
+     "no": 6,
+     "question": "Are you looking forward to working?",
+     "answer": "Yes, absolutely. I am working part time at the moment. I like to make my own money because it gives me freedom. I’m looking forward to my graduation when I can have a proper job, make a decent income and enjoy being able to manage my own money."
+    },
+    {
+     "no": 7,
+     "question": "Is it very interesting?",
+     "answer": "Learning another language is not only an interesting experience but also a challenging one. It's full of fun when it comes to American and British humor. With excellent English, you can watch English TV series and movies without subtitles. But on the other hand, it requires substantial amount of patience to remember a wide range of vocabulary and to use it in the appropriate situation. 8. Do you like your subject?(Why?/Why not?) Yes, of course I do. I would say I love the major I’m studying because learning another language is never simply about the grammar or the words themselves. It's more about the cultural background, serving as a way for communication and passing on the wisdom of humanity from generation to generation."
+    },
+    {
+     "no": 9,
+     "question": "Why did you choose to study that subject?/Why did you choose to study those subjects?",
+     "answer": "Well, finance wasn’t my primary choice. To be honest, I was convinced by my parents that it was the most worthwhile subject to learn. Perhaps they were right. What I’ve learned has helped me a great deal in real life. I think I can think more rationally nowadays about any financial decisions I make."
+    },
+    {
+     "no": 10,
+     "question": "Do you think that your subject is popular in your country?",
+     "answer": "Yes, I believe that law is indeed a popular subject in my country. With the increasing demand for legal professionals and the significance of upholding justice, many students are drawn towards studying law. The evolving legal system and frequent high-profile cases have also contributed to its popularity and the desire to pursue a career in this field. In addition, the diverse career opportunities offered by the legal profession have further attracted individuals to take an interest in law."
+    },
+    {
+     "no": 11,
+     "question": "Do you have any plans for your studies in the next five years?",
+     "answer": "In the next five years, my plans for studies include expanding my knowledge in various fields, such as computer science and psychology. I aim to pursue higher education and engage in research projects to further understand these subjects. Additionally, I plan to participate in internships or exchange programs to gain practical experiences and broaden my international perspective. Overall, my goal is to become a well-rounded individual through dedicated studies and constant learning."
+    },
+    {
+     "no": 12,
+     "question": "Do you want to change your major?",
+     "answer": "No, I do not want to change my major. I have always been passionate about my field of study and I believe it aligns perfectly with my career goals. I enjoy the challenges and opportunities that my major offers, and I am excited to pursue further knowledge and skills in this area."
+    },
+    {
+     "no": 13,
+     "question": "What changes would you like to see in your school?",
+     "answer": "I would like to see an upgrade in the school's gymnasium. It would be great if we could have newer and more advanced sports equipment, as well as improved facilities for various sports activities. A renovated gym would encourage students to engage more in physical activities and promote a healthier lifestyle. It would also provide a better environment for both practice and competitions, fostering a sense of competitiveness and teamwork among students. Overall, an updated gym would enhance the overall sports culture in our school."
+    },
+    {
+     "no": 14,
+     "question": "What do you think is the most important at the moment?",
+     "answer": "At this moment, I believe the most crucial thing is maintaining good mental health. With the fast-paced world we live in, managing stress and staying positive is essential. For example, many people now practice mindfulness or meditation to cope. Prioritizing inner well-being helps improve overall productivity and happiness."
+    },
+    {
+     "no": 15,
+     "question": "What work do you do?",
+     "answer": "I’m working as a teacher at XXX high school/ training organization right now. Usually I teach English lessons four days a week. Correcting my students' homework and other assignments is an essential part of my job. I also spend time taking care of and playing with the students outside the classroom."
+    },
+    {
+     "no": 16,
+     "question": "Do you miss being a student?",
+     "answer": "Yes and no. I miss the worry-free time as a student. Studying hard was my mission. I didn’t have to worry about rent, office affairs, work productivity and so on. However, when I didn’t have the freedom to make financial decisions, I had to discuss almost every financial matter with my parents. That’s the part I don’t miss."
+    },
+    {
+     "no": 17,
+     "question": "Do you want to change jobs?",
+     "answer": "I’m quite content with my current job and don’t have any immediate plans to switch to another position. I find my work fulfilling and enjoy the challenges and opportunities it offers. Additionally, I have developed valuable skills and expertise in my field, which I believe will help me grow and advance in my career. Therefore, I’m committed to continuing my journey in my current role."
+    },
+    {
+     "no": 18,
+     "question": "What kinds of technology do you use at work?",
+     "answer": "In my current job, I use various technologies to efficiently carry out my tasks. These include software such as Microsoft Office for document creation and data analysis. Additionally, I utilize project management tools like Trello or Asana to organize and collaborate on team projects. Moreover, I use communication tools like Slack or Microsoft Teams to facilitate seamless communication with colleagues and clients. Furthermore, I’m familiar with industry-specific software and database management systems that are essential for my profession."
+    },
+    {
+     "no": 19,
+     "question": "Is your work interesting?",
+     "answer": "It’s not particularly exciting, but it’s very practical. You know, finance is related to almost every aspect of our life. Also, it’s a hot major in the job market. With financial knowledge, I could at least find a decent job and live a reasonable life."
+    },
+    {
+     "no": 20,
+     "question": "Do you like your job?",
+     "answer": "I’m very fond of my job. Actually, teaching is more of a career instead of a job to me. As a child, I always dreamed of being a teacher, standing on the stage in front of the school. I love embracing my students every day and passing on the knowledge I have accumulated over the years. I’ve always had this feeling that as long as I stay with my students, I will always be energetic and passionate."
+    },
+    {
+     "no": 21,
+     "question": "Why did you choose to do that type of work (or, that job)?",
+     "answer": "There’s no doubt that teachers play an important role in students' lives. Back in my school days, I was lucky to encounter many excellent teachers who’ve had a profound influence on me. Their passion for teaching and patience for caring inspired me to be a teacher myself. With this idea in mind, I chose to study English at university with the aim of becoming an English teacher."
+    },
+    {
+     "no": 22,
+     "question": "What are the benefits of being your age?",
+     "answer": "As a 25-year-old working professional, there are several benefits that come with my age. Firstly, I have the energy and enthusiasm to take up new challenges and work towards my career goals. Secondly, being in my mid-20s allows me to have a good balance between youthfulness and maturity, which helps me adapt to different social and professional settings. Additionally, at this age, I have gained some work experience and developed a certain level of expertise in my field, which gives me an edge in my job. Lastly, I have a strong network of friends and colleagues within my age group, providing a sense of support and camaraderie in both personal and professional life."
+    },
+    {
+     "no": 23,
+     "question": "What requirements did you need to meet to get current job？",
+     "answer": "To secure my current job, I had to fulfill several requirements. Firstly, having a relevant educational background was crucial. I needed at least a bachelor's degree in my field. Additionally, I had to possess prior experience and demonstrate strong skills in areas related to my job role. Fluency in English was a must, as it is the primary language used in my workplace. Moreover, I needed to excel in the interview process, showcasing my communication abilities, problem-solving skills, and adaptability. Meeting these qualifications significantly contributed to my successful attainment of my current job."
+    },
+    {
+     "no": 24,
+     "question": "Do you have any plants for your work in the next five years?",
+     "answer": "Oh, absolutely! In the next five years, I'm planning to thrive in my career by exploring new opportunities, acquiring additional skills, and taking on challenging projects. I aim to enhance my problem-solving abilities, develop leadership qualities, and build a strong professional network. Furthermore, I hope to contribute to my field through research and innovation, ultimately making a positive impact. Overall, I'm excited about the possibilities that lie ahead and can't wait to see where my hard work and determination take me!"
+    }
+   ],
+   "tag": "must"
+  },
+  {
+   "name_en": "Hometown",
+   "name_zh": "家乡",
+   "note": "",
+   "page": 11,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Did you learn about the history of your hometown at school?",
+     "answer": "Actually, not really. In history class, the teacher only focused on textbooks. We were asked to memorize the historical events of the world and of our country, but nobody taught us about our hometown. Perhaps it’s too small to be mentioned."
+    },
+    {
+     "no": 2,
+     "question": "What’s your hometown famous for?",
+     "answer": "My hometown is renowned for its vibrant street food culture, particularly for the mouth-watering local delicacy called \"Dragon's Breath\". This popular snack consists of liquid-nitrogen-infused cereal puffs that emit a dramatic mist when eaten. It's a hit among both locals and tourists, adding a touch of whimsy to our culinary scene."
+    },
+    {
+     "no": 3,
+     "question": "How long have you lived there?",
+     "answer": "I have been a resident there for approximately five wonderful years now. It has been such a pleasure to call that place my home. The community is vibrant, and the surrounding nature is simply breathtaking, making everyday life serene. Living there has enriched my life in countless ways."
+    },
+    {
+     "no": 4,
+     "question": "Is that a big city or a small place?",
+     "answer": "That's actually a mid-sized city with a population of around half a million people. It's not too hectic like the big metropolises, but it's also not a tiny town where everyone knows each other. I find it has a nice balance between urban amenities and a slower pace of life, which suits me quite well."
+    },
+    {
+     "no": 5,
+     "question": "Do you think you will continue living there for a long time?",
+     "answer": "Good question! I imagine I will. You see, I spend most of the year living in the city, because my work is in the city. However, I have plans to go back home someday in the future. When I’ve made enough money to retire, I will move back to my hometown."
+    },
+    {
+     "no": 6,
+     "question": "Is there anything you dislike about it?",
+     "answer": "Well, if I have to name one, then it’s the poor job prospects. Since it’s only a small town, the government doesn’t have any plans to invest in it. Compared to big cities, it has poor infrastructure and transportation facilities, so there aren’t many promising jobs there."
+    },
+    {
+     "no": 7,
+     "question": "What do you like about your hometown?",
+     "answer": "Well, the most attractive thing about my hometown is that it has a number of scenic spots, like the West Lake, and Lingyin Temple. People of various age groups can enjoy or entertain themselves when they visit the West Lake. Retired people usually sing opera near that area."
+    },
+    {
+     "no": 8,
+     "question": "Do you like living there?",
+     "answer": "Of course. I made many friends while I was growing up. Most of them settled down in my hometown. I like to hang out with them. Also, my family all live in my hometown. If I live there, I can spend time with my parents too. Above all, I enjoy the great scenery back home."
+    },
+    {
+     "no": 9,
+     "question": "Do you like your hometown?",
+     "answer": "Definitely. I often tell my city friends about my hometown. The greenery, the nature, the sweet people, and the quiet evenings have captured me deep inside. I’ve traveled to many places, but I believe my hometown has the best to offer, at least to me."
+    },
+    {
+     "no": 10,
+     "question": "How long have you been living there?",
+     "answer": "I lived there until I turned 18. I left my hometown for university but in the past few years I have traveled back to my hometown at least twice a year to spend holidays. To me, it’s always the best place to be. 11. Please describe your hometown a little. Well, it’s a small town where the weather is mild. There’s no major public transport facilities like a train station or airport, however, the roads are solid and lead to all directions. Traveling is easy if you have a vehicle. Most importantly, people there are very nice and modest."
+    },
+    {
+     "no": 12,
+     "question": "Is your hometown a big city or a small place?",
+     "answer": "My hometown is a small town. It has a small population so there’s not even a train station, but it’s quite a livable place. It isn’t busy or crowded like a big city. People can manage their lives at a slow pace. Life is pretty enjoyable in a small town."
+    },
+    {
+     "no": 13,
+     "question": "Where would you like to live?",
+     "answer": "Ideally, I would be able to afford an apartment in the city that I’m working in now, and a town house in my hometown. I’ll live in the city during the weekdays and travel back to my hometown to spend the weekends and holidays."
+    },
+    {
+     "no": 14,
+     "question": "Do you plan to continue living there?",
+     "answer": "I plan to buy a house in my hometown when I can afford it, and quite likely, I will travel back and forth between my hometown and the city that I’m living in now. That’s because even though my hometown is beautiful, it doesn’t have the kind of jobs that I am interested in."
+    },
+    {
+     "no": 15,
+     "question": "Where's your hometown?",
+     "answer": "I come from a small town in the middle of the country. It’s an agricultural town so the scenery is pretty stunning with plenty of trees and bushes lining both sides of the streets. The buildings aren’t very tall like in big cities, and people are quite nice, so it’s a very lovely place."
+    }
+   ],
+   "tag": "must"
+  },
+  {
+   "name_en": "Home/Accommodation",
+   "name_zh": "住所",
+   "note": "",
+   "page": 13,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you think it is important to live in a comfortable environment?",
+     "answer": "Absolutely, I believe that living in a comfortable environment is crucial for one's well-being. A cozy living space not only promotes relaxation but also enhances productivity. For instance, having a comfortable chair and good lighting can make studying or working from home more efficient. Additionally, a relaxing ambiance can reduce stress levels and improve mental health. Therefore, creating a comfortable living space is essential for a balanced and fulfilling life."
+    },
+    {
+     "no": 2,
+     "question": "What makes you feel pleasant in your home?",
+     "answer": "I feel most at peace in my home when I'm surrounded by the smell of fresh coffee brewing in the morning, gentle sunlight streaming through the windows, and my favorite music playing softly in the background. It's these simple joys that create a warm and welcoming atmosphere, making me feel relaxed and content every day."
+    },
+    {
+     "no": 3,
+     "question": "What’s your favorite room in your apartment or house?",
+     "answer": "In my apartment, I particularly cherish my study room. It's where I dive into my books and explore new ideas. The room is filled with shelves of various genres, from classic literature to modern thrillers, creating a peaceful ambiance. Whenever I need to unwind or seek inspiration, this cozy haven helps me disconnect from the world and tap into my creativity."
+    },
+    {
+     "no": 4,
+     "question": "What kind of house or flat do you want to live in in the future?",
+     "answer": "In the future, I envision living in a cozy, quaint cottage with a flower-filled garden, tucked away in the countryside. A place that exudes charm and serenity, where I can unwind and enjoy the simple pleasures of life. Ideally, it would have a spacious kitchen, flooded with natural light, perfect for whipping up delicious meals. This peaceful retreat would be my sanctuary from the hustle and bustle of the city."
+    },
+    {
+     "no": 5,
+     "question": "Do you live in a house or a flat?",
+     "answer": "I live in a cozy apartment located in the heart of the city. The flat's large windows offer a beautiful view of the bustling streets below. Living in a flat allows me to be close to various amenities like shops and restaurants, which I find very convenient. Overall, I enjoy the vibrant atmosphere of urban living in my modern apartment."
+    },
+    {
+     "no": 6,
+     "question": "What part of your home do you like the most?",
+     "answer": "The part of my home that I cherish the most is the cozy reading nook by the window. The soft natural light filtering through the curtains creates the perfect ambiance for relaxation and escaping into different worlds through books. The comfortable armchair and the stack of my favorite books make it my little slice of heaven where I can unwind and recharge after a long day. 7. Please describe the room you live in. I reside in a cozy little abode with a sunlit nook adorned with vintage bookshelves brimming with adventure tales. The room is painted in serene shades of azure, a sanctuary where the walls echo the melody of my guitar strings in the tranquil evening hours. A cluster of succulents basking in the warmth of the sunlight adds a touch of green to the room's decor, creating a harmonious sanctuary after a long day's hustle and bustle."
+    },
+    {
+     "no": 8,
+     "question": "Do you prefer living in a house or a flat?",
+     "answer": "I prefer living in a house due to the sense of space and privacy it offers. A house provides room for outdoor activities, such as gardening or relaxing in a backyard. Unlike flats, houses offer a greater sense of independence. Additionally, having a garden enables me to enjoy fresh air and nature without leaving home. So, for me, a house is a more preferable living option."
+    },
+    {
+     "no": 9,
+     "question": "Are the transport facilities to your home very good?",
+     "answer": "Yes, the transportation options to my home are quite convenient. Living in the city center means I have easy access to buses, taxis, and even the subway. The bus stop is just around the corner, and there's a subway station within walking distance. I particularly enjoy the scenic bus rides that pass by some of the city's landmarks. Overall, getting around from my place is hassle-free due to the varied transport services available."
+    },
+    {
+     "no": 10,
+     "question": "What do you usually do in your house/flat/room?",
+     "answer": "In my room, I often unwind by listening to music or reading my favorite novels. I have a small collection of vinyl records that I enjoy playing on my record player. Sometimes, I also like to do a bit of light exercise, such as stretching or yoga, to stay active. Additionally, I have a cozy reading nook where I spend time delving into different genres of books."
+    },
+    {
+     "no": 11,
+     "question": "Which room does your family spend most of the time in?",
+     "answer": "In my family, we primarily gather in the living room. It's the heart of our home, where we unwind after a long day and engage in quality time together. The cozy ambiance, plush couches, and vibrant decor make it a welcoming space. From watching movies to sharing laughter, the living room accommodates various activities that bond us as a family."
+    },
+    {
+     "no": 12,
+     "question": "Can you describe the place where you live?",
+     "answer": "I reside in a bustling city nestled among towering skyscrapers and serene green spaces. My neighborhood is a vibrant melting pot of diverse cultures, where quaint cafes and lively markets line the streets. Surrounded by historical landmarks and modern architecture, my home offers a perfect blend of tradition and innovation, creating a captivating living experience."
+    },
+    {
+     "no": 13,
+     "question": "What’s the difference between where you are living now and where you have lived in the past?",
+     "answer": "Where I currently reside is quite different from my previous dwellings. Unlike my past homes in bustling cities, I now live in a tranquil village surrounded by lush greenery. The peaceful ambiance here is a stark contrast to the hustle and bustle I was accustomed to. The change of scenery has allowed me to appreciate a slower pace of life and connect more with nature."
+    },
+    {
+     "no": 14,
+     "question": "Do you plan to live there for a long time?",
+     "answer": "Yes, I do intend to settle down there for the foreseeable future. Seeing how the neighborhood has a warm community feel and convenient amenities, it seems like an ideal place for me to put down roots. The peaceful surroundings and the vibrant local culture make me excited to imagine embracing this as my long-term home."
+    },
+    {
+     "no": 15,
+     "question": "How long have you lived there?",
+     "answer": "I have been residing there for approximately half a decade now. It has been a significant period of time during which I have grown accustomed to the community and the lifestyle. Living there has given me a sense of belonging and familiarity with the surroundings that I truly appreciate."
+    },
+    {
+     "no": 16,
+     "question": "Who do you live with?",
+     "answer": "I rent the place by myself, but quite often, I have family and friends come over to stay the night, especially during holidays and weekends. I also have one room listed on a rental website to make extra money. So occasionally, I have rental guests too."
+    },
+    {
+     "no": 17,
+     "question": "What kind of housing/accommodation do you live in?",
+     "answer": "Well，I live in a unit which has a small garden in the front yard. It’s not very spacious but it’s comfy enough. It has two bedrooms, a living room, a kitchen and a bathroom. We get plenty of light during the day."
+    }
+   ],
+   "tag": "must"
+  },
+  {
+   "name_en": "Sports programs",
+   "name_zh": "体育节目",
+   "note": "",
+   "page": 16,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you like watching sports programs on TV?",
+     "answer": "Yes, I do enjoy watching sports programs on TV. It's a great way to unwind and relax after a long day. I find it fascinating to see the dedication and skill of the athletes as they compete in various sports. It also allows me to learn about different types of sports and their rules."
+    },
+    {
+     "no": 2,
+     "question": "Do you like to watch live sports games?",
+     "answer": "Yes, I enjoy watching live sports games. There's something captivating about the atmosphere and the energy of being in a stadium or arena. It's thrilling to see the skilled athletes in action and to be a part of the collective excitement among the crowd. Whether it's football, basketball, or tennis, live sports games always provide a unique and immersive experience."
+    },
+    {
+     "no": 3,
+     "question": "Who do you like to watch sports games with?",
+     "answer": "I enjoy watching sports games with my friends and family. It's always fun to have their company and share the excitement of the game together. Whether it's cheering for our favorite team or engaging in friendly banter, the atmosphere becomes lively and enjoyable. Additionally, I also appreciate watching games with fellow fans at the stadium or in sports bars. The collective energy and enthusiasm create an unforgettable experience. So, I prefer watching sports games with people who share the same passion for sports."
+    },
+    {
+     "no": 4,
+     "question": "What kinds of games do you expect to watch in the future?",
+     "answer": "In the future, I anticipate witnessing a diverse range of games, including sports competitions, virtual reality challenges, and mind-boggling puzzles. One particular game that I am excited about is the urban commuting race. Picture this: participants navigating through the bustling streets of a city, overcoming various obstacles and testing their agility, speed, and problem-solving skills. It would be a thrilling and action-packed event, showcasing the dynamic nature of city life. I look forward to immersing myself in this exhilarating game in the future."
+    },
+    {
+     "no": 5,
+     "question": "Have you ever watched a sports game in astadium?",
+     "answer": "Yes, I have attended a football match at a local stadium once. The atmosphere was electrifying, with fans passionately cheering and chanting. Watching the game live allowed me to appreciate the players' skills up close, which is very different from viewing on TV. It was a memorable experience that heightened my love for the sport."
+    },
+    {
+     "no": 6,
+     "question": "Do you prefer to watch sports games alone or witha group of friends?",
+     "answer": "Honestly, I enjoy watching sports games with friends much more than alone. The lively atmosphere and shared excitement make the experience unforgettable. When cheering together, even a simple match feels thrilling. However, sometimes watching alone helps me concentrate better on the strategies and plays. It really depends on the mood and the importance of the game."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Evening time",
+   "name_zh": "晚间时光",
+   "note": "",
+   "page": 17,
+   "questions": [
+    {
+     "no": 1,
+     "question": "What do you usually do in the evening?",
+     "answer": "I like to go to the supermarket or hang out with my friends in a bar or cafe after work. Sometimes, I dial my parents’ number on my way home to catch up with them. If I’ve had a long day, I usually just go straight home and order food to be delivered while I enjoy a movie. The evening is the best time of my day."
+    },
+    {
+     "no": 2,
+     "question": "What did you do in the evening when you were little? Why?",
+     "answer": "Well, when I was a child, I spent most evenings in the yard, playing games and laughing with my family. We lived in a country house back then, and our yard was full of flowers and plants. They looked especially beautiful in the evening. I can recall so many good memories of summer evenings there when I was young."
+    },
+    {
+     "no": 3,
+     "question": "Are there any differences between what you do in the evening now and what you did in the past?",
+     "answer": "Yes, absolutely. When I was a kid, I was carefree. I spent most of my evenings with my family playing and laughing. However, now I live by myself in a strange city. I either spend the evening alone, or with my friends. Occasionally, I need to work in the evening. Couldn’t be more different, really!"
+    },
+    {
+     "no": 4,
+     "question": "Do you spend your evenings doing the same things on both weekdays and weekends?",
+     "answer": "No, not exactly. I often have to deal with assignments or essays in the evenings during the week. However, on the weekend, I like to hang out with my friends in the afternoons and we often go to a restaurant for a nice dinner in the evenings."
+    },
+    {
+     "no": 5,
+     "question": "What do you hate doing in the evening？",
+     "answer": "In the evening, I really dislike doing household chores like washing dishes. It feels tedious after a long day, and I much prefer relaxing or reading a book instead. Sometimes, I try to avoid it by finishing chores earlier, but if left until evening, it can be quite frustrating and tiring."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Watch",
+   "name_zh": "手表",
+   "note": "",
+   "page": 18,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you wear a watch?",
+     "answer": "Yes, I often do. I like to make a schedule each day, and having a watch helps me stick to it. You see, I like to be punctual. I actually started to wear a watch when I was like ten years old as even from a young age I wanted to be on time to events, and knowing the time gives me a sense of security."
+    },
+    {
+     "no": 2,
+     "question": "Have you ever received a watch as a gift?",
+     "answer": "I think it was on my 12th or maybe 13th birthday, my father bought me a sports watch as a birthday present. I was thrilled at the time! You see, I’d been desiring one for months! Also, I was the first one in my class to wear one, so that drew lots of attention to me from my classmates."
+    },
+    {
+     "no": 3,
+     "question": "Why do some people wear expensive watches?",
+     "answer": "While some people use their watch as a tool, there are also a lot of people who wear them as jewelry. For example, rich men buy expensive watches to show off their social status, while some women like to wear luxurious watches to match their expensive clothes. Sometimes it’s about status, sometimes it’s about fashion."
+    },
+    {
+     "no": 4,
+     "question": "Do you think watch is important for you? Why?",
+     "answer": "They are, indeed. As I mentioned earlier, I like to be a punctual person. Wearing a watch makes it much easier to know the time. Of course, I could check the time on my cell phone, but it’s just not that convenient. Besides, I’ve developed the habit of wearing a watch every day. Without one on my wrist, I’d feel incomplete."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Cars",
+   "name_zh": "汽车",
+   "note": "",
+   "page": 19,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you think car colours are important？",
+     "answer": "I'd say car colours do matter, but not for everyone. From a personal perspective, colour reflects the owner's taste and identity. For example, someone who chooses a bright red or blue car probably wants to stand out, while a person who picks grey or black might prefer a more classic or understated look. On a practical level, lighter colours like white or silver are safer because they're more visible in low light. Also, some colours have better resale value than others. So overall, while it's not the most important factor, car colour still plays a role."
+    },
+    {
+     "no": 2,
+     "question": "Did you enjoy traveling by car when you were a kid?",
+     "answer": "Yes of course. My dad bought his first car when I was in kindergarten. For me back then, traveling by car would mean picnics at the weekends. There were fewer cars on the road then so more convenient to go to the countryside. As a result, traveling by car not only made it possible for me to go to faraway places, such as nearby parks or a neighboring city, but also made the trip more comfortable. As a result, I really enjoyed that."
+    },
+    {
+     "no": 3,
+     "question": "What types of cars do you like?",
+     "answer": "I prefer small cars like Smart and Mini. First of all, for urban residents like me, finding a parking place in the city center is always a headache. As a result, it’s easier to park a small car. You don’t need to worry when parking it on a narrow road or driving it through a narrow alley. Besides, small cars cost less compared to larger SUVs. It requires less fossil fuel, which not only saves money, but also contributes to environment protection. As a result, I prefer smaller cars to bigger ones."
+    },
+    {
+     "no": 4,
+     "question": "Do you prefer to be a driver or a passenger?",
+     "answer": "I prefer driving cars. Compared to passengers, drivers can take a better control of the trip. I enjoy the sense of feeling of controlling the direction. I think driving itself is highly enjoyable. . Whether you want to go slower to enjoy the view or faster to experience speed, is totally your decision. Besides, I may get carsick when sitting at the back of the car. When driving, you tend not to get motion sick, compared to back seat passengers , which, according to research, is perhaps because I can anticipate the movement of the car."
+    },
+    {
+     "no": 5,
+     "question": "What do you usually do when there is a traffic jam?",
+     "answer": "Well, if I'm stuck in a traffic jam, my first reaction is often to get restless. You know, I start complaining and keep looking out of the window to estimate how long I'll have to wait. Though once I manage to calm down, I like to play some soft music or play games on my phone."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Websites",
+   "name_zh": "网站",
+   "note": "",
+   "page": 20,
+   "questions": [
+    {
+     "no": 1,
+     "question": "What kinds of websites do you often visit?",
+     "answer": "I often use search engines like Baidu and Google. I frequently visit these two sites especially when I need to learn something new. Such websites can provide me with the best matched information I need. For instance, if I need to know more about art history, I can search on Google and browse pages of information. When I need to get the latest news, I can also sort by date, or search for news pages. As a result, I often use these websites."
+    },
+    {
+     "no": 2,
+     "question": "What is your favourite website?",
+     "answer": "Whenever possible, I would access Youtube. It harbors probably the richest categories of videos among all websites alike. You know, I am always on the way teaching myself new things, improving myself. Youtube just has the right materials to help me. Initially, I logged on to it to watch TED videos. Those great speeches given by specialists were so inspiring. Then gradually, I found tons of high-quality videos. I learned to match clothes by watching fashion videos on Youtube, and also my knowledge was expanded in psychology, astronomy, science and etc. I drew so much nutrition from Youtube videos."
+    },
+    {
+     "no": 3,
+     "question": "Are there any changes to the websites you ofter visit？",
+     "answer": "I find that search engines like Baidu and Google become smarter nowadays. For instance, if you search COVID-19 related information on both websites, they will advise you to go to the hospital as soon as possible and provide the latest data on COVID-19 cases. Moreover, these websites now have a special tag for the advertising web pages so that we users won’t get misled by these advertising pages, which is a great improvement."
+    },
+    {
+     "no": 4,
+     "question": "What kinds of websites are popular in your country?",
+     "answer": "As you may know, TikTok is widespread in China these days, so I think the most popular websites would be those with short videos. What’s more, online shopping websites are also gaining popularity. It's shocking that China's online avenue on November 11th surpassed that of America's largest retail store for the whole year."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Mirrors",
+   "name_zh": "镜子",
+   "note": "",
+   "page": 21,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Would you use mirrors to decorate your room?",
+     "answer": "I don’t think it’s a good idea to fill my room with mirrors, really. In my culture, mirrors aren’t lucky emblems. I remember my grandmother used to tell me horror stories, where mirrors can call through a ghost at night. So, for that reason alone, I would never use mirrors to light up my place."
+    },
+    {
+     "no": 2,
+     "question": "Do you usually take a mirror with you ?",
+     "answer": "I carry a mini mirror in my bag wherever I go. To be honest, I started keeping a mirror on me when I was a teenager. I use it to check if my teeth are clean after eating, and whether I need to fix up my make-up. I’d feel so insecure without it."
+    },
+    {
+     "no": 3,
+     "question": "Have you ever bought mirrors?",
+     "answer": "Well, yes. I’ve bought many mirrors since I realized the huge benefit of them. Funnily enough, now you mention it, I bought a really expensive one only a couple of weeks ago, which was advertised to reflect the perfect image of your make up."
+    },
+    {
+     "no": 4,
+     "question": "Do you like looking at yourself in the mirror?How often?",
+     "answer": "I’d say yes. I mean, I check my make-up in the mirror many times a day. It always boosts my confidence when my reflection looks awesome , because it makes me feel confident."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Films/cinemas",
+   "name_zh": "电影与影院",
+   "note": "",
+   "page": 22,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you prefer to watch films at home or in the cinema?",
+     "answer": "I prefer watching at home because it’s more comfortable and flexible. I can pause, rewind, and eat whatever I want. But for big visual effects movies like sci-fi or action, the cinema is definitely better."
+    },
+    {
+     "no": 2,
+     "question": "How often do you watch films?",
+     "answer": "On average, I watch about one or two films per week. Sometimes more if I’m on holiday, sometimes less if I’m busy with exams. I try to keep it balanced so that it doesn’t affect my study time."
+    },
+    {
+     "no": 3,
+     "question": "Do you think going to the cinema is a good way to spend time with friends?",
+     "answer": "Yes, I’d say so. It’s a low-pressure activity — you don’t need to keep a conversation going the whole time. After the movie, you can grab a snack and talk about your favorite scenes. It’s simple but enjoyable."
+    },
+    {
+     "no": 4,
+     "question": "Do you often go to the cinema with your friends?",
+     "answer": "It depends. When we’re all free, yes. But with busy schedules, it’s not that often — maybe once every two months. We usually choose a comedy or an action film because those work best for a group."
+    },
+    {
+     "no": 5,
+     "question": "Did you ever go to the cinema alone as a child?",
+     "answer": "No, never. As a child, I always went with my parents or older cousins. My parents wouldn’t allow me to go alone because they thought it was unsafe. Looking back, I think they were right."
+    },
+    {
+     "no": 6,
+     "question": "Did you often watch films when you were a child?",
+     "answer": "Yes, I watched films quite regularly. My family had a collection of Disney VCDs, so I watched those over and over again. I also remember watching Chinese martial arts films with my dad on weekend afternoons."
+    },
+    {
+     "no": 7,
+     "question": "What films do you like?",
+     "answer": "I’m a big fan of detective and mystery films. I love trying to solve the puzzle before the ending. Sometimes I also enjoy romantic dramas, but I’m not into superhero movies — they feel a bit repetitive to me."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Old buildings",
+   "name_zh": "古老建筑",
+   "note": "",
+   "page": 23,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Are there any old buildings you want to see in the future? why?",
+     "answer": "Yes, I’d like to visit the ancient town of Pingyao in Shanxi. It has well-preserved city walls and traditional banking buildings from the Ming and Qing dynasties. Seeing it would help me understand how people lived centuries ago."
+    },
+    {
+     "no": 2,
+     "question": "Do you prefer living in an old building or a modern house?",
+     "answer": "I slightly prefer old buildings, actually. I live in one right now — it has high ceilings, thick walls, and lots of character. The only downside is the plumbing. But the charm and quiet atmosphere make up for it."
+    },
+    {
+     "no": 3,
+     "question": "Do you think we should preserve old buildings in cities?",
+     "answer": "I think so, but selectively. Not every old building is worth keeping. Some have historical or artistic value, while others are just old and unsafe. The government should protect the meaningful ones and replace the rest wisely."
+    },
+    {
+     "no": 4,
+     "question": "Have you ever seen old buildings in the city?",
+     "answer": "Yes, in many Chinese cities you can find old buildings right next to new ones. For example, in Shanghai, there are old shikumen houses. They look a bit worn but very unique. I think they add character to the city."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Jokes & Comedies",
+   "name_zh": "笑话与喜剧",
+   "note": "",
+   "page": 24,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Have you ever watched a live show?",
+     "answer": "Yes, I went to a stand-up comedy show last year. It was a lot of fun because the comedian interacted with the audience. The atmosphere was completely different from watching a screen — much more energetic."
+    },
+    {
+     "no": 2,
+     "question": "Do you like to watch comedies?",
+     "answer": "Yes, I’m a big fan. Comedies are my go-to choice when I want to kill time or cheer up. I prefer romantic comedies or funny family shows. They always put me in a good mood without needing too much brainpower."
+    },
+    {
+     "no": 3,
+     "question": "Do your friends like to tell jokes?",
+     "answer": "Yes, a few of my friends are natural comedians. They love sharing funny stories or silly puns. It really lifts our mood when we hang out, especially after a long day of studying or working."
+    },
+    {
+     "no": 4,
+     "question": "Are you good at telling jokes?",
+     "answer": "I’m okay, but not great. I can tell simple and clean jokes, but I’m not a natural storyteller. Sometimes I laugh before finishing the punchline. Still, my friends say I’m quite funny when I’m not trying too hard."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Parks",
+   "name_zh": "公园",
+   "note": "",
+   "page": 25,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you still like going to parks now?",
+     "answer": "Yes, I do, but the reasons have changed. As a child, I went to parks mainly to play on the equipment and run around. Now, I visit parks for peace and relaxation. Living in a busy city, parks offer a quiet escape from traffic and crowds. I enjoy walking along the paths, sitting on a bench to read, or just listening to the birds. It's a great way to reduce stress and recharge. I probably go once or twice a month. So yes, I still like parks, just in a more grown-up way."
+    },
+    {
+     "no": 2,
+     "question": "Did you like going to parks as a child?",
+     "answer": "Definitely. I have very fond memories of going to parks as a child. There was a small park just a ten- minute walk from my home, and my parents used to take me there almost every weekend. I loved running on the grass, playing on the swings, and feeding the ducks in the pond. It felt like a little escape from school and homework. Looking back, I think those park visits helped me stay active and also gave me a chance to connect with nature. So yes, I absolutely enjoyed it."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "social media",
+   "name_zh": "社交媒体",
+   "note": "",
+   "page": 26,
+   "questions": [
+    {
+     "no": 1,
+     "question": "When did you start using social media?",
+     "answer": "I began using social media about five years ago, mainly to stay in touch with friends and family living abroad. At first, I only had a simple profile, but over time, I started sharing photos and updates regularly. It’s been a helpful way to keep connected and discover new trends worldwide."
+    },
+    {
+     "no": 2,
+     "question": "Have you ever posted anything on social media?",
+     "answer": "Yes, I have shared posts on social media several times. Mostly, I upload photos from my travels or special events. It’s a fun way to keep in touch with friends and show them what I’m up to. However, I try not to share too much personal information because privacy is important to me."
+    },
+    {
+     "no": 3,
+     "question": "Do you think you spend too much time on social media?",
+     "answer": "Honestly, sometimes I feel a little addicted to social media. You know, one minute you're browsing Tik Tok and the next an hour has passed. I've been trying to cut down on my social media use, especially during exams. Well, it's like, I need to keep reminding myself that there is a whole world beyond the screen of my phone."
+    },
+    {
+     "no": 4,
+     "question": "What do people do on social media？",
+     "answer": "Oh, people do all sorts of things on social media. Some people focus on sharing their daily lives, such as photos, what they're eating, and where they're hanging out. Others are keen on sharing cute moments of their pets. And, of course, there are plenty of people who just like to watch funny videos or keep up with news and trends. I can't really think of anything we can't do on social media."
+    },
+    {
+     "no": 5,
+     "question": "Do your friends use social medial？",
+     "answer": "Yeah, almost all of my friends use social media. It's our go-to way to stay in touch, especially those of us who have gone to different cities for college or work. We are always messaging each other in WeChat or sharing things on QQ. It's like our virtual hangout. Honestly, I can't imagine a day without that connection."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Clothing",
+   "name_zh": "服装",
+   "note": "",
+   "page": 27,
+   "questions": [
+    {
+     "no": 1,
+     "question": "What kind of clothes do you like to wear?",
+     "answer": "I prefer to wear formal attire for the workplace. This typically includes well-fitted suits, dress shirts, and ties. I believe that dressing professionally not only reflects a sense of responsibility and competence, but also allows for a more confident and respectful demeanor."
+    },
+    {
+     "no": 2,
+     "question": "Do you prefer to wear comfortable and casual clothes or smart clothes?",
+     "answer": "Personally, I prefer to wear comfortable and casual clothes rather than smart clothes. Casual attire allows me to move freely and focus on my tasks without feeling restricted. Moreover, it helps create a relaxed and friendly atmosphere in the workplace."
+    },
+    {
+     "no": 3,
+     "question": "Do you like wearing T-shirts?",
+     "answer": "Yes, I do enjoy wearing T-shirts for casual occasions. They are comfortable, versatile, and easy to style. T-shirts are not typically considered appropriate office wear, so I reserve them for my personal time outside of work."
+    },
+    {
+     "no": 4,
+     "question": "Do you spend a lot of time choosing clothes?",
+     "answer": "I do not spend a lot of time choosing clothes. I believe in keeping things simple and efficient when it comes to dressing for work. I have a basic wardrobe of versatile pieces that can be easily mixed and matched, saving me time and effort in selecting an outfit each day."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "the city you live in",
+   "name_zh": "居住城市",
+   "note": "",
+   "page": 28,
+   "questions": [
+    {
+     "no": 1,
+     "question": "What city do you live in?",
+     "answer": "I currently reside in the beautiful coastal city of Qingdao in China. Known for its stunning beaches, delicious seafood, and rich cultural heritage, Qingdao is a vibrant and dynamic city that offers a wonderful quality of life. I am fortunate to call it my home, and I enjoy exploring all that this city has to offer while pursuing my studies."
+    },
+    {
+     "no": 2,
+     "question": "What's the weather like where you live?",
+     "answer": "The weather where I live can be quite unpredictable. It ranges from scorching heat in the summer to freezing cold in the winter. However, overall, it tends to be mild and comfortable throughout the year. There are occasional rain showers and gusty winds, but it adds to the charm of the place. It's a great place for outdoor activities and enjoying nature's beauty."
+    },
+    {
+     "no": 3,
+     "question": "Are there people of different ages living in this city?",
+     "answer": "I have observed that there are people of all ages living in my city. From young kids to teenagers, to working-age adults and senior citizens, the population here is diverse and varied. This mix of different generations brings a unique energy to the city, seriously."
+    },
+    {
+     "no": 4,
+     "question": "Is this city your permanent residence?",
+     "answer": "No, this city is not my permanent residence. I moved here for my studies and will stay until I graduate. However, I do enjoy living in this city because it has a vibrant cultural atmosphere and provides many opportunities for personal and professional growth."
+    },
+    {
+     "no": 5,
+     "question": "Are there big changes in this city?",
+     "answer": "Yes, there have been some big changes in Qingdao in recent years, especially with the city's rapid development. One of the most notable changes is the expansion of transportation systems, such as the subway and high-speed rail, which has made travel much more convenient."
+    },
+    {
+     "no": 6,
+     "question": "How long have you lived in this city?",
+     "answer": "I have been living in this city for two years. Even though it hasn't been long, this city has become like a second home to me. I've had the opportunity to explore various areas of the city and discover its hidden gems., and I'm excited to see what else this city has in store for me."
+    },
+    {
+     "no": 7,
+     "question": "Do you like this city? Why?",
+     "answer": "I absolutely love Qingdao! There are so many things about this city that make it unique and special. The beautiful ocean views, fresh seafood, and friendly locals are just a few reasons why I enjoy living here. Qingdao has offered me a great balance of academics, leisure, and personal growth. It's definitely a city that has captured my heart!"
+    },
+    {
+     "no": 8,
+     "question": "Do you often see your neighbors？",
+     "answer": "Not really, I don't often see my neighbors. We all seem to have busy schedules and rarely have time to interact. However, when we do see each other, we exchange greetings and small talk. It's not like we're close friends, but it's nice to have a sense of community."
+    },
+    {
+     "no": 9,
+     "question": "Are the people friendly in the city？",
+     "answer": "Yes, the people in the city are incredibly friendly. They are always willing to help and engage in conversation. Whether it's asking for directions or seeking recommendations, they are approachable and kind-hearted. Their warm hospitality creates a welcoming atmosphere which makes living here an enjoyable experience. Interacting with locals has not only broadened my cultural understanding but also made me feel accepted and part of the community."
+    },
+    {
+     "no": 10,
+     "question": "Is the city friendly to children and old people?",
+     "answer": "Yes, the city is extremely friendly to children and old people. There are numerous parks and playgrounds specifically designed for children, allowing them to play and explore in a safe environment. Additionally, there are various community centers and social clubs dedicated to the elderly, providing them with opportunities for socialization and activities tailored to their needs. The city also prioritizes pedestrian- friendly infrastructure, making it easier for children and the elderly to navigate the streets safely."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Morning routines",
+   "name_zh": "晨间日常",
+   "note": "",
+   "page": 30,
+   "questions": [
+    {
+     "no": 1,
+     "question": "What do you do in the mornings?",
+     "answer": "On weekdays, I usually have a routine to get ready for work, including putting on makeup, getting dressed, a quick breakfast and then rush to the bus stop to catch the minibus. On weekend, on the other hand, I tend to sleep in and wake up naturally, around noon usually. And then I will just get a brunch with my roommate."
+    },
+    {
+     "no": 2,
+     "question": "Is breakfast important?",
+     "answer": "I would say so. Breakfast is sometimes described as the most important meal of the day. And I’ve also heard studies that eating breakfast seems to have a positive effect on weight maintenance. like most people, I am usually hungry when I wake up, sometimes a bite of biscuits or even some juice, which can make me feel so much better."
+    },
+    {
+     "no": 3,
+     "question": "What is your morning routine?",
+     "answer": "Mornings can be the busiest time of the day and I start to create a fast routine for myself after a few years of working. After I wake up, I get ready for work, including putting on a quick makeup around 10 minutes, get dressed, meanwhile, downing some milk and scarfing a quick breakfast. If I am quick, I will also think about today’s to-do list."
+    },
+    {
+     "no": 4,
+     "question": "Do you like to get up early in the morning?",
+     "answer": "Like most people, I am not a morning person. I find waken up by an alarm clock very stressful and a bad morning impacts the whole day. If I were to choose, I always prefer to get up naturally. However, the reality was and still is, I always have to get up pretty early, for lessons or work."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Teachers",
+   "name_zh": "教师",
+   "note": "",
+   "page": 31,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you have a favorite teacher?",
+     "answer": "Yes, I do have a favorite teacher. In particular, my Chinese language teacher holds a special place in my heart. Her name is Ms. Li, and she has been my teacher for the past three years. What makes her unique is her passion for teaching and her commitment to helping her students succeed. She always goes the extra mile to make her classes engaging and interactive, using various teaching methods and incorporating real- life examples. I appreciate her patience and dedication in ensuring that each student understands the content thoroughly."
+    },
+    {
+     "no": 2,
+     "question": "In what way has your favourite teacher helped you?",
+     "answer": "My favorite teacher has greatly helped me in developing my thinking skills and organizing my daily tasks effectively. Through thought-provoking discussions and challenging assignments, she taught me how to critically analyze information and approach problems from different perspectives. Additionally, she guided me in setting realistic goals and creating a structured schedule to prioritize my tasks. As a result, I have become more efficient in managing my time and accomplishing my daily responsibilities."
+    },
+    {
+     "no": 3,
+     "question": "Do you have a teacher from your past that you still remember?",
+     "answer": "Yes, I do have a teacher from my past that I still remember vividly. Her name is Ms. Wang, my Chinese language teacher in primary school. What makes her unforgettable is her incredible patience towards me. Whenever I struggled with a concept or had difficulty understanding a lesson, she would patiently explain it to me until I grasped the concept. Her patience was truly remarkable and it made a significant impact on my learning experience. Ms. Wang's dedication and commitment to her students left a lasting impression on me and I will always be grateful for her guidance."
+    },
+    {
+     "no": 4,
+     "question": "Are you still in touch with your primary school teachers?",
+     "answer": "No, I am not currently in touch with my primary school teachers. Unfortunately, I do not have any means of contacting them. However, I do hope to reconnect with them in the future if I am able to find a way to get in touch. It would be wonderful to catch up with them and reminisce about my time in primary school."
+    },
+    {
+     "no": 5,
+     "question": "Do you want to be a teacher in the future?",
+     "answer": "Yeah, well, I don’t mind teaching. To a point, I think teaching is the most rewarding job in the world. Because you are cultivating the next generation for this society. Your devotion will be paid off in the future. So yeah, if I am qualified to be a teacher, I will make it my career."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Headphones",
+   "name_zh": "耳机",
+   "note": "",
+   "page": 32,
+   "questions": [
+    {
+     "no": 1,
+     "question": "In what conditions, you won't use headphones？",
+     "answer": "I never use the headphones when I’m in the car, or on a plane. ‘cause I feel that there’s already enough noise from the vehicle running, my ears really can’t afford any more of that. As much as I love to enjoy music, I do worry about my hearing safety."
+    },
+    {
+     "no": 2,
+     "question": "When would you use headphones？",
+     "answer": "I use them when I want to enjoy some good music. You know, with the headphones, I can get better solid quality of the sound. And also, when I’m having online classes, I need the headphones, ‘cause then they help me focus on the class content, rather than being distracted by the outside noise."
+    },
+    {
+     "no": 3,
+     "question": "Do you use headphones？",
+     "answer": "People are more reliant on headphones nowadays, and I am no exception. In my spare time, I love to enjoy some quiet time by putting in my headphones and playing some of my favorite music. During work, they’re always in my ears, because I need to receive many phone calls every day, and in order to be more efficient, I like to communicate via headphones rather than typing emails."
+    },
+    {
+     "no": 4,
+     "question": "What kind of headphones do you use？",
+     "answer": "Among all the headphones on the market, I prefer to use Bluetooth headsets, which connect to mobile phones via Bluetooth instead of a cable, making them extremely free and easy to use. This also makes them much more comfortable to wear than a wired headset."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "History",
+   "name_zh": "历史",
+   "note": "",
+   "page": 33,
+   "questions": [
+    {
+     "no": 1,
+     "question": "When was the last time you read about history?",
+     "answer": "Well, you know, I don't major in history and I’m not really into that area, so it might be a few years ago when I read some. At the time, I was in high school and was preparing for an important history exam. From that learning, I got to know how our country was founded and how much effort the leaders had put into it."
+    },
+    {
+     "no": 2,
+     "question": "Have you ever been to history museums?",
+     "answer": "To be honest, I don't think I’ve been to any sorts of history museum. I have visited some art or science museums, but history, I don't think so. I’ve always wanted to pay a visit to a history museum because I reckon that there will be lots of thought-provoking facts to learn about."
+    },
+    {
+     "no": 3,
+     "question": "Did you like history when you were young?",
+     "answer": "Actually, I guess I did have a period when I was quite into the stories of the past. I believe that was at the age of 5 or 6, when my grandpa was living with me. He told me a lot of fascinating stories about the old days in a really dramatic way. I was totally engrossed with history at the time."
+    },
+    {
+     "no": 4,
+     "question": "Do you like history?",
+     "answer": "Well, I believe I have very neutral attitudes towards history. I mean I don't really like it but I don't detest it either. I think it’s probably because I’m convinced that history itself is really intriguing and we can learn a great deal from it, but my history teachers back in school were quite boring so I don't really have a positive impression of it."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Shopping",
+   "name_zh": "购物",
+   "note": "",
+   "page": 34,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you prefer online shopping or in-store shopping？",
+     "answer": "It depends on what I'm buying. For everyday items like books, electronics, or household goods, I definitely prefer online shopping because it's time-saving and often cheaper. I can compare prices easily and read reviews from other customers. However, when it comes to clothes, shoes, or furniture, I prefer going to a physical store. I want to see the quality, try things on, or test the product before making a decision. So I'd say I use both, depending on the situation."
+    },
+    {
+     "no": 2,
+     "question": "How often do you go shopping？",
+     "answer": "I wouldn't say I shop very often. For essentials like food and household items, I go to the supermarket roughly twice a week. As for clothes, shoes, or electronics, I only shop when necessary — maybe once a month or even less. I'm not really into window shopping or browsing for fun because I find it a bit tiring and time-consuming. So overall, I'd describe myself as a practical shopper who buys things only when needed."
+    },
+    {
+     "no": 3,
+     "question": "Do you like shopping?",
+     "answer": "I like shopping. I mean shopping is a great way to relieve stress as long as you don’t overdo it. Also, because you often shop with friends, it’s a great chance for you to connect with one another by creating shared memories. Moreover, putting on beautiful and stylish clothes will actually make you feel good about yourself, thus boosting one’s self-confidence."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Tidiness",
+   "name_zh": "整洁",
+   "note": "",
+   "page": 35,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Did you use to keep your room tidy as a child？",
+     "answer": "To be honest, I was quite a messy child. I rarely kept my room tidy because I was too busy playing or watching cartoons. My desk was usually covered with schoolbooks, toys, and snack wrappers. My parents often reminded me to clean up, but I would just push things under the bed or into the closet. Looking back, I think I was just lazy, but as I grew older, I gradually learned to be more organized."
+    },
+    {
+     "no": 2,
+     "question": "Do you like to keep things tidy？",
+     "answer": "Yes, definitely. I'm someone who really appreciates a clean and organized space. I find that when my surroundings are tidy, I feel calmer and more productive. I usually make my bed every morning and put things back in their place after using them. That said, I'm not obsessive about it. If I'm busy with exams or projects, I might let things slide for a few days, but I always tidy up afterwards. So yes, I do like keeping things tidy."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Science",
+   "name_zh": "科学",
+   "note": "",
+   "page": 36,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do Chinese people often visit science museums?",
+     "answer": "I'm not sure if the majority Chinese are interested in the science museums. You see, most Chinese parents would like to cultivate their children's interest in science. So they may pay to send their children to these museums, but for themselves, I'm afraid they would rather spend their spare time somewhere else, like a theater, rather than visiting museums."
+    },
+    {
+     "no": 2,
+     "question": "Do you like watching science TV programs?",
+     "answer": "Yep! I like to watch science documentaries, especially those that explore the secrets in the universe. Actually there is a science program sponsored by Nasa in America. I watch that regularly. Sometimes I would even invite friends over to enjoy the show together."
+    },
+    {
+     "no": 3,
+     "question": "What kinds of interesting things you have done with science?",
+     "answer": "I used to do an experiment related to nutrition on myself. I was curious about the impacts of carb on human body, so I decided to stop taking in carbs for a week to see if there are any changes on my body. I felt tired and anxious on the fourth day after stopping eating carbs and felt a bit dizzy on the fifth day. So, I stopped the experiment on the sixth day because I felt really bad."
+    },
+    {
+     "no": 4,
+     "question": "Which science subject is interesting to you?",
+     "answer": "I like biology the most. We started to learn biology in the middle school. Because I am very into human bodies, I am deeply attracted to how human body functions which is a core part in biology. I am obsessed with how cells work with each other to become organs, blood and many other important parts in our body."
+    },
+    {
+     "no": 5,
+     "question": "When did you start to learn about science？",
+     "answer": "I started to learn about science since I was 10. At that time, I was in grade 4 in primary school and I took a class called “science”. In that course, we did a lot of physics experiments including paper planes, mini- rocket and so on. I did not know that was physics knowledge but I felt that it was pretty interesting and willing to learn more in the future. Well, my experience with science began as a child because my father and mother both had scientific interests. When I was a kid, we had lots of books about astronomy, physics and nature, so my interest in science was established by reading those books and hearing my parents discuss it all the time."
+    },
+    {
+     "no": 6,
+     "question": "Do you like science?",
+     "answer": "Of course, I do, when I was a little kid, my parents took me to many stunning science museums and galleries, which really broadened my horizons. Also, science provided me a deeper understanding of the earth. Yes, I do, if I remember correctly, I fell in love with it in an early age. I always have a lively curiosity(强 烈的好奇心) about things, and thanks to science books, I learned a lot about the natural phenomena and the laws of science."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Singing",
+   "name_zh": "唱歌",
+   "note": "",
+   "page": 37,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you like singing? Why or why not?",
+     "answer": "Absolutely! Although I’m not a professional singer and not very talented in that respect, I’m still very into singing, especially when I’m taking a shower. The echo of my voice in the shower cubicle always sounds better than elsewhere, so I often hum to myself in the bathroom with my Bluetooth speaker on."
+    },
+    {
+     "no": 2,
+     "question": "Have you ever learnt how to sing?",
+     "answer": "No, not really. Throughout my entire school years, I never really had a real music lesson. The school I went to focused only on the academic side. At school, singing wasn't really a priority, so I never had the chance to learn it seriously. But I used to I used to teach myself some singing skills through videos on the Internet."
+    },
+    {
+     "no": 3,
+     "question": "Who do you want to sing for?",
+     "answer": "Ah, that’s a tricky question for me. Normally I only sing to myself, cause I’m such a terrible singer. But perhaps I can sing for my parents on their birthdays. They certainly wouldn’t laugh at my bad singing, but they are the only people I would sing for, cause I love them so much."
+    },
+    {
+     "no": 4,
+     "question": "Do you think singing can bring happiness to people?",
+     "answer": "Perhaps. I have a lot of friends who enjoy singing! They pay to go to KTVs to sing. They throw themselves into music and seem to be completely involved in their singing. So I think singing must bring them pleasure and comfort in some ways. Yeah, so they must find some sort of happiness in singing."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Art",
+   "name_zh": "艺术",
+   "note": "",
+   "page": 38,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you like modern art or traditional art?",
+     "answer": "Compared with traditional art, I prefer modern art. Of course, this does not mean that traditional art is unappealing. Traditional art gives people the enjoyment of eternal beauty, and there is a reason why these beautiful treasures have been handed down through the years. But modern art has a stronger visual impact, which makes more of an impression on me."
+    },
+    {
+     "no": 2,
+     "question": "Do you want to be an artist?",
+     "answer": "Well, to be honest, although I love art, I don’t think I would like to be an artist in the future. I know that my grandfather’s paintings can be sold for a lot of money, but he was relatively poor when he was younger when he was a nobody. For most artists, they lead a relatively poor life . So, I don’t want to be an artist."
+    },
+    {
+     "no": 3,
+     "question": "Do you like visiting art galleries?",
+     "answer": "Of course, I like visiting art galleries. My grandfather always brought me to different art galleries when I was young. Even now, sometimes I go with him to art galleries. My favorite art gallery is the Louvre in Paris, France. I have been there once, before the epidemic started, and it was breathtaking. I still remember the excitement I felt when I saw the Mona Lisa for the first time."
+    },
+    {
+     "no": 4,
+     "question": "Do you like art?",
+     "answer": "Yes, I do. I like all kinds of art. I think I got influenced by my grandfather. My grandfather is a well- known local oil painter. One of his oil paintings can be sold for a few thousand dollars. When I was young, I always watched him paint. Then gradually I fell in love with the arts. Not only paintings and drawings, I am also a big fan of musical instruments."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Music",
+   "name_zh": "音乐",
+   "note": "",
+   "page": 39,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Does happy music make you feel more excited？",
+     "answer": "Yes, happy music often lifts my mood and energizes me. For example, upbeat songs with a fast tempo can make me feel more enthusiastic and motivated, especially when I’m exercising or socializing. However, sometimes I prefer calm music to relax rather than increase excitement, depending on the situation."
+    },
+    {
+     "no": 2,
+     "question": "Do you prefer sad or happy music？",
+     "answer": "I usually prefer happy music because it lifts my mood and energizes me, especially after a long day. However, sometimes I enjoy sad songs as well since they allow me to reflect on my feelings and experience a sense of calm. Overall, my choice depends on my current emotional state and the situation I’m in."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Outer space and stars",
+   "name_zh": "外太空与星辰",
+   "note": "海外 疑似淘汰",
+   "page": 40,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you want to know more about outer space?",
+     "answer": "Yeah, you know when I was a kid, I always wanted to see what the Earth looked like from far away, or whether there would be aliens on other planets. All these things sound pretty interesting for someone like me who really wants to explore the unknown in the solar system (太阳系), or even the whole universe. However, the way I’ve learnt about outer space is kinda limited to sci-fi movies, documentaries, and some famous books."
+    },
+    {
+     "no": 2,
+     "question": "Do you want to go into outer space in the future?",
+     "answer": "Well, I am negative about the commercial availability of space travel in my lifetime. But if the chance is real, I would certainly give it a go. Outer space is full of mystery, and discovering the unknown is always something worth human effort. Let’s just hope for rapid technological advancement."
+    },
+    {
+     "no": 3,
+     "question": "Do you like science fiction movies?Why?",
+     "answer": "I do. A number of the most distinguished films in the film industry set their background on space travel . I surely enjoy an exciting journey into space with the movie characters. One of my favorite movies is Interstellar by Christopher Nolan. Sometimes I wish I could travel in space in real life."
+    },
+    {
+     "no": 4,
+     "question": "Have you ever learnt about outer space and stars?",
+     "answer": "Yes, I have. Geography is a subject in China’s compulsory education, and astronomy interlinks with the geographical phenomena on earth. So basically, everyone will have to learn something about Cosmos and the stars. I know what planets compose the solar system and how the moon would affect the tide. It’s interesting to see how things so far from you could affect your life."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Hobby",
+   "name_zh": "爱好",
+   "note": "",
+   "page": 41,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you have any hobbies?",
+     "answer": "Yes, I have a couple of hobbies that I enjoy doing in my free time. Firstly, I have a keen interest in photography. I love capturing beautiful moments and exploring different angles and perspectives. It allows me to see ordinary things in a unique way. Besides that, I also enjoy playing the guitar. Music has always been a great way for me to express myself and relax. Whether strumming a favorite song or creating my own melodies, it brings me immense joy. These hobbies help me unwind and bring a sense of fulfillment to my life."
+    },
+    {
+     "no": 2,
+     "question": "Did you have any hobbies when you were a child?",
+     "answer": "Yes, I had hobbies when I was a child. One of my favorite hobbies was drawing. I used to spend hours with a pencil and paper, creating my own little world on the page. It was a way for me to express my creativity and imagination. I loved the feeling of bringing something to life through my drawings. Whether it was drawing my favorite cartoon characters or creating my own colorful landscapes, it was a hobby that brought me so much joy. I still enjoy drawing occasionally as a way to relax and unleash my artistic side."
+    },
+    {
+     "no": 3,
+     "question": "Do you have a hobby that you've had since childhood?",
+     "answer": "Yes, I do have a hobby that I've had since childhood. I have always been passionate about playing the piano. From a young age, I was fascinated by the beautiful melodies and rhythmic patterns. It became a part of my daily routine, as I would spend hours practicing and honing my skills. During my school years, I participated in various music competitions and even performed at local events. Playing the piano provided me with a sense of joy and a means of self-expression. It continues to be a significant part of my life, allowing me to relax and unwind after a long day."
+    },
+    {
+     "no": 4,
+     "question": "Do you have the same hobbies as your family members?",
+     "answer": "No, I do not share the same hobbies as my family members. While they enjoy outdoor activities like hiking and gardening, I have a passion for food and cooking. I love exploring different cuisines and trying new dishes. Whenever I travel, I make it a point to taste local delicacies and immerse myself in the culinary experiences of different cultures. It's a hobby that allows me to appreciate the art of food and indulge in unique flavors. Cooking and experimenting with recipes is also a therapeutic activity for me, where I can express my creativity in the kitchen."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Advertisement",
+   "name_zh": "广告",
+   "note": "",
+   "page": 42,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you often see advertisements when you are on your phone or computer?",
+     "answer": "Yes, I frequently encounter advertisements when using my phone or computer, especially while scrolling through social media apps like Instagram or Facebook. It's hard to ignore them these days as they pop up in between posts or on websites."
+    },
+    {
+     "no": 2,
+     "question": "Is there an advertisement that made an impression on you when you were a child?",
+     "answer": "Oh I saw a commercial when I was a kid that I still remember. It was for a famous chocolate brand and featured animated characters in a super cool, magical world of chocolate. The jingle was catchy and the whole picture was colorful - it totally caught my eye as a kid. It wasn't just the chocolate that drew me in, but the creativity and fun of the ad's story."
+    },
+    {
+     "no": 3,
+     "question": "Do you see a lot of advertising on trains or other transport?",
+     "answer": "Yeah, around my city, you see a lot of ads on public transport, like on trains and buses. They've got everything from big posters inside to those full wraps covering the outside. These ads are all over the place, advertising all sorts of things – from local events to different products. They're pretty hard to miss and give me something to look at when I'm on my way somewhere."
+    },
+    {
+     "no": 4,
+     "question": "Do you like advertisements?",
+     "answer": "My feelings about ads are kind of a mixed bag. I get why they're important for marketing and stuff, but I really like them more when they're creative, informative, and not too in your face. Ads that are too pushy or just not relevant can be annoying. But if an ad is well-made, entertaining, or just looks good, and maybe even gives me some good info, I actually enjoy it."
+    },
+    {
+     "no": 5,
+     "question": "What kind of advertising do you like?",
+     "answer": "The ads I like the most are the ones that are creative and tell a story. I'm into ads that can make me feel something, whether it's a good laugh, a bit of inspiration, or something I can relate to. I also like ads that look great and get their message across clearly. And if an ad can show me how useful a product is in a clever way, that's a big plus for me."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Gifts",
+   "name_zh": "礼物",
+   "note": "",
+   "page": 43,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Have you ever sent handmade gifts to others?",
+     "answer": "Yes, I have sent handmade gifts to others. I believe that handmade gifts possess a personal touch and convey a sense of sincerity and thoughtfulness. By dedicating time and effort to create something unique, it shows the recipient that they are valued and cherished."
+    },
+    {
+     "no": 2,
+     "question": "Have you ever received a great gift?",
+     "answer": "Yes, I have received a great gift. I appreciate meaningful and thoughtful gestures. One of the best gifts I received was a personalized leather notebook. It reflected my passion for writing and organizing my thoughts."
+    },
+    {
+     "no": 3,
+     "question": "What do you consider when choosing a gift?",
+     "answer": "When choosing a gift, it is important to consider the recipient's interests and preferences. I believe that practical and meaningful gifts are always appreciated. It could be something related to their hobbies or work, like a high-quality pen set or a book on a topic they enjoy."
+    },
+    {
+     "no": 4,
+     "question": "Do you think you are good at choosing gifts?",
+     "answer": "I believe I am good at choosing gifts. I pay attention to the recipient's preferences and try to find something that aligns with their interests. I also consider the occasion and the relationship I have with the person. I believe a thoughtful and well-chosen gift can bring joy and show that I care about the person. So, overall, I think I am skilled at selecting gifts that make others feel special and appreciated."
+    },
+    {
+     "no": 5,
+     "question": "What gift have you received recently?",
+     "answer": "Recently, I was fortunate enough to receive a beautiful handmade craft as a gift from a friend who went on a trip. It was a unique piece that showcased the rich cultural heritage of the destination they visited. The craft was intricately designed, with vibrant colors and meticulous detailing. It was truly a special and thoughtful present, one that reflected both my friend's thoughtfulness and their appreciation for art. I was truly thrilled to receive such a remarkable gift, as it not only allowed me to appreciate the craftsmanship, but also provided a glimpse into the culture and traditions of the place my friend visited."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "buildings",
+   "name_zh": "建筑",
+   "note": "",
+   "page": 44,
+   "questions": [
+    {
+     "no": 1,
+     "question": "ls there a building that you would like to visit?",
+     "answer": "Certainly! One building I’ve always wanted to visit is the Sydney Opera House in Australia. Its unique sail-like design fascinates me, and I’m eager to experience the lively cultural events held there. Moreover, the stunning waterfront location adds to its charm, making it a must-see landmark for architecture lovers like me."
+    },
+    {
+     "no": 2,
+     "question": "Do you take photos of buildings?",
+     "answer": "Yes, I enjoy photographing buildings, especially those with unique architecture. For instance, when I travel, I often capture ancient temples or modern skyscrapers, as they tell stories about culture and history. Taking photos of buildings allows me to appreciate design details that I might otherwise overlook."
+    },
+    {
+     "no": 3,
+     "question": "Are there tall buildings near your home?",
+     "answer": "Yes, there are several tall buildings close to where I live. For instance, a recently constructed office tower stands out with its modern glass façade, contrasting with the older, shorter residential blocks nearby. Living amidst such architecture makes the area feel vibrant and bustling, especially during the evenings when the city lights glow brightly."
+    }
+   ],
+   "tag": "new"
+  },
+  {
+   "name_en": "Dreams",
+   "name_zh": "梦想",
+   "note": "",
+   "page": 45,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Can you remember the dreams you had?",
+     "answer": "Sometimes, I vividly recall my dreams, especially when they are unusual or emotionally intense. For example, last week, I dreamt about flying over mountains, which felt incredibly real. However, most nights, my dreams fade quickly after waking, leaving only a vague impression behind. This difference often depends on how deeply I sleep and my state of mind before bedtime."
+    },
+    {
+     "no": 2,
+     "question": "Do you want to make your dreams come true?",
+     "answer": "(4) If dreams refer to my ambitions or goals, yes, sure, I would like to make them come true. For example, I would like to live out my dream of travelling around the world before I kick the bucket. But if dreams refer to those thoughts in my mind when I’m sleeping, then I hope they won’t come true, because I only remember my nightmares and I certainly wouldn’t want to have a spider chasing after me."
+    },
+    {
+     "no": 3,
+     "question": "Do you think dreams have special meaning?",
+     "answer": "Well, I believe that our dreams are the reflections of our deepest thoughts, so dreams might be very introspective and remind us to reflect on what we are experiencing. But I don’t really buy those superstitious claims that dreams are foreboding or foretelling. Our fortune depends on how we make use of our time, and it would be insane to rely on the promise of a dream."
+    },
+    {
+     "no": 4,
+     "question": "Can you often remember your dreams?",
+     "answer": "Not really. Most of my dreams leave only a vague blur in my mind, except for extremely intense ones. For example, I still remember the dream I had the day before yesterday, where I was chased by a giant spider through the jungle. My heart was still beating wildly even after I woke up. I am not a very curious person and I think dreams can be particularly private, so I don’t take much interest in what others dream about. However, if people close to me want to share their dreams, I am all ears because I want to be sympathetic to their needs."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Life stages",
+   "name_zh": "人生阶段",
+   "note": "",
+   "page": 46,
+   "questions": [
+    {
+     "no": 1,
+     "question": "At what age do you think people are the happiest?",
+     "answer": "I believe people are happiest in their late twenties because they often have gained enough life experience to appreciate their achievements, yet still possess the energy and optimism to pursue new goals. At this age, many enjoy a balance between independence and social connections, which contributes greatly to their overall happiness."
+    },
+    {
+     "no": 2,
+     "question": "Do you enjoy being the age you are now?",
+     "answer": "Absolutely, I appreciate my current age because it offers a perfect blend of youthful energy and growing maturity. At this stage, I’m more confident in my decisions compared to my teens, yet I still have time to explore new opportunities. This balance makes my present age truly enjoyable and full of potential."
+    },
+    {
+     "no": 3,
+     "question": "How do people remember each stage of their lives?",
+     "answer": "People often recall different life stages through a mix of personal memories and external cues. Photographs, for instance, vividly capture moments, while events like graduations or family gatherings mark milestones. Additionally, emotions attached to these periods help solidify memories, making each stage uniquely memorable."
+    },
+    {
+     "no": 4,
+     "question": "Do you have any plans for the next five years?",
+     "answer": "Certainly! Over the next five years, I aim to enhance my professional skills by pursuing advanced certifications. Additionally, I hope to travel to at least three different countries to experience diverse cultures, which I believe will enrich my personal growth and broaden my perspective on life."
+    },
+    {
+     "no": 5,
+     "question": "What do you think is the most important at the moment?",
+     "answer": "At this moment, I believe mental health stands out as the most crucial aspect. With the fast pace of modern life, many people face stress and anxiety. Prioritizing well-being and seeking support when needed can make a significant difference in individuals’ lives and society as a whole."
+    },
+    {
+     "no": 6,
+     "question": "What did you often do with your friends in your childhood?",
+     "answer": "During my childhood, my friends and I frequently ventured outdoors to play sports like soccer and badminton, which helped us stay active and build teamwork skills. Sometimes, we also gathered indoors for board games or storytelling sessions, creating cherished memories that strengthened our bond. These activities made my early years both joyful and meaningful."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Reading",
+   "name_zh": "阅读",
+   "note": "",
+   "page": 47,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you prefer scanning or detailed reading?",
+     "answer": "I usually prefer detailed reading because it helps me fully understand the material, especially when studying complex topics. However, when I'm short on time or searching for specific information, scanning becomes very useful. For instance, while reading news articles, I scan headlines first, but for textbooks, I always read closely to grasp every detail."
+    },
+    {
+     "no": 2,
+     "question": "When do you need to read carefully,and when not?",
+     "answer": "Careful reading is essential when studying complex materials like legal documents or academic articles, where every detail matters. However, for casual content such as social media posts or light fiction, skimming is often enough to grasp the main ideas quickly without getting bogged down in details."
+    },
+    {
+     "no": 3,
+     "question": "Do you prefer to read on paper or on a screen?",
+     "answer": "Honestly, I tend to prefer reading on paper because it feels more tangible and reduces eye strain. However, when I’m on the go, reading on a screen is incredibly convenient since I can carry multiple books in one device. Both methods have their advantages depending on the situation."
+    },
+    {
+     "no": 4,
+     "question": "Do you like reading?",
+     "answer": "Absolutely, I enjoy reading a lot. Exploring various genres, from thrilling mysteries to insightful biographies, broadens my understanding and sparks my imagination. For instance, diving into historical novels helps me appreciate different cultures and eras. Reading not only entertains me but also enhances my language skills and critical thinking, making it a valuable pastime."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Walking",
+   "name_zh": "散步",
+   "note": "",
+   "page": 48,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Where did you go for a walk lately?",
+     "answer": "Recently, I took a stroll along the riverside park near my home. Unlike usual city walks, this place offers a peaceful atmosphere with lush greenery and gentle water sounds. It was refreshing to breathe fresh air and watch families enjoying picnics, which made the experience quite relaxing and different from my daily routine."
+    },
+    {
+     "no": 2,
+     "question": "Where would you like to take a long walk if you had the chance?",
+     "answer": "If I had the opportunity, I would love to take a long walk through a dense forest, like the Amazon. Experiencing the rich biodiversity and the peaceful sounds of nature would be incredibly refreshing. Unlike typical urban parks, a forest walk offers a unique chance to disconnect from technology and reconnect with the natural world."
+    },
+    {
+     "no": 3,
+     "question": "Why do people like to walk in parks?",
+     "answer": "People enjoy walking in parks because it offers a peaceful escape from busy city life. Strolling among trees and flowers can refresh the mind and body. Additionally, parks provide a safe space for exercise and socializing, making them perfect for relaxation and meeting friends in a natural setting."
+    },
+    {
+     "no": 4,
+     "question": "Did you often go outside to have a walk when you were a child?",
+     "answer": "As a child, I rarely went for walks outside because I preferred playing indoors with my toys or reading books. However, during weekends, my family and I would occasionally take leisurely strolls in the park, which I found refreshing and enjoyable. These moments allowed me to appreciate nature and spend quality time with my loved ones."
+    },
+    {
+     "no": 5,
+     "question": "Do you walk a lot?",
+     "answer": "Yes, I tend to walk quite a bit, especially during weekends when I explore local parks or nearby neighborhoods. Walking not only helps me stay active but also gives me a chance to clear my mind and enjoy nature. Although I sometimes prefer cycling for longer distances, walking remains my favorite way to unwind after a busy day."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Sports team",
+   "name_zh": "运动队",
+   "note": "",
+   "page": 49,
+   "questions": [
+    {
+     "no": 1,
+     "question": "What are the differences between team sports and individual sports?",
+     "answer": "Team sports, such as soccer, emphasize cooperation and communication among players, fostering social skills. In contrast, individual sports like tennis focus on personal discipline and self-motivation. Additionally, team sports often create a strong sense of camaraderie, while individual sports highlight personal achievement and responsibility."
+    },
+    {
+     "no": 2,
+     "question": "Do you like to watch team games?Why?",
+     "answer": "I enjoy watching team sports because they showcase cooperation and strategy. For instance, in football, players must work together seamlessly to score goals, which is fascinating to observe. Additionally, the excitement of cheering for a team builds a sense of community among fans, making the experience even more enjoyable."
+    },
+    {
+     "no": 3,
+     "question": "Have you ever been part of a sports team?",
+     "answer": "Yes, I joined my university’s basketball team last year. Playing with others taught me valuable lessons about teamwork and discipline. Although I wasn’t the best player, the experience boosted my confidence and made exercising more enjoyable. Overall, being part of a sports team helped me build lasting friendships and improve my communication skills."
+    },
+    {
+     "no": 4,
+     "question": "Is team sports popular in your culture?",
+     "answer": "Definitely, team sports hold a special place in my culture. For instance, football matches often bring people together, fostering a strong sense of community. Beyond just entertainment, these sports teach valuable lessons in cooperation and discipline, which are highly appreciated here."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Day off",
+   "name_zh": "休息日",
+   "note": "",
+   "page": 50,
+   "questions": [
+    {
+     "no": 1,
+     "question": "What would you like to do if you had a day off tomorrow?",
+     "answer": "If I had a day off tomorrow, I would seize the opportunity to explore a nearby nature reserve. Immersing myself in the tranquility of the outdoors often helps me recharge. Alternatively, catching up on a good book or cooking a new recipe could offer a relaxing change from my usual routine. Either way, I’d make sure the day is both enjoyable and refreshing."
+    },
+    {
+     "no": 2,
+     "question": "Do you usually spend your days off with your parents or with your friends?",
+     "answer": "On my days off, I mostly choose to hang out with my friends rather than my parents. While I do appreciate family time, weekends offer a great chance to catch up with peers, explore new places, or try hobbies together. It’s a refreshing break from everyday routines and helps strengthen my social bonds in a lively, informal way."
+    },
+    {
+     "no": 3,
+     "question": "What do you usually do when you have days off?",
+     "answer": "On my days off, I often explore new hobbies, such as painting or cooking exotic dishes. Sometimes, I prefer staying home to relax with a good book or watch movies. Occasionally, I meet friends to catch up, which helps me unwind and recharge for the week ahead."
+    },
+    {
+     "no": 4,
+     "question": "When was the last time you had a few days off?",
+     "answer": "The last time I had a few days off was during the spring holiday two months ago. I spent the break visiting my grandparents in the countryside, which was refreshing. Being away from the city’s hustle allowed me to relax, enjoy nature, and reconnect with my family. It was a much-needed pause from my busy routine."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Food",
+   "name_zh": "食物",
+   "note": "",
+   "page": 51,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Has your favourite food changed since you were a child?",
+     "answer": "Certainly! When I was a child, I absolutely loved sweets like candy and chocolate. However, as I grew older, my taste shifted toward healthier options such as salads and grilled fish. This change happened because I became more conscious of nutrition and wanted to maintain a balanced diet. So, my favourite food has definitely evolved over time."
+    },
+    {
+     "no": 2,
+     "question": "Do you eat different foods at dfferent times of the year?",
+     "answer": "Absolutely, my diet varies throughout the year. In the summer, I prefer fresh fruits like watermelon and berries to stay hydrated. During colder months, I enjoy hearty soups and stews to keep warm. Festivals also influence my meals, as traditional dishes often make appearances, adding a cultural touch to my eating habits."
+    },
+    {
+     "no": 3,
+     "question": "Is there any food you dislike?",
+     "answer": "Actually, I’m not particularly fond of overly spicy food. For instance, dishes with excessive chili often overpower the natural flavors and make it hard for me to enjoy the meal. While I appreciate a bit of heat, I prefer meals that are balanced and allow other ingredients to shine through. This makes dining more enjoyable for me."
+    },
+    {
+     "no": 4,
+     "question": "What is your favourite food?",
+     "answer": "Honestly, I find sushi fascinating because it combines simplicity with elegance. The freshness of the fish paired with vinegared rice creates a unique taste experience. Besides being delicious, sushi reflects Japanese culture and artistry, which makes it even more appealing to me. I especially enjoy trying different varieties, like salmon nigiri and spicy tuna rolls."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Typing",
+   "name_zh": "打字",
+   "note": "",
+   "page": 52,
+   "questions": [
+    {
+     "no": 1,
+     "question": "How do you improve your typing?",
+     "answer": "To enhance my typing skills, I usually practice daily using online exercises that focus on accuracy and speed. Additionally, I pay attention to my hand placement and try to avoid looking at the keyboard. Occasionally, I also challenge myself by typing complex texts, which helps me improve both my fluency and precision."
+    },
+    {
+     "no": 2,
+     "question": "When did you learn how to type on a keyboard?",
+     "answer": "I actually started learning to type on a keyboard when I was about ten years old, during a computer class at school. Back then, we used typing software that made the process fun and interactive. Over time, with regular practice, I became quite proficient, which really helped me in my studies and later in my professional life."
+    },
+    {
+     "no": 3,
+     "question": "Do you type on a desktop or laptop keyboard every day?",
+     "answer": "Actually, I use a laptop keyboard daily because it’s convenient and portable. Unlike desktop keyboards, laptops allow me to work from anywhere, whether at home or a café. Sometimes, I miss the comfort of larger keys on a desktop, but the flexibility of a laptop suits my busy lifestyle perfectly."
+    },
+    {
+     "no": 4,
+     "question": "Do you prefer typing or handwriting?",
+     "answer": "Honestly, I lean more towards handwriting because it helps me remember things better. When I jot notes by hand, I feel more connected to the material. However, typing is faster and more convenient, especially for lengthy essays. Still, for creative writing or personal journals, nothing beats the charm of pen and paper for me."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Childhood activities",
+   "name_zh": "童年活动",
+   "note": "",
+   "page": 53,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Did you prefer to do activities alone or with agroup of people when you were a child?",
+     "answer": "As a child, I generally preferred spending time with a group of friends rather than being alone. Participating in team games and group activities made me feel more energetic and helped me build social skills. However, I also cherished some quiet moments alone, especially when reading or drawing, which allowed me to relax and reflect."
+    },
+    {
+     "no": 2,
+     "question": "What were your favourite activities when you werea child?",
+     "answer": "As a child, I absolutely loved painting and drawing; it allowed me to express my creativity freely. Besides art, I enjoyed playing outdoors with my friends, especially riding bicycles around the neighborhood. These activities not only entertained me but also helped me build lasting friendships and develop a sense of adventure."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Views",
+   "name_zh": "观点",
+   "note": "",
+   "page": 54,
+   "questions": [
+    {
+     "no": 2,
+     "question": "Do you prefer views in urban areas or rural areas?",
+     "answer": "I prefer views in rural areas because the natural landscapes are more calming and refreshing. Unlike the bustling city, the countryside offers expansive green fields and clear skies, which help me relax after a busy week. Additionally, the peaceful environment fosters creativity and a sense of connection with nature that urban views rarely provide. 3. Do you like taking pictures of different views Absolutely, I enjoy capturing various scenes because photography allows me to preserve special moments. Whether it’s a bustling cityscape or a quiet countryside, each view tells a unique story. For instance, I love snapping pictures during sunset, as the colors create a magical atmosphere that photos can vividly convey."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Going out",
+   "name_zh": "外出",
+   "note": "",
+   "page": 55,
+   "questions": [
+    {
+     "no": 1,
+     "question": "How often do you use cash?",
+     "answer": "I tend to mostly use cash for small purchases, such as buying a cup of coffee or grabbing a quick snack. However, for larger expenses like shopping or dining out, I prefer using my debit card or mobile payment apps for convenience and security reasons. So, I would say I use cash sporadically, mainly for day-to-day minor transactions."
+    },
+    {
+     "no": 2,
+     "question": "Do you often bring cash with you?",
+     "answer": "Yes, I usually bring a small amount of cash with me for emergencies or places where cards are not accepted. I find it practical to have some cash handy as a backup. Additionally, having cash helps in situations where internet connection may be unreliable for card transactions. Overall, I believe it's essential to have a balance between cash and card for different payment scenarios."
+    },
+    {
+     "no": 3,
+     "question": "Do you always take your mobile phone with you when going out?",
+     "answer": "I usually bring my mobile phone with me when heading out. It serves as a safety tool in case of emergencies and helps me stay connected with family and friends. Additionally, having my phone handy allows me to access navigation apps for finding directions and to capture memorable moments through photographs."
+    },
+    {
+     "no": 4,
+     "question": "Do you bring food or snacks with you when going out?",
+     "answer": "Yes, when I go out, especially for a long day, I usually bring some light snacks like fruit or nuts to keep me energized. I find it convenient and a healthier option than buying fast food when I'm on the go. It's a good way to curb hunger and avoid unhealthy choices. Plus, it saves time and money."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Rules",
+   "name_zh": "规则",
+   "note": "",
+   "page": 56,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Would you like to work as a teacher in a rule-free school?",
+     "answer": "I would be interested in working at a rule-free school as a teacher. Such an environment would foster creativity and individuality among students, allowing them to explore their interests freely. Without strict guidelines, learning can be dynamic and engaging, leading to a more holistic education experience."
+    },
+    {
+     "no": 2,
+     "question": "Have you ever had a really strict teacher?",
+     "answer": "Yes, during my high school years, I encountered a particularly strict teacher, Mrs. Thompson. She was known for her unwavering discipline and high expectations. Despite her stern demeanor, she was also incredibly dedicated."
+    },
+    {
+     "no": 3,
+     "question": "Do you prefer to have more or fewer rules at school?",
+     "answer": "I personally believe that having some rules in school is important for maintaining discipline and a conducive learning environment. However, excessive rules can sometimes stifle creativity and individuality. Therefore, I think it's essential to strike a balance between having enough rules to ensure order and allowing students some freedom to express themselves and explore their interests. 4. Do you have a teacher who does his or her job very well?/3.Have you ever had a very dedicated teacher? Yes, I am fortunate to have a teacher who excels at their job. My English literature professor not only conveys complex ideas with clarity but also fosters engaging discussions that deepen our understanding of the subject. They inspire us to think critically and creatively, making each lesson enjoyable and intellectually stimulating. Their passion for teaching shines through in every class, motivating us to strive for excellence."
+    },
+    {
+     "no": 5,
+     "question": "Do you think students would benefit more from more rules?",
+     "answer": "It depends on the context. In some cases, having clear rules can provide structure and guidance for students, helping them understand expectations and boundaries. On the other hand, overly strict rules might stifle creativity and critical thinking. Therefore, striking a balance between having enough rules to ensure discipline and providing flexibility for individual growth is essential."
+    },
+    {
+     "no": 6,
+     "question": "Are there any rules for students at your school?",
+     "answer": "Yes, at my school, there are several rules that students need to follow. For example, we have a strict policy on uniform, and students must wear the designated attire every day. Additionally, we are expected to arrive to class on time and participate actively in all school activities. Furthermore, there are rules about politeness and respect towards teachers and fellow students that are very important to maintain a positive learning environment."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Doing something well",
+   "name_zh": "擅长之事",
+   "note": "",
+   "page": 57,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you often tell your friends when they do something well?",
+     "answer": "Yes, I frequently express my appreciation to my friends when they accomplish something commendable. For instance, if a friend excels in exams, I always make sure to congratulate them personally or send a heartfelt message to acknowledge their success. Acknowledging their achievements helps maintain a positive and supportive friendship, which I believe is essential in fostering strong and lasting relationships."
+    },
+    {
+     "no": 2,
+     "question": "Do you have an experience that your teacher thought you did a good job?",
+     "answer": "Yes, I recall one memorable incident when my teacher praised my performance in a science project. I created an interactive model demonstrating the water cycle. My teacher commended my creativity and detailed explanation during the presentation. It was truly rewarding to receive recognition for my efforts, motivating me to further excel in my studies."
+    },
+    {
+     "no": 3,
+     "question": "Do you have an experience that you did something well?",
+     "answer": "Yes, I vividly recall excelling in a cooking competition last year. With precision, I prepared a complex dish that earned top praise from the judges. The culmination of efforts and my passion for cooking led to a rewarding experience, and winning that competition was truly gratifying."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Public places",
+   "name_zh": "公共场所",
+   "note": "",
+   "page": 58,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you often go to public places near where you live?",
+     "answer": "Living near the city center provides easy access to public places such as parks, cafes, and libraries. I find myself frequently strolling in the nearby park, enjoying nature to unwind from the daily hustle. Additionally, I often visit the local library to spend quiet afternoons reading. These places not only offer relaxation but also an opportunity to connect with the community."
+    },
+    {
+     "no": 2,
+     "question": "Would you like to see more public places near where you live?",
+     "answer": "I would definitely appreciate having more public spaces in my neighborhood. They not only provide social meeting spots but also opportunities for physical activities like jogging or simply relaxing outdoors. More public places can enhance the community's overall well-being and encourage social interactions among residents, which is beneficial for everyone."
+    },
+    {
+     "no": 3,
+     "question": "Do you wear headphones in public places?",
+     "answer": "Yes, I do wear headphones when I'm out and about. It helps me relax and block out the surrounding noise, allowing me to enjoy my favorite music or podcasts. However, I make sure to remain aware of my surroundings for safety reasons. It's a convenient way to unwind during commutes or while waiting in public places."
+    },
+    {
+     "no": 4,
+     "question": "Have you ever talked with someone you don’t know in public places?",
+     "answer": "Yes, I have engaged in conversations with strangers in public places. For example, once while waiting for the bus, a guy struck up a conversation with me about the local sports team. It was intriguing to learn about his perspective. Initiating dialogue with strangers can provide unique insights into different viewpoints and create unexpected connections."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Pets and animals",
+   "name_zh": "宠物与动物",
+   "note": "",
+   "page": 59,
+   "questions": [
+    {
+     "no": 1,
+     "question": "What is the most popular animal in China?",
+     "answer": "The most popular animal in China is the Giant pandas. I think \"the looks of a teddy bear\" are what makes pandas so popular. Pandas appeal to our \"cuteness recipient\" because they have large, front-facing eyes, and are extremely furry, so we therefore think of them as cuddly and cute."
+    },
+    {
+     "no": 2,
+     "question": "Have you ever had a pet before?",
+     "answer": "Yes! I had a small goldfish when I was a child with a very unique color. This tiny creature had two giant bubbles around its eyes and I loved it very much. But its life only lasted for a few months and when it died, I felt awful. Since then, I have never had any other pets because I am afraid of facing their death."
+    },
+    {
+     "no": 3,
+     "question": "Where do you prefer to keep your pet, indoors or outdoors?",
+     "answer": "It depends on the weather. If the weather is pleasant, I usually let my cat out to play in the yard. But when it gets extremely hot or cold, I like to keep it inside, just for its safety, you know. The cat itself prefers to stay outside though."
+    },
+    {
+     "no": 4,
+     "question": "What's your favourite animal? Why?",
+     "answer": "Well, cats are definitely my favorite. I think they bring out the kind of inter-species relationship that I am comfortable with which also reflects how I treat people. I am not the sort of person who wants to order people around or manage them. I much prefer to mind my own business, so I really enjoy being around cats."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Crowded place",
+   "name_zh": "拥挤场所",
+   "note": "",
+   "page": 60,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Is the city where you live crowded?",
+     "answer": "Uh huh, yeah, my city is still pretty crowded. It's not super crowded like those big cities, but it does have its busy spots, especially during rush hour. On weekdays, the city center is very busy with everyone going about their business, but it's not overcrowded. But for the most part, travel is relatively smooth."
+    },
+    {
+     "no": 2,
+     "question": "Is there a crowded place near where you live?",
+     "answer": "Yeah, there's this shopping area not too far from me that gets really crowded, especially on weekends. It's a hit because it's got all sorts of shops, places to eat, and stuff to do. It pulls in a lot of people for shopping and hanging out, especially when there's a sale or some event going on."
+    },
+    {
+     "no": 3,
+     "question": "Do most people like crowded places?",
+     "answer": "I think it really varies from person to person whether or not people like a lively place. Some people like the hustle and bustle of a crowd and find it energizing. However, some people may feel stressed out or tired in crowded places and prefer quiet and peaceful places. It all depends on what you enjoy - like having fun, meeting people, or just wanting some peace."
+    },
+    {
+     "no": 4,
+     "question": "Do you like crowded places?",
+     "answer": "For me, I like lively but not too crowded places. I love the buzz and the whole neighborhood feel when I want to have fun or move around the city. But there are times when a super busy place can be too tiring for me and I'd rather go somewhere quieter to relax and give myself more space."
+    },
+    {
+     "no": 5,
+     "question": "When was the last time you were in a crowded place?",
+     "answer": "The last time I was in a crowded place was about a week ago at a local food festival. It was a bustling event with numerous food stalls and a large number of visitors. The atmosphere was vibrant and festive, but navigating through the crowd was a bit of a challenge. Despite the congestion, the variety of foods and the lively environment made it an enjoyable experience."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Memory",
+   "name_zh": "记忆",
+   "note": "",
+   "page": 61,
+   "questions": [
+    {
+     "no": 1,
+     "question": "How do you remember important things?",
+     "answer": "Well, I find that creating colorful mind maps or visual diagrams really helps me remember important information. By incorporating pictures and keywords, my memory gets a boost. For example, for vocabulary, associating new words with images or using them in sentences helps embed them in my mind. This visual approach not only enhances my memory retention but also makes studying quite enjoyable."
+    },
+    {
+     "no": 2,
+     "question": "Why do some people have good memory while others just don' t?",
+     "answer": "Well, Memory really varies from person to person, and it's influenced by lots of things. Some people just have a natural talent for remembering stuff, maybe because of their genes or the way their brain is wired. Others might have learned some good memory tricks along the way. Also, being interested, focused, and having a healthy brain matters a lot. It's kind of a mix of what you're born with and what you learn that shapes how well you remember things."
+    },
+    {
+     "no": 3,
+     "question": "Why do more people rely on cellphones to memorize things?",
+     "answer": "These days, loads of people use their phones to remember stuff, and it makes sense because phones are super handy. They're like a part of our brain, but outside our body, holding tons of info easily. Phones have all these features – reminders, calendars, note apps – that help you keep track of things without cramming everything in your head. It's a smart way to deal with the crazy amount of information we deal with every day."
+    },
+    {
+     "no": 4,
+     "question": "Are you good at memorizing things?",
+     "answer": "I'm pretty decent at remembering things, especially if it's something I'm really into. Linking new info to stuff I already know seems to help a lot. But, of course, I get forgetful sometimes, especially when I'm distracted or stressed out. In general, though, I'd say my memory's pretty reliable. Still, I do lean on things like notes and reminders as a backup."
+    },
+    {
+     "no": 5,
+     "question": "Have you ever forgotten something that was important?",
+     "answer": "Yeah, I've definitely forgotten important stuff before, and it's super annoying. Like this one time, I totally spaced on a big appointment because I was swamped and forgot to set a reminder. That was a tough way to learn how important it is to keep things organized and prioritize. Ever since then, I've been trying to stay on top of things better."
+    },
+    {
+     "no": 6,
+     "question": "What do you need to remember in your daily life?",
+     "answer": "Well, keeping a schedule is a big deal in my daily life. As a student, I have quite a lot of things going on with classes, club activities and competitions, and I rely heavily on my schedule to keep everything organized, such as when I have lectures, when I have study time, and when I have group activities. Another important thing is to remember to drink water and eat healthy even when I'm running around. I usually carry a water bottle and some healthy snacks with me to stay energized. Paying attention to these things helps me stay organized and take care of myself."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Taking photos",
+   "name_zh": "拍照",
+   "note": "",
+   "page": 62,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you like taking photos?",
+     "answer": "Yes, I am a great fan of photography. I think the capability of the human brain is limited and we tend to forget or even neglect our experiences. But with a camera, we can capture and constantly refresh those wonderful memories. That’s why I’m keen on taking photos to snapshot those little moments of my life."
+    },
+    {
+     "no": 2,
+     "question": "Do you like taking selfies?",
+     "answer": "Yes, I do enjoy taking selfies. It's a fun way for me to capture moments and express myself. It allows me to document my experiences and share them with friends and family. Plus, it's a great way to boost my confidence and celebrate my individuality. The art of taking selfies has become quite popular nowadays with the rise of social media platforms. With the different filters and editing tools available, it's like having my own personal photographer. So yes, I like taking selfies, but I also value the importance of being present in the real world."
+    },
+    {
+     "no": 3,
+     "question": "Where do you like to go to take photos?",
+     "answer": "I personally enjoy capturing the charm of urban architecture. The blend of old and new buildings in cities fascinates me. Exploring the bustling streets, I find myself drawn to the intricate details of historical structures as well as the sleek lines of modern skyscrapers. Additionally, I love visiting museums and art galleries, as they offer unique subjects that tell stories through paintings, sculptures, and artifacts. Lastly, libraries provide a tranquil setting, allowing me to delve into my photography with a focus on the power of knowledge and the serenity it brings."
+    },
+    {
+     "no": 4,
+     "question": "What is your favourite family photo?",
+     "answer": "One of my favorite family photos is from New Year's Eve. It captures the joyous moment when we gather together, smiling and holding our glasses of champagne, ready to toast to the new year ahead. The photo symbolizes unity and celebration, reminding me of the importance of family bonds and the excitement of new beginnings."
+    },
+    {
+     "no": 5,
+     "question": "Do you like taking selfies?",
+     "answer": "To be honest, I don’t really like taking selfies. I can even count on one hand the number of selfies I've taken. It's not just because I think it's kind of ridiculous, but it's also that I really don't like how I look in pictures. Sometimes, if someone points a camera in my direction, I usually hide my face. I don't actually think I'm unattractive, but when I see myself in pictures, I can be horrified, you know? My eyes go beady, my mouth narrows, my nose expands, and those cheekbones I thought I had have gone. I start to wonder if the photos are actually more accurate. Also, when I meet a lot of people, I feel particularly camera-shy."
+    },
+    {
+     "no": 6,
+     "question": "What is your favorite family photo?",
+     "answer": "The family photo that I really like is one which was taken almost twenty years ago. It was framed and enlarged by my father back then, and it is still hanging on the wall of our drawing room. The photo was taken on my parents' 6th wedding anniversary, and at that time I was only three years old. In the picture, my dad, mom and I were standing there, while my grandparents were sitting in front of us, and the picture captured the memory of a happy family. When this picture was taken, I was very little, and I don’t have any recollection of it, but every time I see it, I feel a real sense of joy."
+    },
+    {
+     "no": 7,
+     "question": "Do you want to improve your picture taking skills?",
+     "answer": "Who wouldn’t? To reiterate, I’m a big fan of photography, but I have to admit that I’m only a layman. Whenever I see breathtaking photos captured by other photographers, I feel this urge inside of me to improve my mediocre photography skills. I hope in the future I can invest more time and money into learning the art."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Shoes",
+   "name_zh": "鞋子",
+   "note": "",
+   "page": 64,
+   "questions": [
+    {
+     "no": 2,
+     "question": "Which do you prefer, expensive shoes or comfortable shoes?",
+     "answer": "Well, definitely comfortable shoes. Honestly, why would anyone pick expensive shoes over comfortable ones? Unless it‘s for some commercial event, I guess. I‘m not super rich, so I really wouldn't go for the expensive ones. I think it‘s just a waste of money."
+    },
+    {
+     "no": 3,
+     "question": "How much money do you usually spend on shoes?",
+     "answer": "Well, I think those that cost 200 RMB or so are perfect. You know, for everyday use, that price is not too high or too low. I can afford them. Also, at that price, I can easily find shoes that are comfortable and durable."
+    },
+    {
+     "no": 4,
+     "question": "Have you ever bought shoes online?",
+     "answer": "I am a big fan of online shopping, however, shoes are one of the few things I don’t. buy online often. Shoes come in many shapes and styles but only very few look good on me. I did buy a pair recently from a European e-commerce website called Selfridges during the sales season. The price was great although they haven’t actually arrived yet so I hope they’ll fit!"
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Plants",
+   "name_zh": "植物",
+   "note": "",
+   "page": 65,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you know anything about growing plants?",
+     "answer": "Yeah, I know quite a bit about gardening. I know how to grow aloe vera(芦荟). The first step in growing aloe vera is to realize that this plant grows best in a dry environment. Aloe plants cannot tolerate standing water. Another important thing about caring for Aloe Vera potted plants is that they need proper light. Growing an aloe vera home pot plant is not only easy, but it also provides the family with a plant that helps treat minor burns and rashes."
+    },
+    {
+     "no": 2,
+     "question": "Do Chinese people send plants as gifts?",
+     "answer": "Yes, we do. In ancient China, a young man would use the peony as a gift to show his affection for a woman. When seeing someone off, a poet, scholar or official would pick up a willow branch and give it to the person who is leaving. Nowadays, influenced by western culture, people will send roses to express their love for others."
+    },
+    {
+     "no": 3,
+     "question": "Did you grow any plants when you were young?",
+     "answer": "Yes. When I was young, I used to have two kinds of potted plants in my home: an aloe plant and a peace lily. The gel of the aloe plant has a number of healing properties. Not only does it soothe skin burns and cuts, it can also help to monitor the air quality in your home. Also, the beautiful peace lily is a wonderful flower to keep in the home."
+    },
+    {
+     "no": 4,
+     "question": "Do you keep plants at home?",
+     "answer": "Yes, I do. Visually, plants make my home look more beautiful. They are the best decorations. Also, it’s not just about improving the indoor aesthetic. Even if I don’t normally notice a plant’s presence, knowing one is there can subconsciously make me feel calm and relaxed."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Spare time",
+   "name_zh": "闲暇时光",
+   "note": "",
+   "page": 66,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Would you like to have more free time in the future?",
+     "answer": "Yes, I would definitely appreciate having more free time in the future. Having extra time would allow me to explore hobbies and activities that I am passionate about, such as painting and hiking. It would also provide me with the opportunity to spend quality time with my loved ones and enhance my overall well- being. More free time would undoubtedly contribute to a better work-life balance and promote self-care, ensuring a more fulfilling and rewarding lifestyle."
+    },
+    {
+     "no": 2,
+     "question": "Which day do you have more free time on, Saturday or Sunday?",
+     "answer": "On Saturdays, I typically have more free time to relax and enjoy various activities. I often use this day to catch up on reading, baking, or spending time outdoors. Sundays, on the other hand, I tend to devote to self-care, meditation, or meeting with friends. Overall, I find both days equally important for balancing work and leisure activities in my schedule."
+    },
+    {
+     "no": 3,
+     "question": "Do you often have free time?",
+     "answer": "As a person with a busy schedule, I treasure the limited free time I have. Balancing work and personal life can be challenging, but I make it a priority to indulge in my hobbies during my spare moments. I enjoy reading novels, exploring new cafes, and practicing yoga to unwind and recharge. Having some free time allows me to rejuvenate and focus better on my responsibilities."
+    },
+    {
+     "no": 4,
+     "question": "What do you and your family like to do in spare time?",
+     "answer": "We will go for a walk in the park together. Because there is a beautiful wetland part nearby a lake in my hometown. So strolling after dinner is like a great family activity for us. By the way, the scenery is beautiful and we can chat while walking."
+    },
+    {
+     "no": 5,
+     "question": "Do you think you will spend more time with your family?",
+     "answer": "I would like to spend more time with my family. Having quality time with family is important for everybody. However, as I grow up, I spend less and less time with my parents. My college is in a city far away from my hometown. I can only go home during summer and winter vacations."
+    },
+    {
+     "no": 6,
+     "question": "Do you like to spend time with your family?",
+     "answer": "Of course, I do. Nowhere is better than home, right? Since I am the only child in my family and I have a very close relationship with my parents. I always feel safe and warm when I am with my family. when I am with my family, I feel that I am complete."
+    },
+    {
+     "no": 7,
+     "question": "What do you usually do when you are free?",
+     "answer": "As a crazy traveler, I want to travel when I have a long holiday. You know it's fun to explore the nature and the world. It’s not unusual to become a bit bored of everyday life. The daily routine: bills to pay; shopping to do; a big project at work; meals to cook; clothes to wash …I look forward to some ‘time out’ each year. It’s a time to switch off from everything back home and to leave our worries behind."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Borrowing/lending",
+   "name_zh": "借与还",
+   "note": "",
+   "page": 67,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you mind if others borrow money from you?",
+     "answer": "I believe in helping others when needed. I don't mind lending money to friends or family if they are in genuine need. However, it's essential to set clear expectations for repayment to avoid any misunderstandings. Trust and communication are key in such situations to maintain healthy relationships."
+    },
+    {
+     "no": 2,
+     "question": "Have you ever borrowed books from others?",
+     "answer": "Yes, I have borrowed books from people in the past. From my memory, I borrowed some books about science and technology from one of my friends because I was very interested in those subjects but I didn’t have any related books. I think it’s a good way to learn from each other by lending and borrowing books, and it's also very convenient."
+    },
+    {
+     "no": 3,
+     "question": "Have you ever borrowed money from others?",
+     "answer": "Actually, I have borrowed money from others before. For example, last summer I borrowed 900 dollars from my father to buy a laptop, but I returned it soon after I got my salary from my internship. Frankly speaking, I don’t borrow money that often."
+    },
+    {
+     "no": 4,
+     "question": "Do you like to lend things to others?",
+     "answer": "Well, I don’t mind lending things to people although I’m not that keen on it because from my perspective I think it’s people’s responsibility to buy their own things and not always borrow things from others. You know, it’s very annoying when I can’t get my things back after I’ve lent them to others."
+    },
+    {
+     "no": 5,
+     "question": "How do you feel when people don’t return things they borrowed from you?",
+     "answer": "Well, I think it depends. If someone failed to return my belongings without any reason, I would feel disappointed and even angry at them, since they don’t respect promises. However, I can understand if they don’t return my items due to unavoidable circumstances and have explained them to me in advance."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Sharing",
+   "name_zh": "分享",
+   "note": "",
+   "page": 68,
+   "questions": [
+    {
+     "no": 1,
+     "question": "What kinds of news do you share with our friends?",
+     "answer": "I enjoy sharing a variety of news with my friends - from interesting articles about travel destinations and fashion trends, to updates on local events and heartwarming stories about people making a difference in the community. I also like sharing recipes, book recommendations, and fitness tips to inspire and bond with my friends over common interests. Sharing news is a way to connect and create meaningful conversations with those I care about."
+    },
+    {
+     "no": 2,
+     "question": "Who is the first person you like to share good news with?",
+     "answer": "The first person I would like to share good news with is definitely my close friend Jack. He's been my best buddy since childhood and has always been there for me through thick and thin. Whenever something exciting happens, he's the one I turn to for support and celebration. Sharing good news with Jack not only doubles the joy but also strengthens our bond as friends."
+    },
+    {
+     "no": 3,
+     "question": "Did your parents teach you to share when you were a child?",
+     "answer": "When I was little, my mom was the one who was always telling me to share things. She asked me to take out my toys when my childhood friends came, she also required me to retell what had happened in the kindergarten when I got back home. I believe my mom made a wise decision because sharing things, no matter material stuff or daily stories, is really helpful to maintain a good relationship with others."
+    },
+    {
+     "no": 4,
+     "question": "What kind of things do you like to share with others?",
+     "answer": "Actually, there are a lot of different kinds of stuff that I am willing to tell others, especially delightful things. When I pass an important test, I would tell my parents about it. When I see a hilarious story, I would recount it to my friends. Sharing, in my opinion, can double the happiness, so I always tell cheerful things."
+    },
+    {
+     "no": 5,
+     "question": "What kind of things are not suitable for sharing?",
+     "answer": "Privacy is something that I think is absolutely unsuitable for telling others. For the ones who tell the personal things, they may put themselves in danger if the listeners are not trustworthy enough. For the listeners, they may not want to bear those secret things. So, sharing personal stuff is not so responsible for both the tellers and the listeners."
+    },
+    {
+     "no": 6,
+     "question": "Do you have anything to share with others recently?",
+     "answer": "Well, recently I have been working on this IELTS examination, so the things that I would like to talk to my friends are usually about this exam. You know the reading and listening parts of IELTS are generally about some academic knowledge so I can always learn something from them. After reading or listening, I would share what I have known with other people."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Museum",
+   "name_zh": "博物馆",
+   "note": "",
+   "page": 69,
+   "questions": [
+    {
+     "no": 1,
+     "question": "When was the last time you visited a museum?",
+     "answer": "It was during my last summer vacation. At the time there was a new museum in our city. It was a special one because it wasn’t about history, culture or science. Instead, it was about people who had broken up. In this museum. I saw many words and stories from these disheartened people, and I could really feel their disappointment and agony due to their breakups."
+    },
+    {
+     "no": 2,
+     "question": "Do you often visit museums?",
+     "answer": "Actually, I don't visit museums very often because all the museums are very far away from my home. And I'm quite busy with my studies, so I don't have much time to visit them. However, I still enjoy visiting them because I think they’re magical places where I can learn about our ancestors."
+    },
+    {
+     "no": 3,
+     "question": "Do you think museums are important?",
+     "answer": "Yes. I think museums are very important because one can learn many things there. When visiting museums, people can learn history, geography, culture, art, science, and so on. Nowadays, museums are becoming more and more interesting by holding many interactive activities and games to engage visitors. These special features are attractive as well as educational."
+    },
+    {
+     "no": 4,
+     "question": "Are there any museums in your hometown?",
+     "answer": "Yes, there are several well-known museums in my city. The most famous one is The Provincial Museum and there are numerous unique exhibits all year round, which people cannot enjoy in other places. Because of this, each year, tourists at home and abroad go to appreciate the artworks and ancient items in this museum."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Scenery",
+   "name_zh": "风景",
+   "note": "",
+   "page": 70,
+   "questions": [
+    {
+     "no": 1,
+     "question": "What are the most beautiful sights you have seen while travelling?",
+     "answer": "One of the most stunning sights I’ve witnessed was the Northern Lights in Iceland; their vibrant colors dancing across the night sky felt magical. Additionally, the serene cherry blossoms in Japan during spring create a breathtaking spectacle. These experiences showed me nature’s incredible artistry from very different perspectives."
+    },
+    {
+     "no": 2,
+     "question": "Do you like to take scenery pictures?",
+     "answer": "Yes, I enjoy capturing scenic photographs because they allow me to preserve beautiful moments in nature. For instance, during my last trip to the mountains, I took pictures of the sunrise that showcased stunning colors. It’s a relaxing hobby that also helps me see the world from different perspectives."
+    },
+    {
+     "no": 3,
+     "question": "Do you prefer the mountains or the sea?",
+     "answer": "Although both landscapes have their charm, I find the mountains more appealing. The fresh air and panoramic views offer a peaceful retreat from city life. For instance, hiking up a mountain trail allows me to connect with nature in a way the sea’s endless horizon doesn’t quite provide. This sense of adventure fascinates me."
+    },
+    {
+     "no": 4,
+     "question": "Do you look out the window at the scenery when travelling by bus or car?",
+     "answer": "Yes, I often find myself gazing out the window while traveling by bus or car. Observing the changing landscapes helps me relax and pass time. For instance, on a recent bus trip through the countryside, I enjoyed spotting various farms and wildlife, which made the journey more enjoyable and interesting."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Morning time",
+   "name_zh": "晨间时光",
+   "note": "",
+   "page": 71,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you like getting up early in the morning?",
+     "answer": "Honestly, waking up early isn’t my favorite thing because I’m more of a night owl. However, on days when I have important tasks, getting up early helps me feel more productive and energized. Sometimes, the quiet morning hours allow me to enjoy a peaceful start before the day gets busy. Overall, I appreciate early mornings occasionally but not every day."
+    },
+    {
+     "no": 2,
+     "question": "What do you usually do in the morning?",
+     "answer": "In the mornings, I typically start by stretching to wake my body up, then enjoy a cup of green tea while reading the news. Sometimes, I go for a jog in the nearby park to energize myself. This routine helps me feel refreshed and ready to tackle the day ahead with focus and enthusiasm."
+    },
+    {
+     "no": 3,
+     "question": "What did you do in the morning when you were little? Why?",
+     "answer": "When I was little, my mornings usually began with a family breakfast because my parents believed it was important to start the day together. After eating, I often played outside with my friends to enjoy the fresh air and sunshine before school. This routine helped me feel energized and happy throughout the day."
+    },
+    {
+     "no": 4,
+     "question": "Are there any differences between what you do in the morning now and what you did in the past?",
+     "answer": "Certainly! Compared to the past, my morning routine has changed quite a bit. Previously, I used to rush through breakfast, but now I take time to prepare a healthy meal. Also, I’ve started doing some light exercise, which energizes me for the day ahead. These small adjustments have made my mornings more enjoyable and productive. 5. Do you spend your mornings doing the same things on both weekends and weekdays? Why or why not? What I do on weekend mornings is different from what I do in the mornings during the week. You know, as a student, I’m often quite busy on weekday mornings, getting dressed, getting my backpack ready, having breakfast and so on. But on the weekend, I like to have relaxed mornings, like going for a run or visiting the library. What I do on weekend mornings is different from what I do in the mornings during the week. I'm still a student, so Monday to Friday mornings I get up at 7 am to go to class. But I don't have classes on weekends, so I don't need to get up early. Usually I go for a run on Saturdays, and then I spend the rest of the morning in the library. On Sundays, I usually sleep in late."
+    }
+   ],
+   "tag": "retained"
+  },
+  {
+   "name_en": "Happy things",
+   "name_zh": "开心之事",
+   "note": "",
+   "page": 72,
+   "questions": [
+    {
+     "no": 1,
+     "question": "Do you think people are happy when buying new things?",
+     "answer": "Why not? In most cases, buying new things is joyful because it means we are able to afford the things we want to purchase. But things would be very different if we were buying a new house because that means we have loans to pay, and that could be quite stressful."
+    },
+    {
+     "no": 2,
+     "question": "Do you feel happy when buying new things?",
+     "answer": "Definitely. Who doesn’t? I think most people love shopping because it means we are able to afford the things we want, and it’s a really joyful journey. New shoes, new iPhones, new outfits, I’m even happy right now imagining getting all those new things ."
+    },
+    {
+     "no": 3,
+     "question": "When do you feel happy at work? Why?",
+     "answer": "I would really be happy if I make some achievements at work. I like challenging things and don’t wanna do routine work only. So, whenever I get out of my comfort zone and face challenges at work, I feel very thrilled and will become even happier when I handle the challenges smoothly."
+    },
+    {
+     "no": 4,
+     "question": "Is there anything that has made you feel happy lately?",
+     "answer": "Yes, I just enjoyed my Chinese New Year vacation with my family and friends, and I was super happy. See, we have a whole week off for the holiday. For the first couple of days, I spent some quality time with my family members, sitting down, chatting, and having family dinners. Later , I went traveling with my family to Hangzhou and spent a really nice time there."
+    },
+    {
+     "no": 5,
+     "question": "What do you think will make you feel happy in the future?",
+     "answer": "Many things can make me feel happy in the future. Because of the Covid-19 pandemic in the past three years, I feel that being healthy is important, so I have decided to start some workouts like going jogging, and I believe regular exercises will make me much stronger and feel refreshed and energetic as well. In addition, now countries around the world are relaxing mask mandates and I’m really looking forward to going traveling abroad next year, and I feel kinda thrilled as I’m thinking of this."
+    },
+    {
+     "no": 6,
+     "question": "What made you happy when you were little?",
+     "answer": "There were lots of things that made me feel happy when I was young. For example, when I got my favorite dolls or toys on my birthday, I would be over the moon. Sometimes, I got good grades in math, I also felt really happy because I was not good at math. Apart from that, when I spent my summer vacation in the countryside with my grandparents and hung out with my friends in the village, I also had a lot of fun. As you can see, I had a very happy childhood."
+    }
+   ],
+   "tag": "retained"
+  }
+ ]
+}
