@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { Library, Search } from 'lucide-vue-next'
 import { ElMessage } from 'element-plus'
-import { onMounted, ref, watch } from 'vue'
-import { useRouter } from 'vue-router'
+import { computed, onMounted, ref, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 import { extractErrorMessage } from '@/api/client'
 import { fetchTopicsPage } from '@/api/topics'
@@ -10,7 +10,20 @@ import { usePracticeStore } from '@/stores/practice'
 import type { TopicOut } from '@/types'
 
 const router = useRouter()
+const route = useRoute()
 const practice = usePracticeStore()
+
+/** 从 Dashboard 雷达跳转携带的弱项维度（仅作展示说明） */
+const DIM_ZH: Record<string, string> = {
+  fluency: '流利度',
+  lexical: '词汇多样性',
+  grammar: '语法准确性',
+  pronunciation: '发音',
+}
+const weakDimLabel = computed(() => {
+  const weak = route.query.weak
+  return typeof weak === 'string' && DIM_ZH[weak] ? DIM_ZH[weak] : ''
+})
 
 const activePart = ref<1 | 2 | 3>(1)
 const loading = ref(false)
@@ -101,6 +114,15 @@ onMounted(load)
 
 <template>
   <div class="topics">
+    <el-alert
+      v-if="weakDimLabel"
+      type="warning"
+      :closable="true"
+      show-icon
+      title="弱项专项推荐"
+      :description="`以下话题适合针对「${weakDimLabel}」短板加强练习，完成后回到首页查看能力变化。`"
+      style="margin-bottom: 12px"
+    />
     <div class="topics__tabs">
       <button
         v-for="tab in partTabs"

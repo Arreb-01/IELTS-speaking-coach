@@ -9,7 +9,7 @@ import {
   RotateCcw,
 } from 'lucide-vue-next'
 import { ElMessage } from 'element-plus'
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 import {
@@ -18,9 +18,11 @@ import {
   type ScoreReportDetail,
   type SentenceAnalysis,
 } from '@/api/reports'
+import { updateProfile } from '@/api/auth'
 import { turnAudioUrl } from '@/api/practice'
 import VChart from '@/plugins/echarts'
 import TurnAudioPlayer from '@/components/TurnAudioPlayer.vue'
+import { useAuthStore } from '@/stores/auth'
 
 const route = useRoute()
 const router = useRouter()
@@ -98,6 +100,48 @@ async function handleRescore() {
     ElMessage.error('重新评分失败，请稍后重试')
   } finally {
     rescoring.value = false
+  }
+}
+
+// ------------------------------------------------------------------
+// 能力测评出分后：设定目标分数（users.target_band 为空才提示）
+// ------------------------------------------------------------------
+
+const auth = useAuthStore()
+const targetDialogVisible = ref(false)
+const targetDraft = ref<number | null>(null)
+const savingTarget = ref(false)
+
+const TARGET_OPTIONS = Array.from({ length: 11 }, (_, i) =>
+  Number((4 + i * 0.5).toFixed(1)),
+)
+
+watch(
+  () => report.value?.status,
+  (status) => {
+    if (
+      status === 'completed' &&
+      report.value?.session?.is_placement &&
+      auth.user?.target_band == null
+    ) {
+      targetDialogVisible.value = true
+    }
+  },
+)
+
+async function saveTarget() {
+  if (targetDraft.value == null) return
+  savingTarget.value = true
+  try {
+    const user = await updateProfile({ target_band: targetDraft.value })
+    auth.user = user
+    targetDialogVisible.value = false
+    ElMessage.success('目标分数已保存')
+    router.push({ name: 'dashboard' })
+  } catch {
+    ElMessage.error('保存失败，请稍后重试')
+  } finally {
+    savingTarget.value = false
   }
 }
 
@@ -495,10 +539,39 @@ function practiceAgain() {
         <button class="primary-btn" @click="load">重试</button>
       </div>
     </div>
+
+    <!-- 能力测评出分后：设定目标分数 -->
+    <el-dialog
+      v-model="targetDialogVisible"
+      title="设定你的目标分数"
+      width="400px"
+      :close-on-click-modal="false"
+    >
+      <p class="target-dialog__tip">
+        目标分数用于生成你的专属学习路径：计算目标差距、预测达成时间，
+        并安排每日练习强度。之后也可以在首页修改。
+      </p>
+      <el-select v-model="targetDraft" placeholder="选择目标 Band" style="width: 100%">
+        <el-option v-for="opt in TARGET_OPTIONS" :key="opt" :label="`Band ${opt}`" :value="opt" />
+      </el-select>
+      <template #footer>
+        <el-button @click="targetDialogVisible = false">稍后再说</el-button>
+        <el-button type="primary" :loading="savingTarget" @click="saveTarget">
+          保存并查看学习路径
+        </el-button>
+      </template>
+    </el-dialog>
   </div>
 </template>
 
 <style scoped>
+.target-dialog__tip {
+  margin: 0 0 14px;
+  color: var(--ielts-muted-foreground);
+  font-size: var(--ielts-text-sm);
+  line-height: 1.6;
+}
+
 .report {
   max-width: 1080px;
   margin: 0 auto;

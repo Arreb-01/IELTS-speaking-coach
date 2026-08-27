@@ -68,11 +68,14 @@ class PracticeEngine:
         session: PracticeSession,
         topic: Topic | None,
         questions: list[Question],
+        p1_question_count: int | None = None,
     ) -> None:
         self.user = user
         self.session = session
         self.topic = topic
         self.questions = questions
+        # P1 正式题上限（默认取常量；能力测评传 5）
+        self._p1_limit = p1_question_count or C.PART1_QUESTION_COUNT
         self.strict = session.mode == "mock"
 
         self.phase = "idle"
@@ -244,7 +247,7 @@ class PracticeEngine:
         await self._speak(line)
 
     def _p1_questions(self) -> list[str]:
-        return [q.content_en for q in self.questions if q.part == 1][: C.PART1_QUESTION_COUNT]
+        return [q.content_en for q in self.questions if q.part == 1][: self._p1_limit]
 
     async def _ask_next_part1(self) -> None:
         questions = self._p1_questions()

@@ -33,18 +33,36 @@ async def practice_websocket(websocket: WebSocket, session_id: uuid.UUID) -> Non
             return
         user = await db.get(User, session.user_id)
         topic = await db.get(Topic, session.topic_id) if session.topic_id else None
-        questions = (
-            await db.scalars(
-                select(Question).where(Question.topic_id == topic.id).order_by(Question.sort)
+        if topic is not None:
+            # 普通练习：按话题取题
+            questions = list(
+                await db.scalars(
+                    select(Question).where(Question.topic_id == topic.id).order_by(Question.sort)
+                )
             )
-        ).all() if topic else []
+        elif session.question_ids:
+            # 能力测评：会话创建时已固定题目清单，按存储顺序还原
+            wanted = [
+                uuid.UUID(qid) if isinstance(qid, str) else qid for qid in session.question_ids
+            ]
+            rows = await db.scalars(select(Question).where(Question.id.in_(wanted)))
+            by_id = {q.id: q for q in rows}
+            questions = [by_id[qid] for qid in wanted if qid in by_id]
+        else:
+            questions = []
 
     await websocket.accept()
 
     # 断线重连：复用既有引擎
     engine = registry.get_engine(session_id)
     if engine is None:
-        engine = PracticeEngine(user=user, session=session, topic=topic, questions=list(questions))
+        engine = PracticeEngine(
+            user=user,
+            session=session,
+            topic=topic,
+            questions=list(questions),
+            p1_question_count=len(questions) if (topic is None and questions) else None,
+        )
         registry.register(engine)
 
     try:

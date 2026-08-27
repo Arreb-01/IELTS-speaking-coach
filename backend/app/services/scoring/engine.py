@@ -184,10 +184,22 @@ async def run_scoring(session_id) -> None:
         # 阶段二在状态提交为 completed 之后才启动（避免读到 processing 静默退出）
         if pron_summary is not None:
             asyncio.create_task(_deep_analysis_later(session_id, pron_summary))
+        # Part E：出分成功后补测评标记并重排学习路径（失败只记日志不影响评分）
+        if report.status == "completed":
+            asyncio.create_task(_after_report_completed(session_id))
         logger.info(
             "评分完成 %s：status=%s 耗时 %.1fs",
             session_id, report.status, time.monotonic() - started,
         )
+
+
+async def _after_report_completed(session_id) -> None:
+    from app.services.progress import recommender
+
+    try:
+        await recommender.on_report_completed(session_id)
+    except Exception:  # noqa: BLE001
+        logger.exception("报告完成后处理失败：%s", session_id)
 
 
 async def _run_pipeline(db, report, session, topic, turns, user) -> None:

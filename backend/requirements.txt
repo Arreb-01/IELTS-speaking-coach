@@ -16,6 +16,9 @@ websocket-client>=1.8
 tencentcloud-sdk-python-cam>=3.0
 pymupdf>=1.24
 
+# 时区数据（Windows 下 zoneinfo 需要；Linux 自带）
+tzdata>=2024.1
+
 # 测试
 pytest>=8.3
 pytest-asyncio>=0.24

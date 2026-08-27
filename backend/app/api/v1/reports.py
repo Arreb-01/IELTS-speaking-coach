@@ -60,6 +60,7 @@ async def build_report_detail(
             mode=session.mode,
             topic_name_en=topic.name_en if topic else None,
             topic_name_zh=topic.name_zh if topic else None,
+            is_placement=session.topic_id is None and bool(session.question_ids),
             started_at=session.started_at,
             ended_at=session.ended_at,
         )

@@ -28,6 +28,12 @@ const router = createRouter({
           meta: { title: '首页', requiresAuth: true },
         },
         {
+          path: 'plan',
+          name: 'plan',
+          component: () => import('@/views/PlanView.vue'),
+          meta: { title: '学习路径', requiresAuth: true },
+        },
+        {
           path: 'topics',
           name: 'topics',
           component: () => import('@/views/TopicsView.vue'),

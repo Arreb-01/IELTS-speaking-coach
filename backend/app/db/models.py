@@ -5,7 +5,7 @@ config 字段使用 JSON 类型：PostgreSQL 上渲染为 JSONB，SQLite（本�
 """
 
 import uuid
-from datetime import datetime
+from datetime import date, datetime
 from typing import Any
 
 import sqlalchemy as sa
@@ -25,6 +25,10 @@ TOPIC_TAGS = ("new", "retained", "must")
 SESSION_MODES = ("practice", "mock")
 SESSION_STATUSES = ("in_progress", "completed", "abandoned")
 REPORT_STATUSES = ("pending", "processing", "completed", "failed")
+TASK_TYPES = ("topic", "special", "corpus")
+TASK_STATUSES = ("pending", "done", "skipped")
+# 四维能力维度（score_reports 列名，弱项分析/任务定向用）
+SKILL_DIMENSIONS = ("fluency", "lexical", "grammar", "pronunciation")
 
 
 class User(Base):
@@ -38,6 +42,8 @@ class User(Base):
     phone: Mapped[str | None] = mapped_column(sa.String(20))
     # 目标分数，如 6.5 / 7.0
     target_band: Mapped[float | None] = mapped_column(sa.Numeric(2, 1))
+    # 完成初始能力测评的时间（NULL=未测评，Dashboard 显示测评引导）
+    placement_at: Mapped[datetime | None] = mapped_column(sa.DateTime(timezone=True))
     is_active: Mapped[bool] = mapped_column(default=True)
     created_at: Mapped[datetime] = mapped_column(
         sa.DateTime(timezone=True), server_default=sa.func.now()
@@ -131,6 +137,8 @@ class PracticeSession(Base):
     )
     part: Mapped[int] = mapped_column(sa.SmallInteger)  # 1 / 2 / 3
     topic_id: Mapped[uuid.UUID | None] = mapped_column(sa.ForeignKey("topics.id", ondelete="SET NULL"))
+    # 能力测评专用：预选题的 question_id 列表（普通练习为 NULL，按 topic 查题）
+    question_ids: Mapped[list[Any] | None] = mapped_column(JSONVariant)
     status: Mapped[str] = mapped_column(
         sa.Enum("in_progress", "completed", "abandoned", name="session_status", native_enum=False, length=20),
         default="in_progress",
@@ -323,3 +331,42 @@ class MistakeNote(Base):
     created_at: Mapped[datetime] = mapped_column(
         sa.DateTime(timezone=True), server_default=sa.func.now()
     )
+
+
+class DailyTask(Base):
+    """学习路径的单日任务（规则引擎生成，文案生成时固化）。
+
+    - plan_date：任务所属日（用户本地时区日期）
+    - task_type：topic 话题练习 / special 发音专项跟读 / corpus 表达学习
+    - 幂等策略：同日重跑删除 pending，保留 done/skipped
+    """
+
+    __tablename__ = "daily_tasks"
+    __table_args__ = (sa.Index("ix_daily_tasks_user_date", "user_id", "plan_date"),)
+
+    id: Mapped[uuid.UUID] = mapped_column(sa.Uuid(), primary_key=True, default=uuid.uuid4)
+    user_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("users.id", ondelete="CASCADE")
+    )
+    plan_date: Mapped[date] = mapped_column(sa.Date)
+    task_type: Mapped[str] = mapped_column(
+        sa.Enum(*TASK_TYPES, name="daily_task_type", native_enum=False, length=20)
+    )
+    # 针对的弱项维度（fluency/lexical/grammar/pronunciation）
+    dimension: Mapped[str | None] = mapped_column(sa.String(20))
+    topic_id: Mapped[uuid.UUID | None] = mapped_column(
+        sa.ForeignKey("topics.id", ondelete="SET NULL")
+    )
+    part: Mapped[int | None] = mapped_column(sa.SmallInteger)
+    title_zh: Mapped[str] = mapped_column(sa.String(100))
+    desc_zh: Mapped[str] = mapped_column(sa.String(200))
+    payload: Mapped[dict[str, Any] | None] = mapped_column(JSONVariant)
+    status: Mapped[str] = mapped_column(
+        sa.Enum(*TASK_STATUSES, name="daily_task_status", native_enum=False, length=20),
+        default="pending",
+    )
+    sort: Mapped[int] = mapped_column(sa.SmallInteger, default=0)
+    created_at: Mapped[datetime] = mapped_column(
+        sa.DateTime(timezone=True), server_default=sa.func.now()
+    )
+    completed_at: Mapped[datetime | None] = mapped_column(sa.DateTime(timezone=True))

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {
   BookMarked,
+  CalendarCheck,
   ChartLine,
   KeyRound,
   LayoutDashboard,
@@ -20,6 +21,7 @@ const router = useRouter()
 
 const navItems = [
   { name: 'dashboard', label: '首页', icon: LayoutDashboard },
+  { name: 'plan', label: '学习路径', icon: CalendarCheck },
   { name: 'topics', label: '话题练习', icon: Library },
   { name: 'mock-exam', label: '模拟考试', icon: Mic },
   { name: 'reports', label: '评分报告', icon: ChartLine },

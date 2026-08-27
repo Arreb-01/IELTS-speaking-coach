@@ -8,6 +8,7 @@ import {
   fetchPracticeDetail,
   type PracticeDetail,
 } from '@/api/practice'
+import { startPlacement as apiStartPlacement } from '@/api/dashboard'
 import { useAudioPlayer } from '@/composables/useAudioPlayer'
 import { useRecorder } from '@/composables/useRecorder'
 import { useWsClient, type ServerMessage } from '@/composables/useWsClient'
@@ -271,6 +272,16 @@ export const usePracticeStore = defineStore('practice', () => {
     ws.connect(created.ws_path, created.session_id)
   }
 
+  /** 初始能力测评：后端创建预选题集会话（topic 空），前端走同一 WS 流程 */
+  async function startPlacement(): Promise<void> {
+    reset()
+    phase.value = 'connecting'
+    part.value = 1
+    const created = await apiStartPlacement()
+    sessionId.value = created.session_id
+    ws.connect(created.ws_path, created.session_id)
+  }
+
   function beginAnswer(): void {
     if (phase.value !== 'user_answers' || recorder.recording.value) return
     ws.send({ type: 'begin_turn' })
@@ -386,7 +397,7 @@ export const usePracticeStore = defineStore('practice', () => {
     recorder, summary, buttonState, reportAvailable,
     accentOptions: ACCENT_OPTIONS, speedOptions: SPEED_OPTIONS,
     // 动作
-    start, beginAnswer, endAnswer, togglePause, retryTurn, endSession,
+    start, startPlacement, beginAnswer, endAnswer, togglePause, retryTurn, endSession,
     p2Ready, updateSettings, warmUpMic, reset,
   }
 })

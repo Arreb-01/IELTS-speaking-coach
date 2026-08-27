@@ -139,3 +139,29 @@ M1 统计聚合服务 + overview API → M2 迁移 0005 + 测评链路 → M3 �
 > 注意：① 开工前 `git status` 检查未推送提交（push 失败是我的代理问题，提醒我）；② 我用中文沟通，独立开发者，后端小白——需要我做的操作和涉及的概念用大白话讲清"是什么、为什么、怎么做"；③ 本地环境已就绪（Docker PG/Redis、backend/.venv、npm 镜像、Playwright）。
 >
 > 验收：新用户完成测评后获得推荐路径；Dashboard 正确展示练习数据和趋势。完成的代码提交并推送到 GitHub。
+
+---
+
+## 十一、Part E 完成记录（2026-08-27 实测）
+
+### 交付清单
+- 后端：`services/progress/{stats,recommender}.py`（统计口径纯函数 + 规则引擎）、`services/scoring/placement_pool.py`（测评白名单题池）、API `dashboard.py / placement.py / plan.py`、迁移 0005（users.placement_at + practice_sessions.question_ids + daily_tasks）、评分管线末端挂钩 `engine._after_report_completed`
+- 前端：DashboardView 三态重写、PlanView 周视图、api/dashboard.ts + api/plan.ts、PracticeView 测评特判（徽标+文案+startPlacement store 动作）、ReportView 目标分弹窗（is_placement 驱动）、TopicsView weak 提示条、导航"学习路径"
+- 测试：单测 25 个新增（79/79 全绿）；E2E `smoke_part_e.py` 21 项断言全过（新用户注册→测评→出分→目标分→Dashboard→学习路径→打卡）
+
+### 与计划的主要偏差
+1. **needs_placement 判定加了老用户兼容**：`placement_at 为空 且 无任何 completed 报告` 才引导测评——已有历史报告的老账号（Part D 用户）不强制补测，直接进入完整 Dashboard
+2. **LLM 中文建议语未接**（plan 决策中的"可选"项）：任务文案用本地模板固化，零延迟零失败面；后续要加可挂在 recommender.build_day_plan 出口
+3. **skip 替补**带 `[替补]` 前缀落库，上限当日 5 行防刷；完成率口径 = done/(pending+done)，skipped 不计分母
+
+### 踩坑记录（复现时注意）
+1. **Windows tzdata 缺失**：`zoneinfo.ZoneInfo("Asia/Shanghai")` 在 Windows 的 venv 里抛 ZoneInfoNotFoundError，必须 pip 装 `tzdata`（requirements.txt 已加；Linux/Docker 自带无感）
+2. **SQLAlchemy 多实体 select 必须 execute()**：`db.scalars(select(A, B))` 只返回第一个实体，元组解包报 TypeError——`select(ScoreReport, PracticeSession)` 这类查询一律 `(await db.execute(q)).all()`
+3. **pytest fixture 不能当函数调**：fixture 要通过测试函数签名注入；本文件 test_progress_plan.py 已全部签名化
+4. **幽灵 socket 进阶版**：taskkill //F 杀掉 uvicorn 后 netstat 仍显示 LISTENING（PID 已不存在），但**另一个更老的僵尸进程还在偷偷响应 8000 端口**（openapi 只有 Part A 的 25 条路由！）。对策：E2E 用非默认端口起后端（本次 8010）+ Vite 代理 `VITE_API_PROXY=http://127.0.0.1:8010 npm run dev -- --port 5175` 可覆盖目标（vite.config.ts 已支持该环境变量）；彻底清幽灵需重启电脑
+5. **Playwright wait_for_url 在 SPA 下不可靠**：vue-router pushState 后同文档导航等不到 load 事件，永远超时——脚本是循环轮询 `page.url` 的自写 wait_url()；此前误判"自动跳报告页失败"实为该假象，真实链路正常
+6. **考官追问决策走真实 LLM**（volc_mock 只覆盖 ASR/TTS/评测），本机代理异常时追问判定静默跳过（降级直接下一题）、评分走规则兜底 5.0，不影响 E2E 主链路但分数恒为保守值
+7. 测评会话 topic_id=None + question_ids JSONB 是"placement 会话"的判定特征（reports.is_placement 同源）；WS 取题按存储顺序还原，普通练习路径零改动
+
+### 用户真机验收待办
+新邮箱走完"测评→设目标分→Dashboard→学习路径→打卡"全程（约 10 分钟）；老账号确认 Dashboard 统计与历史一致。

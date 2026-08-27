@@ -3,6 +3,9 @@ import { fileURLToPath, URL } from 'node:url'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
 
+// 后端端口可用环境变量覆盖（VITE_API_PROXY=http://127.0.0.1:8010 npm run dev）
+const apiTarget = process.env.VITE_API_PROXY ?? 'http://127.0.0.1:8000'
+
 export default defineConfig({
   plugins: [vue()],
   resolve: {
@@ -15,7 +18,7 @@ export default defineConfig({
     proxy: {
       // 本地开发：转发到 FastAPI（uvicorn 默认 8000 端口）；ws:true 支持练习 WebSocket
       '/api': {
-        target: 'http://127.0.0.1:8000',
+        target: apiTarget,
         changeOrigin: true,
         ws: true,
       },

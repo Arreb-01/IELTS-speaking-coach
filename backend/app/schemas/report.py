@@ -26,6 +26,8 @@ class ReportSessionBrief(BaseModel):
     mode: str
     topic_name_en: str | None = None
     topic_name_zh: str | None = None
+    # 初始能力测评会话（topic 空 + 预选题集）：报告页据此弹目标分设置
+    is_placement: bool = False
     started_at: datetime | None = None
     ended_at: datetime | None = None
 

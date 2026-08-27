@@ -9,7 +9,7 @@ import {
   Square,
 } from 'lucide-vue-next'
 import { ElMessageBox } from 'element-plus'
-import { computed, onBeforeUnmount, onMounted, watch } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 import TurnAudioPlayer from '@/components/TurnAudioPlayer.vue'
@@ -19,6 +19,9 @@ import { usePracticeStore } from '@/stores/practice'
 const route = useRoute()
 const router = useRouter()
 const practice = usePracticeStore()
+
+/** 能力测评模式（query.placement=1）：顶部徽标与文案特判 */
+const isPlacement = ref(false)
 
 const examinerSpeaking = computed(() => practice.phase === 'examiner_asks')
 const isPreparing = computed(() => practice.phase === 'preparing')
@@ -102,6 +105,19 @@ function fmt(seconds: number): string {
 }
 
 onMounted(async () => {
+  // 能力测评模式：5 题预选会话由后端创建，前端走同一练习流程
+  if (route.query.placement === '1') {
+    isPlacement.value = true
+    const micReady = await practice.warmUpMic()
+    if (!micReady) return
+    try {
+      await practice.startPlacement()
+    } catch {
+      router.replace({ name: 'dashboard' })
+    }
+    return
+  }
+
   const topicId = route.query.topic as string
   const part = Number(route.query.part ?? 1) as 1 | 2 | 3
   if (!topicId) {
@@ -126,8 +142,14 @@ onBeforeUnmount(() => {
     <!-- 顶栏：音色与语速 -->
     <div class="practice__bar">
       <div class="practice__topic">
-        {{ practice.topic?.name_en ?? '口语练习' }}
-        <span class="practice__part-tag">Part {{ practice.part }}</span>
+        <template v-if="isPlacement">
+          <span class="placement-badge">能力测评</span>
+          <span class="practice__part-tag">共 5 题 · 约 3 分钟</span>
+        </template>
+        <template v-else>
+          {{ practice.topic?.name_en ?? '口语练习' }}
+          <span class="practice__part-tag">Part {{ practice.part }}</span>
+        </template>
       </div>
       <div class="practice__settings">
         <el-select
@@ -183,14 +205,20 @@ onBeforeUnmount(() => {
     <div v-else-if="isFinished" class="summary">
       <div class="summary__head ielts-card">
         <div>
-          <h2 class="summary__title">练习完成 🎉</h2>
-          <p class="summary__sub">
+          <h2 class="summary__title">
+            {{ isPlacement ? '测评完成 🎉' : '练习完成 🎉' }}
+          </h2>
+          <p class="summary__sub" v-if="!isPlacement">
             {{ practice.topic?.name_en }} · Part {{ practice.part }} ·
             共 {{ practice.transcripts.length }} 轮作答
           </p>
+          <p class="summary__sub" v-else>
+            已完成 5 道简短问答 · 正在生成你的能力画像
+          </p>
         </div>
         <div class="summary__actions">
-          <el-button @click="router.push({ name: 'topics' })">再选话题</el-button>
+          <el-button v-if="isPlacement" @click="router.push({ name: 'dashboard' })">返回首页</el-button>
+          <el-button v-else @click="router.push({ name: 'topics' })">再选话题</el-button>
           <el-button
             v-if="practice.sessionId"
             type="primary"
@@ -199,6 +227,7 @@ onBeforeUnmount(() => {
             查看评分报告
           </el-button>
           <el-button
+            v-if="!isPlacement"
             @click="router.push({ name: 'practice', query: { topic: route.query.topic, part: route.query.part } })"
           >
             再练一次
@@ -411,6 +440,16 @@ onBeforeUnmount(() => {
   color: var(--ielts-accent-foreground);
   background: var(--ielts-accent);
   padding: 2px 8px;
+  border-radius: var(--ielts-radius-full);
+}
+
+/* 能力测评徽标 */
+.placement-badge {
+  font-size: var(--ielts-text-xs);
+  font-weight: 600;
+  color: #fff;
+  background: var(--ielts-primary);
+  padding: 3px 10px;
   border-radius: var(--ielts-radius-full);
 }
 

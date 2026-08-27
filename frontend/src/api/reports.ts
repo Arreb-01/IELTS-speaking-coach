@@ -41,6 +41,8 @@ export interface ReportSessionBrief {
   mode: string
   topic_name_en: string | null
   topic_name_zh: string | null
+  /** 初始能力测评会话：出分后提示设置目标分数 */
+  is_placement?: boolean
   started_at: string | null
   ended_at: string | null
 }
