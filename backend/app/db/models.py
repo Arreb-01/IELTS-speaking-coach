@@ -222,3 +222,104 @@ class TurnAnalysis(Base):
     pronunciation_detail: Mapped[dict[str, Any] | None] = mapped_column(JSONVariant)
     # 命中的填充词 [{word, count}]
     filler_hits: Mapped[list[Any] | None] = mapped_column(JSONVariant)
+
+
+class SampleAnswer(Base):
+    """范文：P1 挂 question 级；P2 挂 topic 级（question_id 空）；linked 为串联共享范文。"""
+
+    __tablename__ = "sample_answers"
+
+    id: Mapped[uuid.UUID] = mapped_column(sa.Uuid(), primary_key=True, default=uuid.uuid4)
+    topic_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("topics.id", ondelete="CASCADE"), index=True
+    )
+    question_id: Mapped[uuid.UUID | None] = mapped_column(
+        sa.ForeignKey("questions.id", ondelete="CASCADE"), index=True
+    )
+    part: Mapped[int] = mapped_column(sa.SmallInteger)
+    text_en: Mapped[str] = mapped_column(sa.Text)
+    summary_zh: Mapped[str | None] = mapped_column(sa.Text)
+    # p1 / p2p3 / linked
+    source: Mapped[str] = mapped_column(sa.String(20))
+    created_at: Mapped[datetime] = mapped_column(
+        sa.DateTime(timezone=True), server_default=sa.func.now()
+    )
+
+
+class TopicLink(Base):
+    """Part 2 串联：一份共享范文适配的多个话题。"""
+
+    __tablename__ = "topic_links"
+    __table_args__ = (sa.UniqueConstraint("group_name", "topic_id", name="uq_topic_links_group_topic"),)
+
+    id: Mapped[uuid.UUID] = mapped_column(sa.Uuid(), primary_key=True, default=uuid.uuid4)
+    group_name: Mapped[str] = mapped_column(sa.String(200))
+    shared_answer_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("sample_answers.id", ondelete="CASCADE")
+    )
+    topic_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("topics.id", ondelete="CASCADE"), index=True
+    )
+    note: Mapped[str | None] = mapped_column(sa.Text)
+    created_at: Mapped[datetime] = mapped_column(
+        sa.DateTime(timezone=True), server_default=sa.func.now()
+    )
+
+
+class Expression(Base):
+    """话题高分表达（导入时从范文 LLM 提取）。"""
+
+    __tablename__ = "expressions"
+    __table_args__ = (sa.UniqueConstraint("topic_id", "text_en", name="uq_expressions_topic_text"),)
+
+    id: Mapped[uuid.UUID] = mapped_column(sa.Uuid(), primary_key=True, default=uuid.uuid4)
+    topic_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("topics.id", ondelete="CASCADE"), index=True
+    )
+    text_en: Mapped[str] = mapped_column(sa.String(500))
+    meaning_zh: Mapped[str] = mapped_column(sa.String(500))
+    example_en: Mapped[str | None] = mapped_column(sa.Text)
+    created_at: Mapped[datetime] = mapped_column(
+        sa.DateTime(timezone=True), server_default=sa.func.now()
+    )
+
+
+class UserVocabWord(Base):
+    """个人词汇本：从高分表达收藏，或练习中积累。"""
+
+    __tablename__ = "user_vocab_words"
+    __table_args__ = (sa.UniqueConstraint("user_id", "word", name="uq_user_vocab_words_user_word"),)
+
+    id: Mapped[uuid.UUID] = mapped_column(sa.Uuid(), primary_key=True, default=uuid.uuid4)
+    user_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("users.id", ondelete="CASCADE"), index=True
+    )
+    word: Mapped[str] = mapped_column(sa.String(200))
+    # 来源句（表达的原句例句）
+    context_en: Mapped[str | None] = mapped_column(sa.Text)
+    source_topic_id: Mapped[uuid.UUID | None] = mapped_column(
+        sa.ForeignKey("topics.id", ondelete="SET NULL")
+    )
+    is_favorite: Mapped[bool] = mapped_column(default=False)
+    created_at: Mapped[datetime] = mapped_column(
+        sa.DateTime(timezone=True), server_default=sa.func.now()
+    )
+
+
+class MistakeNote(Base):
+    """错题本：数据来自评分的逐句分析（Part C 链路接入）。"""
+
+    __tablename__ = "mistake_notes"
+
+    id: Mapped[uuid.UUID] = mapped_column(sa.Uuid(), primary_key=True, default=uuid.uuid4)
+    user_id: Mapped[uuid.UUID] = mapped_column(
+        sa.ForeignKey("users.id", ondelete="CASCADE"), index=True
+    )
+    turn_id: Mapped[uuid.UUID | None] = mapped_column(sa.Uuid())
+    issue_type: Mapped[str] = mapped_column(sa.String(30))
+    severity: Mapped[str] = mapped_column(sa.String(10))
+    original: Mapped[str | None] = mapped_column(sa.Text)
+    suggestion: Mapped[str | None] = mapped_column(sa.Text)
+    created_at: Mapped[datetime] = mapped_column(
+        sa.DateTime(timezone=True), server_default=sa.func.now()
+    )

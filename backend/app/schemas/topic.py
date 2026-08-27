@@ -15,6 +15,33 @@ class QuestionOut(BaseModel):
     sort: int
 
 
+class SampleAnswerOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: uuid.UUID
+    question_id: uuid.UUID | None
+    part: int
+    text_en: str
+    summary_zh: str | None
+    source: str
+
+
+class ExpressionOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: uuid.UUID
+    topic_id: uuid.UUID
+    text_en: str
+    meaning_zh: str
+    example_en: str | None
+
+
+class TopicLinkOut(BaseModel):
+    group_name: str
+    linked_topic_names: list[str] = []
+    shared_answer: SampleAnswerOut
+
+
 class TopicOut(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
@@ -26,8 +53,41 @@ class TopicOut(BaseModel):
     question_count: int = 0
 
 
+class TopicListOut(BaseModel):
+    items: list[TopicOut]
+    total: int
+    page: int
+    page_size: int
+
+
+class QuestionWithAnswerOut(QuestionOut):
+    sample_answer: SampleAnswerOut | None = None
+
+
 class TopicDetailOut(TopicOut):
-    questions: list[QuestionOut] = []
+    questions: list[QuestionWithAnswerOut] = []
+    # topic 级范文（P2 主范文 / linked 串联范文）
+    sample_answers: list[SampleAnswerOut] = []
+    expressions: list[ExpressionOut] = []
+    links: list[TopicLinkOut] = []
+
+
+class VocabWordOut(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: uuid.UUID
+    word: str
+    context_en: str | None
+    source_topic_id: uuid.UUID | None
+    source_topic_name: str | None = None
+    is_favorite: bool
+    created_at: datetime
+
+
+class VocabWordCreateRequest(BaseModel):
+    word: str = Field(min_length=1, max_length=200)
+    context_en: str | None = None
+    source_topic_id: uuid.UUID | None = None
 
 
 class PracticeTurnOut(BaseModel):
