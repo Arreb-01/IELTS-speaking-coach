@@ -51,6 +51,13 @@ class Settings(BaseSettings):
     volc_evaluation_access_token: str | None = None
     volc_evaluation_cluster: str = "volcano_mdd"
 
+    # 腾讯云智聆口语评测（SOE，英文）。平台默认密钥：控制台「访问管理 → API 密钥管理」获得。
+    # 配置后发音维度优先走腾讯云真实评测；火山口语评测开通后可并存（腾讯优先）
+    tencent_secret_id: str | None = None
+    tencent_secret_key: str | None = None
+    # 账号 APPID（数字串）；留空则通过 CAM GetUserAppId 自动获取（需 cam 只读权限）
+    tencent_appid: str | None = None
+
     # Mock 模式：不访问火山语音服务，使用本地假实现（开发/测试用）
     volc_mock: bool = False
 

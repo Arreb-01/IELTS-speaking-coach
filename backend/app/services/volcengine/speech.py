@@ -6,6 +6,7 @@ VOLC_MOCK=1 时工厂返回 Mock 实现，不触碰真实服务。
 """
 
 from dataclasses import dataclass
+import logging
 from typing import Any
 
 from sqlalchemy import select
@@ -15,6 +16,8 @@ from app.core.config import get_settings
 from app.db.models import User, UserApiKey
 from app.services.volcengine.asr import AsrCredentials, VolcAsrSession
 from app.services.volcengine.tts import TtsCredentials
+
+logger = logging.getLogger(__name__)
 
 # ASR 版本 → Resource ID
 ASR_RESOURCE_IDS = {
@@ -124,13 +127,31 @@ async def resolve_evaluation_credentials(user: User, db: AsyncSession):
 async def evaluate_turn_speech(
     wav: bytes, ref_text: str, user: User, db: AsyncSession, *, uid: str = "ielts-user"
 ):
-    """按配置走真实评测或 Mock；无凭据时返回 Mock 结果（发音维度降级标注）。"""
+    """按配置走真实评测或 Mock。优先级：Mock 开关 > 腾讯云 SOE > 火山 MDD > Mock 兜底。
+
+    腾讯云调用失败时继续尝试火山链路，全不可用最终回落 Mock（发音维度降级标注）。"""
     from app.services.volcengine import evaluation as evaluation_module
     from app.services.volcengine import mock as mock_module
 
     settings = get_settings()
     if settings.volc_mock:
         return await mock_module.mock_evaluate_turn(wav, ref_text)
+
+    if settings.tencent_secret_id and settings.tencent_secret_key:
+        from app.services.tencent.soe import (
+            TencentEvaluationError,
+            TencentSoeCredentials,
+            evaluate_turn as tencent_evaluate_turn,
+        )
+
+        try:
+            return await tencent_evaluate_turn(
+                wav,
+                ref_text,
+                TencentSoeCredentials(settings.tencent_secret_id, settings.tencent_secret_key),
+            )
+        except TencentEvaluationError as exc:
+            logger.warning("腾讯云口语评测失败，回退火山/Mock：%s", exc)
 
     credentials = await resolve_evaluation_credentials(user, db)
     if credentials is None:

@@ -28,7 +28,9 @@
 - **LLM**: doubao-1.5-pro-32k / doubao-seed-2.1-turbo
 - **ASR**: 豆包流式语音识别 2.0
 - **TTS**: 豆包语音合成 2.0
-- **发音评测**: 火山引擎口语评测 (service_type 81)
+- **发音评测**: 腾讯云智聆口语评测（新版，英文；`TENCENT_SECRET_ID/KEY` 配置即启用）
+  - 火山引擎口语评测 (service_type 81) 为邀测服务暂不可用；适配器已就绪（`evaluation.py`），开通后配置 `VOLC_EVALUATION_*` 即可并存
+  - 评测优先级：Mock 开关 > 腾讯云 > 火山 MDD > Mock 兜底
 
 ### BYOK 架构
 系统支持用户自带火山引擎 API Key (Bring Your Own Key)，优先使用用户自带的 Key 调用 AI 服务，未配置时回退到平台默认 Key。
@@ -148,8 +150,8 @@ npm run dev                # http://localhost:5173，/api 自动代理到 8000
 
 练习结束后自动触发，`score_reports` / `turn_analyses` 两表持久化（迁移 0003）：
 
-1. **阶段一（10s 内出分）**：流利度规则引擎（纯本地）∥ 火山口语评测（每轮音频 + 参考文本）
-   ∥ LLM 快速四维打分（**禁用深度思考**，实测开启时 >30s、关闭后 ~3s）→
+1. **阶段一（10s 内出分）**：流利度规则引擎（纯本地）∥ 口语评测（每轮音频 + 参考文本；
+   腾讯云优先）∥ LLM 快速四维打分（**禁用深度思考**，实测开启时 >30s、关闭后 ~3s）→
    融合（发音 = 真实评测 0.7 + LLM 0.3，综合 = 四维均值取半档）→ 报告置 completed
 2. **阶段二（后台补齐，前端轮询渐进呈现）**：LLM 深度分析一次产出逐句问题标注 +
    中文总评/优点/改进建议/高分表达替换
@@ -157,9 +159,11 @@ npm run dev                # http://localhost:5173，/api 自动代理到 8000
    空轮次（无有效作答）→ 报告 failed 并给出原因
 4. **手动重评**：报告页「重新评分」按钮 → `POST /api/v1/practices/{id}/rescore`（幂等）
 
-> 口语评测（service_type 81）真机校准进展：端点 `POST /api/v1/mdd` 请求形态已实证
-> （见 evaluation.py 头注），当前账号返回"无可用实例"——待语音控制台开通「口语评测」后，
-> 校准 `VOLC_EVALUATION_CLUSTER` 即可切换真实评测（Mock 全流程可用）。
+> 发音评测真机校准：
+> - 腾讯云智聆口语评测（新版 WebSocket 录音评测模式）已真机打通并上线为默认真实评测
+>   （协议见 `app/services/tencent/soe.py` 头注；探测工具 `scripts/tencent_soe_probe.py`）
+> - 火山口语评测（service_type 81）为邀测服务，账号暂不可用；端点/请求形态已实证
+>   （见 evaluation.py 头注），待邀测通过后配置 `VOLC_EVALUATION_*` 即可切换。
 
 ### Part D 题库知识库（架构速览）
 
