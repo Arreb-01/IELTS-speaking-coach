@@ -134,7 +134,8 @@ npm run dev                # http://localhost:5173，/api 自动代理到 8000
 - [x] **Part B** 语音对话核心引擎（流式 ASR / TTS / LLM 考官 / Part 1/2/3 练习）✅ 2026-08
 - [x] **Part C** 评分与反馈系统（两阶段评分流水线 / 四维 Band + 雷达 / 逐句分析 /
   中文深度反馈 / 高分表达替换 / 历史与趋势）✅ 2026-08
-- [ ] Part D 题库知识库系统
+- [x] **Part D** 题库知识库系统（三份 PDF 全量解析入库 / 话题库搜索筛选分页 /
+  参考范文 + 跟读 / 高分表达库 / 个人词汇本 / Part 2 串联提示）✅ 2026-08
 - [ ] Part E 学习路径与 Dashboard
 - [ ] Part F 模拟考试模式
 - [ ] Part G 测试与上线
@@ -159,6 +160,27 @@ npm run dev                # http://localhost:5173，/api 自动代理到 8000
 > 口语评测（service_type 81）真机校准进展：端点 `POST /api/v1/mdd` 请求形态已实证
 > （见 evaluation.py 头注），当前账号返回"无可用实例"——待语音控制台开通「口语评测」后，
 > 校准 `VOLC_EVALUATION_CLUSTER` 即可切换真实评测（Mock 全流程可用）。
+
+### Part D 题库知识库（架构速览）
+
+数据来源：三份 PDF 素材（2026年5-8月题季，本地 gitignore 不入库）→ 解析为中间 JSON → 幂等导入。
+新考季换 PDF 后重跑两条命令即可：`python scripts/parse_pdf.py` → `python scripts/import_topics.py`。
+
+1. **解析管线**（`backend/scripts/parse_pdf.py`，规则优先 + LLM 兜底）：
+   - p1（59 话题/303 题）：22 号字标题定边界；标签从总览页颜色（红=必考 4 / 蓝=新题）+ 标题文字；
+     每题范文挂 question 级
+   - p2&p3（77 话题）：标题 → Cue Card → 中文概要（CJK 行）→ 英文范文（ASCII 行）→「笔记区」后
+     P3 问答（编号+问号识别，跨行问题拼接）；分类（人物/事件/事物/地点）从总览页分组匹配；
+     范文挂 topic 级；中文名由 LLM 批量译英文名（upsert 键）
+   - 串联版（13 组）：一份范文适配 4-5 个话题，别名经规则+LLM 对到 p2p3 话题 → `topic_links`
+   - 校验报告：`scripts/parsed/report.md`（话题数/缺字段清单/未匹配别名）
+2. **导入**（`backend/scripts/import_topics.py`，幂等）：按 `name_en` upsert，PDF 别名映射到种子名
+   保住练习历史；题目/范文删除重建；表达库对每话题一次 LLM 提取 5-8 条（断点续跑）。
+   实测入库：145 话题 / 747 题 / 707 篇范文 / 50 条串联
+3. **API**：`GET /topics`（search/category/tag/分页）、`GET /topics/{id}`（题目+范文+表达+串联聚合）、
+   `GET /topics/expressions`、`POST /topics/speak`（范文跟读 TTS，PCM→WAV）、词汇本 CRUD `/vocab-words`
+4. **前端**：话题库完整版（搜索/分类/标签/分页）、话题详情页（Cue Card/范文折叠+跟读/高分表达收藏/
+   串联提示）、词汇本页、错题本占位页（Part C 数据接入后启用）
 
 ## License
 
