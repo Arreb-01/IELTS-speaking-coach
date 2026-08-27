@@ -217,11 +217,11 @@ def test_topics_api(ws_client, ws_db):
     headers = {"Authorization": f"Bearer {resp.json()['access_token']}"}
 
     part1 = ws_client.get("/api/v1/topics?part=1", headers=headers).json()
-    assert len(part1) == 1
-    assert part1[0]["question_count"] == 4
+    assert part1["total"] == 1
+    assert part1["items"][0]["question_count"] == 4
 
     part2 = ws_client.get("/api/v1/topics?part=2", headers=headers).json()
-    assert len(part2) == 1
+    assert part2["total"] == 1
 
-    detail = ws_client.get(f"/api/v1/topics/{part1[0]['id']}", headers=headers).json()
+    detail = ws_client.get(f"/api/v1/topics/{part1['items'][0]['id']}", headers=headers).json()
     assert len(detail["questions"]) == 4
