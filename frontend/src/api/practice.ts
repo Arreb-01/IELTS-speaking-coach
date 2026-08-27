@@ -32,11 +32,6 @@ export interface PracticeDetail {
   turns: PracticeTurn[]
 }
 
-export async function fetchTopics(part: number): Promise<TopicOut[]> {
-  const { data } = await client.get<TopicOut[]>('/topics', { params: { part } })
-  return data
-}
-
 export async function createPractice(payload: {
   topic_id: string
   part: number

@@ -34,6 +34,24 @@ const router = createRouter({
           meta: { title: '话题练习', requiresAuth: true },
         },
         {
+          path: 'topics/:topicId',
+          name: 'topic-detail',
+          component: () => import('@/views/TopicDetailView.vue'),
+          meta: { title: '话题详情', requiresAuth: true },
+        },
+        {
+          path: 'vocab',
+          name: 'vocab',
+          component: () => import('@/views/VocabView.vue'),
+          meta: { title: '我的词汇本', requiresAuth: true },
+        },
+        {
+          path: 'mistakes',
+          name: 'mistakes',
+          component: () => import('@/views/MistakesView.vue'),
+          meta: { title: '错题本', requiresAuth: true },
+        },
+        {
           path: 'practice',
           name: 'practice',
           component: () => import('@/views/PracticeView.vue'),

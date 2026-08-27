@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import {
+  BookMarked,
   ChartLine,
   KeyRound,
   LayoutDashboard,
   Library,
   LogOut,
   Mic,
+  NotebookPen,
 } from 'lucide-vue-next'
 import { computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
@@ -21,6 +23,8 @@ const navItems = [
   { name: 'topics', label: '话题练习', icon: Library },
   { name: 'mock-exam', label: '模拟考试', icon: Mic },
   { name: 'reports', label: '评分报告', icon: ChartLine },
+  { name: 'vocab', label: '词汇本', icon: BookMarked },
+  { name: 'mistakes', label: '错题本', icon: NotebookPen },
   { name: 'api-keys', label: 'API 设置', icon: KeyRound },
 ]
 

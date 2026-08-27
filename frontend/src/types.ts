@@ -48,6 +48,69 @@ export interface TopicOut {
   question_count: number
 }
 
+export interface TopicListOut {
+  items: TopicOut[]
+  total: number
+  page: number
+  page_size: number
+}
+
+export interface SampleAnswerOut {
+  id: string
+  question_id: string | null
+  part: number
+  text_en: string
+  summary_zh: string | null
+  source: string
+}
+
+export interface ExpressionOut {
+  id: string
+  topic_id: string
+  text_en: string
+  meaning_zh: string
+  example_en: string | null
+}
+
+export interface TopicLinkOut {
+  group_name: string
+  linked_topic_names: string[]
+  shared_answer: SampleAnswerOut
+}
+
+export interface QuestionWithAnswerOut {
+  id: string
+  part: number
+  content_en: string
+  cue_card: CueCard | null
+  sort: number
+  sample_answer: SampleAnswerOut | null
+}
+
+export interface TopicDetailOut extends TopicOut {
+  questions: QuestionWithAnswerOut[]
+  sample_answers: SampleAnswerOut[]
+  expressions: ExpressionOut[]
+  links: TopicLinkOut[]
+}
+
+export interface VocabWordOut {
+  id: string
+  word: string
+  context_en: string | null
+  source_topic_id: string | null
+  source_topic_name: string | null
+  is_favorite: boolean
+  created_at: string
+}
+
+export interface VocabListOut {
+  items: VocabWordOut[]
+  total: number
+  page: number
+  page_size: number
+}
+
 export interface CueCard {
   prompt: string
   summary_zh?: string
