@@ -14,13 +14,20 @@ from app.api.v1.router import api_router
 from app.core.config import get_settings
 from app.services.cache import close_cache, describe_backend, init_cache
 from app.services.practice_engine import registry as practice_registry
+from app.services.scoring.engine import (
+    recover_stale_reports,
+    start_stale_sweeper,
+    stop_stale_sweeper,
+)
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     await init_cache()
     practice_registry.start_sweeper()
+    start_stale_sweeper()
     yield
+    stop_stale_sweeper()
     practice_registry.stop_sweeper()
     await close_cache()
 

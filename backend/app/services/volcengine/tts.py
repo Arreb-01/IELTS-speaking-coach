@@ -107,7 +107,7 @@ async def synthesize_stream(
 
     audio = bytearray()
     try:
-        async with httpx.AsyncClient(timeout=timeout) as client:
+        async with httpx.AsyncClient(timeout=timeout, trust_env=False) as client:  # 国内云服务直连，不受系统代理干扰
             async with client.stream(
                 "POST", TTS_V3_URL, json=payload, headers=_auth_headers(credentials)
             ) as resp:

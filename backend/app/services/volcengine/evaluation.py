@@ -162,7 +162,7 @@ async def evaluate_turn(
     }
 
     try:
-        async with httpx.AsyncClient(timeout=timeout) as client:
+        async with httpx.AsyncClient(timeout=timeout, trust_env=False) as client:  # 国内云服务直连，不受系统代理干扰
             resp = await client.post(MDD_HTTP_URL, json=body)
     except httpx.TimeoutException:
         raise EvaluationError("口语评测请求超时")

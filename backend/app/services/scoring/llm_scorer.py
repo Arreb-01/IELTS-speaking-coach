@@ -106,7 +106,7 @@ async def score_dimensions(
     model = await _user_model(db, user) or SCORE_MODEL_DEFAULT
     data = await _ask_llm(
         user, db, prompts.SCORE_SYSTEM, user_content,
-        model=model, max_tokens=120, timeout=10,
+        model=model, max_tokens=120, timeout=25,
     )
     if data is None:
         return None, model

@@ -33,7 +33,7 @@ async def chat_completions(
     }
     payload = {"model": model, "messages": messages, **payload_extra}
     try:
-        async with httpx.AsyncClient(timeout=timeout) as client:
+        async with httpx.AsyncClient(timeout=timeout, trust_env=False) as client:  # 国内云服务直连，不受系统代理干扰
             resp = await client.post(url, headers=headers, json=payload)
     except httpx.TimeoutException as exc:
         raise ArkError("请求火山引擎超时") from exc

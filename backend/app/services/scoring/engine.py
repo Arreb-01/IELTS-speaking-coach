@@ -13,7 +13,7 @@
 import asyncio
 import logging
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -443,3 +443,52 @@ def _pronunciation_summary(eval_results: list[dict]) -> str:
         elif r.get("error"):
             parts.append(f"轮次{r['seq']}: 评测失败（{r['error'][:60]}）")
     return "; ".join(parts)
+
+
+async def recover_stale_reports(max_age_minutes: int = 15) -> int:
+    """把卡在 processing 超过时限的报告标记为 failed（进程重启/任务丢失的兜底）。
+
+    应用启动时与周期任务调用。用户可在报告页点击「重新评分」重跑。"""
+    cutoff = datetime.now(timezone.utc) - timedelta(minutes=max_age_minutes)
+    async with async_session_factory() as db:
+        rows = await db.scalars(
+            select(ScoreReport).where(
+                ScoreReport.status == "processing",
+                ScoreReport.created_at < cutoff,
+            )
+        )
+        stale = list(rows)
+        for report in stale:
+            report.status = "failed"
+            report.error = "评分超时中断（服务重启或网络故障），请点击「重新评分」重试"
+            await db.commit()
+        if stale:
+            logger.warning("回收 %d 份卡死的评分报告", len(stale))
+        return len(stale)
+
+
+async def _stale_report_sweeper() -> None:
+    # 首轮延迟 5 秒：启动后先回收孤儿报告，之后每 5 分钟巡检
+    await asyncio.sleep(5)
+    while True:
+        try:
+            await recover_stale_reports()
+        except Exception:
+            logger.exception("卡死报告回收失败")
+        await asyncio.sleep(300)
+
+
+_sweeper_task: asyncio.Task | None = None
+
+
+def start_stale_sweeper() -> None:
+    global _sweeper_task
+    if _sweeper_task is None or _sweeper_task.done():
+        _sweeper_task = asyncio.create_task(_stale_report_sweeper())
+
+
+def stop_stale_sweeper() -> None:
+    global _sweeper_task
+    if _sweeper_task is not None:
+        _sweeper_task.cancel()
+        _sweeper_task = None
